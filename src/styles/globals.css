@@ -26,7 +26,11 @@
     @apply text-[64px] leading-none font-bold;
   }
 
-  @keyframes pulse {
+  h2 {
+    @apply text-[28px] leading-none font-bold;
+  }
+
+  /* @keyframes pulse {
     0% {
       color: #95f9c3;
       background-color: #95f9c3;
@@ -41,5 +45,5 @@
       color: #9795f9;
       background-color: #9795f9;
     }
-  }
+  } */
 }

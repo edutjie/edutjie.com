@@ -1,3 +1,4 @@
+import { Card } from '@elements'
 import React from 'react'
 
 const Projects = () => {
@@ -9,6 +10,7 @@ const Projects = () => {
       <h1>
         My <span className="text-[#95F9C3]">Projects</span>
       </h1>
+      <Card />
     </div>
   )
 }
