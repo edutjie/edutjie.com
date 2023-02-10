@@ -10,10 +10,12 @@ export const LandingModule: React.FC = () => {
 
   return (
     <>
-      <Hero />
-      <Projects />
-      <Experiences />
-      <Certifications />
+      <div className="z-10">
+        <Hero />
+        <Projects />
+        <Experiences />
+        <Certifications />
+      </div>
       <BackgroundBlur />
     </>
   )
