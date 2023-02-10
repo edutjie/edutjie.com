@@ -1,22 +1,17 @@
 {
-  "overrides": [
-    {
-      "extends": [
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
-      ],
-      "files": ["*.ts", "*.tsx"],
-      "parserOptions": {
-        "project": "tsconfig.json"
-      }
-    }
-  ],
+  "env": { "browser": true, "es2021": true },
+  "extends": ["plugin:react/recommended", "google", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "@typescript-eslint/consistent-type-imports": "warn"
-  }
+    "require-jsdoc": "off",
+    "new-cap": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": { "react": { "version": "detect" } }
 }

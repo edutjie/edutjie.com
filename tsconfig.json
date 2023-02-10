@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "checkJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,8 +14,19 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noUncheckedIndexedAccess": true
+    "baseUrl": ".",
+    "paths": {
+      "@icons": ["src/components/icons"],
+      "@contexts": ["src/components/contexts"],
+      "@elements": ["src/components/elements"],
+      "@hooks": ["src/components/hooks"],
+      "@modules": ["src/components/modules"],
+      "@ssr": ["src/components/ssr"],
+      "@utils": ["src/components/utils"],
+      "@pages/*": ["src/pages/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "extends": "@tsconfig/next/tsconfig.json"
 }
