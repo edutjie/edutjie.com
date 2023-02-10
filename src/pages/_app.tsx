@@ -1,4 +1,4 @@
-import { type AppType } from 'next/app'
+import { AppProps, type AppType } from 'next/app'
 
 import { api } from '../utils/api'
 
@@ -6,8 +6,7 @@ import '../styles/globals.css'
 import { Navbar } from '@elements'
 import { ConfigProvider } from 'antd'
 
-// eslint-disable-next-line react/prop-types
-const MyApp: AppType = ({ Component, pageProps }) => {
+const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <ConfigProvider

@@ -9,8 +9,37 @@
     font-family: 'Inter';
     src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf');
   }
-}
+  @font-face {
+    font-family: 'R-Flex Regular';
+    src: url(/assets/fonts/R-FLEX-REGULAR.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'R-Flex Bold';
+    src: url(/assets/fonts/R-FLEX-BOLD.woff2) format('woff2');
+  }
 
-body {
-  @apply font-inter;
+  body {
+    @apply font-r-flex;
+  }
+
+  h1 {
+    @apply text-[64px] leading-none font-bold;
+  }
+
+  @keyframes pulse {
+    0% {
+      color: #95f9c3;
+      background-color: #95f9c3;
+    }
+
+    50% {
+      color: #95d5f9;
+      background-color: #95d5f9;
+    }
+
+    100% {
+      color: #9795f9;
+      background-color: #9795f9;
+    }
+  }
 }

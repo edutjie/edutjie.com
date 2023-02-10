@@ -1,4 +1,4 @@
-export const navItems = [
+export const NAV_ROUTES = [
   {
     name: 'Projects',
     path: '#projects',
