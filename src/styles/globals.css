@@ -30,7 +30,11 @@
     @apply text-[28px] leading-none font-bold;
   }
 
-  /* @keyframes pulse {
+  h3 {
+    @apply text-[24px] leading-none;
+  }
+
+  @keyframes pulse {
     0% {
       color: #95f9c3;
       background-color: #95f9c3;
@@ -45,5 +49,18 @@
       color: #9795f9;
       background-color: #9795f9;
     }
-  } */
+  }
+
+  ::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2f5e7d;
+  }
 }

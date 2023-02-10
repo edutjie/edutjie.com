@@ -1,1 +1,3 @@
-export interface props {}
+export interface props {
+  variant: number
+}

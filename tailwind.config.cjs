@@ -12,6 +12,9 @@ module.exports = {
         primary: '#01162D',
         secondary: '#95F9C3',
       },
+      backgroundImage: {
+        'blur-bg': "url('/assets/images/blur-bg.svg')",
+      },
     },
   },
   plugins: [],

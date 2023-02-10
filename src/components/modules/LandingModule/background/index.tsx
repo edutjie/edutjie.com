@@ -2,7 +2,7 @@ import React from 'react'
 
 export const BackgroundBlur = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div
         style={{
           position: 'absolute',
@@ -17,7 +17,7 @@ export const BackgroundBlur = () => {
 
           zIndex: 0,
 
-          animation: 'pulse 5s ease infinite alternate',
+          // animation: 'pulse 5s ease infinite alternate',
         }}
       ></div>
       <div
@@ -34,7 +34,7 @@ export const BackgroundBlur = () => {
 
           zIndex: 0,
 
-          animation: 'pulse 5s ease infinite alternate-reverse',
+          // animation: 'pulse 5s ease infinite alternate-reverse',
         }}
       ></div>
       <div
@@ -51,7 +51,7 @@ export const BackgroundBlur = () => {
 
           zIndex: 0,
 
-          animation: 'pulse 5s ease infinite alternate',
+          // animation: 'pulse 5s ease infinite alternate',
         }}
       ></div>
       <div
@@ -68,7 +68,7 @@ export const BackgroundBlur = () => {
 
           zIndex: 0,
 
-          animation: 'pulse 5s ease infinite alternate-reverse',
+          // animation: 'pulse 5s ease infinite alternate-reverse',
         }}
       ></div>
     </div>

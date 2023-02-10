@@ -3,7 +3,7 @@ import { AppProps, type AppType } from 'next/app'
 import { api } from '../utils/api'
 
 import '../styles/globals.css'
-import { Navbar } from '@elements'
+import { Footer, Navbar } from '@elements'
 import { ConfigProvider } from 'antd'
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
@@ -18,6 +18,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
       >
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </ConfigProvider>
     </>
   )
