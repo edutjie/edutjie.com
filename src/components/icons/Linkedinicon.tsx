@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './interface'
 
-export const Linkedinicon: React.FC<IconProps> = ({
+export const LinkedinIcon: React.FC<IconProps> = ({
   fill = 'fill-current',
   stroke,
   className,

@@ -1,4 +1,5 @@
 export interface props {
-  width: number
-  height: number
-}
+    width: number
+    height: number
+  }
+  

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Instagramicon, Linkedinicon, Githubicon } from '@icons'
+import { InstagramIcon, LinkedinIcon, GithubIcon } from '@icons'
 import React from 'react'
 
 export const Footer: React.FC = () => {
@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
             height={60}
             className="rounded-full"
           />
-          <div className='flex flex-col gap-1'>
+          <div className="flex flex-col gap-1">
             <div className="flex">
               <h3 className="font-bold text-display-small md:text-display-medium">
                 edutjie
@@ -24,20 +24,28 @@ export const Footer: React.FC = () => {
               <h3>&apos;s personal website</h3>
             </div>
             <p>
-              Made using <a href="https://create.t3.gg/" target="_blank" rel="noreferrer" className='text-secondary underline underline-offset-4'>T3 App</a>
+              Made using{' '}
+              <a
+                href="https://create.t3.gg/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-secondary underline underline-offset-4"
+              >
+                T3 App
+              </a>
             </p>
           </div>
         </div>
         <div className="mt-5 flex select-none flex-col items-center justify-center md:mt-0">
           <div className="flex gap-4">
             <div className="cursor-pointer">
-              <Instagramicon />
+              <InstagramIcon />
             </div>
             <div className="cursor-pointer">
-              <Linkedinicon />
+              <LinkedinIcon />
             </div>
             <div className=" cursor-pointer">
-              <Githubicon />
+              <GithubIcon />
             </div>
           </div>
         </div>

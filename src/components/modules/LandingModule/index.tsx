@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 // import { BackgroundBlur } from './background'
 import Certifications from './certifications'
