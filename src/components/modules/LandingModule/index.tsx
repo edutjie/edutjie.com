@@ -1,7 +1,7 @@
-"use client"
+'use client'
 import React from 'react'
 // import { BackgroundBlur } from './background'
-import Certifications from './certifications'
+import Achievements from './achievements'
 import Experiences from './experiences'
 import Hero from './hero/Hero'
 import Projects from './projects'
@@ -13,9 +13,9 @@ export const LandingModule: React.FC = () => {
     <>
       <div>
         <Hero />
-        <Projects />
         <Experiences />
-        <Certifications />
+        <Projects />
+        <Achievements />
       </div>
       {/* <BackgroundBlur /> */}
     </>

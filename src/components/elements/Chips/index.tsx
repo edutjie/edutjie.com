@@ -23,7 +23,7 @@ export const Chips: React.FC<props> = ({
         onClick={onClick}
       >
         {leftIcon && <span>{leftIcon}</span>}
-        {text}
+        <span className="w-max">{text}</span>
         {rightIcon && <span>{rightIcon}</span>}
       </div>
     </>

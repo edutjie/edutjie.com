@@ -3,7 +3,7 @@ import { CONTACTS } from '../constant'
 
 const Contacts = () => {
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-5 justify-center md:justify-start">
       {CONTACTS.map((contact) => (
         <a
           key={contact.name}

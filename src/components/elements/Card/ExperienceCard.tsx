@@ -1,53 +1,93 @@
-"use client"
+'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { Chips } from '../Chips'
+import { SingularExperienceType } from 'src/constants/experience/interface'
 
-const ExperienceCard = () => {
+const ExperienceCard = ({
+  name,
+  headlineRole,
+  logo,
+  links,
+  date,
+  location,
+  roles,
+  skills,
+}: SingularExperienceType) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="bg-[#0B3866]/25 px-[50px] py-[25px] rounded-[30px] flex flex-col gap-[25px] backdrop-blur-md shadow-xl w-full max-w-[600px]">
-      <div className="grid grid-cols-4">
-        <div className="relative w-24 h-24 self-center">
+    <div className="bg-[#0B3866]/25 px-[30px] pt-[25px] pb-[15px] rounded-[30px] flex flex-col gap-[25px] backdrop-blur-md shadow-xl w-full max-w-[350px] md:max-w-[600px]">
+      <div className="grid grid-cols-5 md:grid-cols-4 gap-8">
+        <div className="relative w-24 h-24 self-center col-span-2 md:col-span-1">
           <Image
-            src="/assets/images/self-portrait.jpg"
+            src={`/assets/${logo}`}
             alt="Segmentation"
             fill
             priority
-            className="rounded-full object-cover"
+            className="rounded-full object-cover bg-white object-center"
           />
         </div>
         <div className="col-span-3 self-center space-y-1">
-          <h2>PIC of Software Engineering</h2>
-          <h3>Depok Kita</h3>
-          <p>Jun 2022 - Present</p>
-          <p>Depok, West Java, Indonesia</p>
+          <h2>{headlineRole ?? roles[0].name}</h2>
+          <h3>{name}</h3>
+          <p className="text-sm md:text-lg">{date ?? roles[0].date}</p>
+          <p className="text-xs md:text-sm">{location}</p>
         </div>
       </div>
       {isOpen && (
-        <div className="flex flex-col gap-2">
-          <div className="flex gap-1">
-            <p>-</p>
-            <p>
-              Developed www.depokkita.com using NextJs, Typescript, TailwindCSS,
-              Strapi, and Chakra UI.
+        <div className="flex flex-col gap-4 md:gap-[25px]">
+          {roles.map((role) => (
+            <div className="flex flex-col gap-1" key={role.name}>
+              {roles.length > 1 && (
+                <div>
+                  <p className="font-bold">{role.name}</p>
+                  <p>{role.date}</p>
+                </div>
+              )}
+              {role.description?.map((desc, idx) => (
+                <div className="flex gap-1 text-sm md:text-lg" key={idx}>
+                  <p>-</p>
+                  <p>{desc}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {skills && (
+            <div className="flex gap-1 overflow-x-auto py-2">
+              {skills.map((skill) => (
+                <Chips
+                  key={skill.name}
+                  text={skill.name}
+                  color={skill.color}
+                  className="text-sm"
+                  onClick={() => window.open(skill.link, '_blank')}
+                />
+              ))}
+            </div>
+          )}
+
+          {links && (
+            <p className="font-bold text-sm md:text-lg">
+              <div className="flex flex-wrap gap-2">
+                Links:{' '}
+                {links.map((link, idx) => (
+                  <span className="text-secondary underline" key={idx}>
+                    <a
+                      href={link.link}
+                      className="font-r-flex font-normal"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.name}
+                    </a>
+                  </span>
+                ))}
+              </div>
             </p>
-          </div>
-          <div className="flex gap-1">
-            <p>-</p>
-            <p>Responsible for leading the team to develop a website.</p>
-          </div>
+          )}
         </div>
-      )}
-      {isOpen && (
-        <p className="font-bold">
-          Project Related:{' '}
-          <span className="text-secondary underline">
-            <a href="" className="font-r-flex font-normal">
-              Computer Vision - Indonesia AI
-            </a>
-          </span>
-        </p>
       )}
       <div className="w-full">
         <ChevronDownIcon

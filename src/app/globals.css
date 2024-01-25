@@ -21,15 +21,15 @@
   }
 
   h1 {
-    @apply text-[64px] leading-none font-bold;
+    @apply text-[40px] md:text-[64px] leading-none font-bold;
   }
 
   h2 {
-    @apply text-[28px] leading-none font-bold;
+    @apply text-[20px] md:text-[28px] leading-none font-bold;
   }
 
   h3 {
-    @apply text-[24px] leading-none;
+    @apply text-[16px] md:text-[24px] leading-none;
   }
 
   @keyframes pulse {

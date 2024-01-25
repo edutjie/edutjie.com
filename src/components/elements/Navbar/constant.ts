@@ -8,7 +8,7 @@ export const NAV_ROUTES = [
     path: '#experiences',
   },
   {
-    name: 'Certifications',
-    path: '#certifications',
+    name: 'Achievements',
+    path: '#achievements',
   },
 ]

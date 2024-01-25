@@ -3,14 +3,14 @@ import ExperienceCard from './ExperienceCard'
 import { props } from './interface'
 import ProjectCard from './ProjectCard'
 
-export const Card: React.FC<props> = ({ variant }) => {
+export const Card: React.FC<props> = ({ variant, props }) => {
   // TODO: Write element's logic
 
   switch (variant) {
     case 0:
       return <ProjectCard />
     case 1:
-      return <ExperienceCard />
+      return <ExperienceCard {...props} />
     default:
       return <ProjectCard />
   }

@@ -18,20 +18,20 @@ export const Footer: React.FC = () => {
           />
           <div className="flex flex-col gap-1">
             <div className="flex">
-              <h3 className="font-bold text-display-small md:text-display-medium">
-                edutjie
+              <h3 className="text-lg md:text-display-medium">
+                © {new Date().getFullYear()} Eduardus Tjitrahardja. All rights
+                reserved.
               </h3>
-              <h3>&apos;s personal website</h3>
             </div>
             <p>
-              Made using{' '}
+              Created by{' '}
               <a
-                href="https://create.t3.gg/"
+                href="https://edutjie.app"
                 target="_blank"
                 rel="noreferrer"
-                className="text-secondary underline underline-offset-4"
+                className="text-secondary underline underline-offset-4 font-bold"
               >
-                T3 App
+                Eduardus Tjitrahardja
               </a>
             </p>
           </div>
