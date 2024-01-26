@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './interface'
 
-export const EmailIcon: React.FC<IconProps> = ({
+export const Emailicon: React.FC<IconProps> = ({
   fill = 'fill-current',
   stroke,
   className,

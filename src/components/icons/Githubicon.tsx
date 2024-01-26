@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './interface'
 
-export const GithubIcon: React.FC<IconProps> = ({
+export const Githubicon: React.FC<IconProps> = ({
   fill = 'fill-current',
   stroke,
   className,
