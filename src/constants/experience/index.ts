@@ -1,7 +1,8 @@
 import { ExperiencesType } from './interface'
-import WorkExperience from './work'
+import OrgExperience from './organizations'
+import WorkExperience from './works'
 
 export const EXPERIENCES: ExperiencesType = {
   Work: WorkExperience,
-  Org: [],
+  Org: OrgExperience,
 }

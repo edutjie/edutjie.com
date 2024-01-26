@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { InstagramIcon, LinkedinIcon, GithubIcon } from '@icons'
 import React from 'react'
+import { CONTACTS } from '@constants'
 
 export const Footer: React.FC = () => {
   // TODO: Write element's logic
@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   return (
     <>
       <div className="flex w-full select-none flex-col items-center justify-between bg-primary py-5 md:flex-row md:py-10 md:px-20">
-        <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left gap-4 text-white">
+        <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left gap-4 text-white max-w-[80%]">
           <Image
             src="/assets/images/logo.jpg"
             alt="logo"
@@ -36,17 +36,19 @@ export const Footer: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="mt-5 flex select-none flex-col items-center justify-center md:mt-0">
+        <div className="mt-5 flex select-none flex-col items-center justify-center md:mt-0 max-w-[80%]">
           <div className="flex gap-4">
-            <div className="cursor-pointer">
-              <InstagramIcon />
-            </div>
-            <div className="cursor-pointer">
-              <LinkedinIcon />
-            </div>
-            <div className=" cursor-pointer">
-              <GithubIcon />
-            </div>
+            {CONTACTS.map((contact) => (
+              <a
+                key={contact.name}
+                href={contact.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 hover:scale-125 transition-all cursor-pointer"
+              >
+                {contact.icon}
+              </a>
+            ))}
           </div>
         </div>
       </div>

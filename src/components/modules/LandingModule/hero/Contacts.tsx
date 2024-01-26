@@ -1,5 +1,5 @@
 import React from 'react'
-import { CONTACTS } from '../constant'
+import { CONTACTS } from '@constants'
 
 const Contacts = () => {
   return (

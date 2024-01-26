@@ -43,6 +43,24 @@ export const SKILLS: SkillType = {
     link: 'https://expressjs.com/',
     color: '#95F9C3',
   },
+  Fiber: {
+    name: 'Fiber',
+    logo: '/images/logo/fiber.svg',
+    link: 'https://gofiber.io/',
+    color: '#95F9C3',
+  },
+  PGX: {
+    name: 'PGX',
+    logo: '/images/logo/pgx.svg',
+    link: 'https://pkg.go.dev/github.com/jackc/pgx/v5',
+    color: '#95F9C3',
+  },
+  tRPC: {
+    name: 'tRPC',
+    logo: '/images/logo/trpc.svg',
+    link: 'https://trpc.io/',
+    color: '#95F9C3',
+  },
   Django: {
     name: 'Django',
     logo: '/images/logo/django.svg',
@@ -61,10 +79,22 @@ export const SKILLS: SkillType = {
     link: 'https://spring.io/projects/spring-boot/',
     color: '#95F9C3',
   },
+  Strapi: {
+    name: 'Strapi',
+    logo: '/images/logo/strapi.svg',
+    link: 'https://strapi.io/',
+    color: '#95F9C3',
+  },
   Prisma: {
     name: 'Prisma',
     logo: '/images/logo/prisma.svg',
     link: 'https://www.prisma.io/',
+    color: '#95F9C3',
+  },
+  Redis: {
+    name: 'Redis',
+    logo: '/images/logo/redis.svg',
+    link: 'https://www.redis.io/',
     color: '#95F9C3',
   },
   GoogleAPI: {
@@ -119,6 +149,12 @@ export const SKILLS: SkillType = {
     name: 'Tailwind CSS',
     logo: '/images/logo/tailwind.svg',
     link: 'https://tailwindcss.com/',
+    color: '#A0C4FF',
+  },
+  GraphicDesign: {
+    name: 'Graphic Design',
+    logo: '/images/logo/graphicdesign.svg',
+    link: '#',
     color: '#A0C4FF',
   },
   ML: {

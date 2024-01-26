@@ -26,10 +26,10 @@ const ProjectCard = () => {
       </div>
       <div className="flex gap-[15px] justify-between items-center">
         <h2 className="truncate">Segmentation</h2>
-        <p className='text-sm md:text-lg'>2022</p>
+        <p className="text-sm md:text-lg">2022</p>
       </div>
-      <p className='text-sm md:text-lg'>Indonesia AI</p>
-      <p className='text-sm md:text-lg'>
+      <p className="text-sm md:text-lg">Indonesia AI</p>
+      <p className="text-sm md:text-lg">
         Project Related:{' '}
         <span className="text-secondary underline">
           <a href="">Computer Vision - Indonesia AI</a>

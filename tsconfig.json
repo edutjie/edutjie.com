@@ -23,6 +23,7 @@
       "@modules": ["src/components/modules"],
       "@ssr": ["src/components/ssr"],
       "@utils": ["src/components/utils"],
+      "@constants": ["src/constants"],
       "@pages/*": ["src/pages/*"]
     }
   },
