@@ -1,10 +1,10 @@
-import { Emailicon, Githubicon, Instagramicon, Linkedinicon } from '@icons'
+import { EmailIcon, Githubicon, Instagramicon, Linkedinicon } from '@icons'
 
 export const CONTACTS = [
   {
     name: 'Email',
     url: 'mailto:edutjitrahardja@gmail.com',
-    icon: <Emailicon />,
+    icon: <EmailIcon />,
   },
   {
     name: 'Instagram',
