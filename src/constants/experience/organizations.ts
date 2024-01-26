@@ -100,7 +100,7 @@ const OrgExperience: SingularExperienceType[] = [
       },
     ],
     skills: [
-      SKILLS.Typescript,
+      SKILLS.TypeScript,
       SKILLS.NextJS,
       SKILLS.Prisma,
       SKILLS.tRPC,

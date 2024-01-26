@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import Typewriter from 'typewriter-effect'
 import Contacts from './Contacts'
+import { EducationCard } from './EducationCard'
 
 const Hero = () => {
   const { width } = useWindowSize()
@@ -26,8 +27,10 @@ const Hero = () => {
           </span>
         </div>
         <p className="text-xl md:text-2xl">
-          an <b>AI</b> and <b>Software Engineer.</b>
+          a passionate <i className="font-bold">AI</i> and{' '}
+          <i className="font-bold">Software Engineer.</i>
         </p>
+        <EducationCard />
         <Contacts />
       </div>
       <div className="z-10 hidden lg:block">

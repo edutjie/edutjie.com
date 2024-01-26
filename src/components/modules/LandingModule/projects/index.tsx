@@ -1,14 +1,35 @@
-import { Button, Card, Chips } from '@elements'
-import React, { useState } from 'react'
+import { Card, Chips } from '@elements'
+import React, { useEffect, useState } from 'react'
 import { useWindowSize } from '@hooks'
+import { PROJECTS } from '@constants'
 
 const Projects = () => {
   const [selectedTag, setSelectedTag] = useState<number>(0)
+  const [filteredProjects, setFilteredProjects] = useState(PROJECTS)
   const { width } = useWindowSize()
+
+  useEffect(() => {
+    if (selectedTag === 1) {
+      setFilteredProjects(
+        PROJECTS.filter(
+          (project) => project.type === 'AI' || project.type === 'All'
+        )
+      )
+    } else if (selectedTag === 2) {
+      setFilteredProjects(
+        PROJECTS.filter(
+          (project) => project.type === 'SE' || project.type === 'All'
+        )
+      )
+    } else {
+      setFilteredProjects(PROJECTS)
+    }
+  }, [selectedTag])
+
   return (
     <div
       id="projects"
-      className="flex flex-col md:min-h-screen items-center justify-center gap-6 z-10 py-40"
+      className="flex flex-col md:min-h-screen items-center justify-center gap-6 z-10 py-20 md:py-40"
     >
       <h1>
         My <span className="text-[#95F9C3]">Projects</span>
@@ -34,12 +55,13 @@ const Projects = () => {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[50px] z-10">
-        <Card variant={0} />
-        <Card variant={0} />
-        <Card variant={0} />
-        <Card variant={0} />
+        {filteredProjects.map((project, index) => (
+          <Card variant={0} key={index} props={project} />
+        ))}
       </div>
-      <Button className="w-fit mx-auto z-10">Load More</Button>
+      {/* <Button onClick={loadMoreProjects} className="w-fit mx-auto z-10">
+        Load More
+      </Button> */}
     </div>
   )
 }

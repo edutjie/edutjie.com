@@ -9,7 +9,7 @@ export const Card: React.FC<props> = ({ variant, props }) => {
 
   switch (variant) {
     case 0:
-      return <ProjectCard />
+      return <ProjectCard {...props} />
     case 1:
       return <ExperienceCard {...props} />
     default:
