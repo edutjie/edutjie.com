@@ -14,8 +14,8 @@ export const LandingModule: React.FC = () => {
       <div>
         <Hero />
         <Experiences />
-        <Projects />
         <Achievements />
+        <Projects />
       </div>
       {/* <BackgroundBlur /> */}
     </>

@@ -22,10 +22,10 @@ const ExperienceCard = ({
         <div className="relative w-24 h-24 self-center col-span-2 md:col-span-1">
           <Image
             src={`/assets/${logo}`}
-            alt="Segmentation"
+            alt={name}
             fill
             priority
-            className="rounded-full object-cover bg-white object-center"
+            className="rounded-full object-cover bg-white object-center shadow-lg shadow-[#9BF6FF]/25"
           />
         </div>
         <div className="col-span-3 self-center space-y-1">
@@ -69,23 +69,21 @@ const ExperienceCard = ({
           )}
 
           {links && (
-            <p className="font-bold text-sm md:text-lg">
-              <div className="flex flex-wrap gap-2">
-                Links:{' '}
-                {links.map((link, idx) => (
-                  <span className="text-secondary underline" key={idx}>
-                    <a
-                      href={link.link}
-                      className="font-r-flex font-normal"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.name}
-                    </a>
-                  </span>
-                ))}
-              </div>
-            </p>
+            <div className="flex flex-wrap gap-2 font-bold text-sm md:text-lg">
+              Links:{' '}
+              {links.map((link, idx) => (
+                <span className="text-secondary underline" key={idx}>
+                  <a
+                    href={link.link}
+                    className="font-r-flex font-normal"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.name}
+                  </a>
+                </span>
+              ))}
+            </div>
           )}
         </div>
       )}
