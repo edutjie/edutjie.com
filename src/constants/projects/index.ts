@@ -27,7 +27,7 @@ export const PROJECTS: ProjectType[] = [
     links: [
       {
         name: 'Website',
-        link: 'https://duren.edutjie.app/',
+        link: 'https://duren.edutjie.net/',
       },
       {
         name: 'Source Code (Backend)',
