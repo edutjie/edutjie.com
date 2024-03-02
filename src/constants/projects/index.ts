@@ -3,6 +3,32 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'PilgrimPal - Umroh AI App',
+    image: 'images/projects/pilgrimpal/image1.jpeg',
+    date: 'Jan 2024-Feb 2024',
+    description:
+      'PilgrimPal is an AI-based mobile application that aims to help pilgrims with their activities related to Umrah. This app contributes to helping pilgrims communicate, informing them of crowdedness in an area, and identifying their future needs. Our two main features are live CCTV crowd detection and AI chatbot assistant.',
+    links: [
+      {
+        name: 'Pitch Deck',
+        link: 'https://www.canva.com/design/DAF7nQXyLso/oGE0B96UUZniNcxempFxJQ/view?',
+      },
+      {
+        name: 'Prototype Release',
+        link: 'https://github.com/PilgrimPal/pilgrimpal-app/releases/tag/0.1.0%2B2',
+      },
+    ],
+    skills: [
+      SKILLS.CV,
+      SKILLS.NLP,
+      SKILLS.Python,
+      SKILLS.FastAPI,
+      SKILLS.Redis,
+      SKILLS.GCP,
+    ],
+    type: 'All',
+  },
+  {
     name: 'Transjakarta App',
     image: 'images/projects/tj app/image1.png',
     date: 'Oct 2023-Present',
