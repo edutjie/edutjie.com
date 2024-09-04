@@ -1,12 +1,18 @@
 import {
   EmailIcon,
   Githubicon,
-  Googlescholar,
+  GooglescholarIcon,
   Instagramicon,
   Linkedinicon,
+  ResumeIcon,
 } from '@icons'
 
 export const CONTACTS = [
+  {
+    name: 'Resume',
+    url: 'https://docs.google.com/document/d/1Vbia5E9etjJLgdVH8Bf2pcIauGegZPw_URp4tVuQZBU/edit?usp=sharing',
+    icon: <ResumeIcon />,
+  },
   {
     name: 'Email',
     url: 'mailto:edutjitrahardja@gmail.com',
@@ -25,7 +31,7 @@ export const CONTACTS = [
   {
     name: 'Google Scholar',
     url: 'https://scholar.google.com/citations?user=33etmQUAAAAJ&hl=en',
-    icon: <Googlescholar />,
+    icon: <GooglescholarIcon />,
   },
   {
     name: 'Github',
