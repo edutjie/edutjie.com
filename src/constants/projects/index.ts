@@ -21,7 +21,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Python,
       SKILLS.HuggingFace
     ],
-    type: 'All',
+    type: 'AI',
   },
   {
     name: 'PilgrimPal - Umroh AI App',
