@@ -12,8 +12,8 @@ const WorkExperience: SingularExperienceType[] = [
         name: 'AI Engineer Intern',
         date: 'Sep 2024 - Present',
         description: [
-          "Developing an AI chatbot using retrieval augmented generation (RAG) architecture."
-        ]
+          'Developing an AI chatbot using retrieval augmented generation (RAG) architecture.',
+        ],
       },
     ],
     skills: [SKILLS.LLM, SKILLS.NLP],

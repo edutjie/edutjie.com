@@ -19,7 +19,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.CV,
       SKILLS.NLP,
       SKILLS.Python,
-      SKILLS.HuggingFace
+      SKILLS.HuggingFace,
     ],
     type: 'AI',
   },

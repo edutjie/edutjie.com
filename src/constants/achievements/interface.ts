@@ -5,7 +5,7 @@ export interface AchievementType {
   issuer: string
   image?: string
   date: string
-  medal: "gold" | "silver" | "bronze" | "none"
+  medal: 'gold' | 'silver' | 'bronze' | 'none'
   description?: string
   skills: SkillTypeObject[]
   links?: LinkType[]
