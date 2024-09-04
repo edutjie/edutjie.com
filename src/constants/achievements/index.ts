@@ -6,7 +6,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     name: '2nd Winner of Big Data Challenge, Satria Data 2024',
     issuer:
       'Indonesian Ministry of Education, Culture, Research, and Technology',
-    image: 'images/achievements/satria data/image2.jpg',
+    image: 'images/achievements/satria data/image20241.jpg',
     date: 'Aug 2024',
     medal: 'silver',
     description:
