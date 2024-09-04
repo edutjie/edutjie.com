@@ -3,6 +3,27 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'Automatic Assignment of Community Reports on the CRM Platform Using Early Fusion Multimodal Transformer',
+    image: 'images/projects/crm/image1.png',
+    date: 'May 2024-Jun 2024',
+    description:
+      'Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process.',
+    links: [
+      {
+        name: 'Paper',
+        link: 'https://drive.google.com/file/d/1f3iNid15NXVFoLfYQfgfGdZvATOsu5IU/view?usp=drive_link',
+      },
+    ],
+    skills: [
+      SKILLS.ML,
+      SKILLS.CV,
+      SKILLS.NLP,
+      SKILLS.Python,
+      SKILLS.HuggingFace
+    ],
+    type: 'All',
+  },
+  {
     name: 'PilgrimPal - Umroh AI App',
     image: 'images/projects/pilgrimpal/image1.jpeg',
     date: 'Jan 2024-Feb 2024',

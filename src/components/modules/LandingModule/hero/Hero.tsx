@@ -33,14 +33,12 @@ const Hero = () => {
         <EducationCard />
         <Contacts />
       </div>
-      <div className="z-10 hidden lg:block">
+      <div className="z-10 hidden lg:max-h-[625px] max-h-[375px] overflow-hidden rounded-[75px] lg:flex lg:items-center">
         <Image
-          src="/assets/images/self-portrait.jpg"
+          src="/assets/images/self-portrait2.jpg"
           alt="self-portrait"
           width={width >= 1280 ? 500 : width > 768 ? 400 : 300}
           height={width >= 1280 ? 625 : width > 768 ? 500 : 375}
-          className="rounded-[75px]"
-          // fill
         />
       </div>
     </div>

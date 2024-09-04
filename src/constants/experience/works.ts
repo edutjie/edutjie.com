@@ -3,6 +3,22 @@ import { SingularExperienceType } from './interface'
 
 const WorkExperience: SingularExperienceType[] = [
   {
+    name: 'Media Kernels Indonesia',
+    logo: 'images/companies/mki.png',
+    links: [{ name: 'Website', link: 'https://www.traveloka.com/' }],
+    location: 'Jakarta, Indonesia',
+    roles: [
+      {
+        name: 'AI Engineer Intern',
+        date: 'Sep 2024 - Present',
+        description: [
+          "Developing an AI chatbot using retrieval augmented generation (RAG) architecture."
+        ]
+      },
+    ],
+    skills: [SKILLS.LLM, SKILLS.NLP],
+  },
+  {
     name: 'Traveloka',
     logo: 'images/companies/traveloka.png',
     links: [{ name: 'Website', link: 'https://www.traveloka.com/' }],
@@ -10,10 +26,15 @@ const WorkExperience: SingularExperienceType[] = [
     roles: [
       {
         name: 'Backend Engineer Intern',
-        date: 'Feb 2024 - Present',
+        date: 'Feb 2024 - Jun 2024',
+        description: [
+          'Part of a core team within the company, the Flight Supply team, which is responsible for managing the technology related to airline inventory.',
+          'Successfully improved booking health by ~4%, seat selection availability of the top 3 airline providers by ~10%, and our Memcache effectiveness and hit rate by ~15%',
+          'Chosen as an intern out of 8700 applicants.',
+        ],
       },
     ],
-    skills: [SKILLS.Java, SKILLS.SpringBoot],
+    skills: [SKILLS.Java, SKILLS.SpringBoot, SKILLS.AWS],
   },
   {
     name: 'Transjakarta (Project Based)',
@@ -102,7 +123,7 @@ const WorkExperience: SingularExperienceType[] = [
     location: 'Tangerang, Indonesia',
     roles: [
       {
-        name: 'Data Ops Intern',
+        name: 'Data Ops Engineer Intern',
         date: 'Sep 2022 - Nov 2022',
         description: [
           'Contributed to the Great Giant Foods (GGF) project by utilizing Pentaho for ETL processes and Tableau to create informative dashboards.',

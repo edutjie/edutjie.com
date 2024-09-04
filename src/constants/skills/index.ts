@@ -175,6 +175,12 @@ export const SKILLS: SkillType = {
     link: '#',
     color: '#FFD6A5',
   },
+  LLM: {
+    name: 'LLM',
+    logo: '',
+    link: '#',
+    color: '#FFD6A5',
+  },
   OpenCV: {
     name: 'OpenCV',
     logo: '/images/logo/chakra-ui.svg',

@@ -3,6 +3,35 @@ import { AchievementType } from './interface'
 
 export const ACHIEVEMENTS: AchievementType[] = [
   {
+    name: '2nd Winner of Big Data Challenge, Satria Data 2024',
+    issuer:
+      'Indonesian Ministry of Education, Culture, Research, and Technology',
+    image: 'images/achievements/satria data/image2.jpg',
+    date: 'Aug 2024',
+    medal: 'silver',
+    description:
+      'Achieved the silver medal by overcoming 400+ teams in a prestigious national competition by developing and implementing a unique analytical method for the study "Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media."',
+    links: [
+      {
+        name: 'Paper',
+        link: 'https://drive.google.com/file/d/1ndZ2PceM5PIP7JRswWmhNAPOXqh3pUu-/view?usp=sharing',
+      },
+      {
+        name: 'Slides',
+        link: 'https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view?usp=sharing',
+      },
+      {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1Wax-3T6rObh-jCLWH23GwlI_yFbZCeVs/view?usp=sharing',
+      },
+      {
+        name: 'Awarding Announcement',
+        link: 'https://www.youtube.com/watch?v=QkouQSzCLLw',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.Python],
+  },
+  {
     name: '1st Winner of Machine Learning Competition, Data Slayer 1.0',
     issuer: 'Telkom Institute of Technology Purwokerto',
     image: 'images/achievements/data slayer/image1.jpg',
@@ -72,7 +101,8 @@ export const ACHIEVEMENTS: AchievementType[] = [
   },
   {
     name: 'Finalist of Data Mining, GEMASTIK XVI',
-    issuer: 'Pusat Prestasi Nasional',
+    issuer:
+      'Indonesian Ministry of Education, Culture, Research, and Technology',
     image: 'images/achievements/gemastik/image1.jpeg',
     date: 'Sep 2023',
     medal: 'none',
@@ -96,7 +126,8 @@ export const ACHIEVEMENTS: AchievementType[] = [
   },
   {
     name: 'Semi-Finalist of Big Data Competition, Satria Data 2023',
-    issuer: 'Pusat Prestasi Nasional',
+    issuer:
+      'Indonesian Ministry of Education, Culture, Research, and Technology',
     image: 'images/achievements/satria data/image1.png',
     date: 'Sep 2023',
     medal: 'none',

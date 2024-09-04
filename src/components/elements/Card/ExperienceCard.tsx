@@ -46,8 +46,8 @@ const ExperienceCard = ({
                 </div>
               )}
               {role.description?.map((desc, idx) => (
-                <div className="flex gap-1 text-sm md:text-lg" key={idx}>
-                  <p>-</p>
+                <div className="flex gap-2 text-sm md:text-lg" key={idx}>
+                  <p>✨</p>
                   <p>{desc}</p>
                 </div>
               ))}

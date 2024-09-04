@@ -12,6 +12,10 @@ const OrgExperience: SingularExperienceType[] = [
       {
         name: 'Lead of Data Science & Analytics SIG',
         date: 'Feb 2024 - Present',
+        description: [
+          'Actively participated and contributed to achievement in various data science competitions.',
+          'Guided and mentored team members to enhance their proficiency in the data science domain such as NLP, CV, Generative AI, etc.',
+        ],
       },
       {
         name: 'Lead of Web Development SIG',
@@ -151,9 +155,7 @@ const OrgExperience: SingularExperienceType[] = [
         ],
       },
     ],
-    skills: [
-      SKILLS.GraphicDesign
-    ],
+    skills: [SKILLS.GraphicDesign],
   },
 ]
 
