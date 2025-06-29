@@ -175,6 +175,12 @@ export const SKILLS: SkillType = {
     link: '#',
     color: '#FFD6A5',
   },
+  SLP: {
+    name: 'SLP',
+    logo: '',
+    link: '#',
+    color: '#FFD6A5',
+  },
   LLM: {
     name: 'LLM',
     logo: '',

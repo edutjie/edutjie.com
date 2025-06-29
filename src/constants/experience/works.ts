@@ -3,25 +3,70 @@ import { SingularExperienceType } from './interface'
 
 const WorkExperience: SingularExperienceType[] = [
   {
+    name: 'International Olympiad in Artificial Intelligence (IOAI)',
+    logo: 'images/companies/ioai.png',
+    links: [
+      { name: 'Olympiad Website', link: 'https://ioai-official.org/' },
+      {
+        name: 'News',
+        link: 'https://www.planetberita.com/berita/1001378305/tim-indonesia-akan-ikut-di-ajang-international-olympiad-in-artificial-intelligence-ioai-2025',
+      },
+      {
+        name: 'Official IG Post',
+        link: 'https://www.instagram.com/p/DLEg7jnR0Eo/',
+      },
+    ],
+    location: 'Jakarta, Indonesia',
+    roles: [
+      {
+        name: 'AI Coach, Indonesian National Team',
+        date: 'Jun 2025 - August 2025',
+        description: [
+          "Mentoring and preparing Indonesia’s top high school students for Indonesia's debut at the 2025 International Olympiad in Artificial Intelligence (IOAI), covering key areas such as machine learning, natural language processing (NLP), computer vision (CV), and data science.",
+        ],
+      },
+    ],
+    skills: [SKILLS.Python, SKILLS.ML, SKILLS.NLP, SKILLS.CV, SKILLS.Pytorch],
+  },
+  {
+    name: 'Maknadata',
+    logo: 'images/companies/maknadata.png',
+    links: [{ name: 'Company Website', link: 'https://www.maknadata.ai/' }],
+    location: 'Jakarta, Indonesia',
+    roles: [
+      {
+        name: 'AI Engineer Intern',
+        date: 'Jan 2025 - April 2025',
+        description: [
+          'Worked closely with the CEO on the Criminal Detention Studies in Indonesia project, developing AI-driven solutions.',
+          'Built an LLM-powered system to extract key criminal information from unstructured legal documents (e.g., PDFs).',
+          'Developed an automated meeting notes generation system for prisoner-officer interviews.',
+          'Designed a Chat RAG system leveraging relational databases for efficient information retrieval.',
+        ],
+      },
+    ],
+    skills: [SKILLS.LLM, SKILLS.NLP, SKILLS.SLP, SKILLS.PostgreSQL],
+  },
+  {
     name: 'Media Kernels Indonesia',
     logo: 'images/companies/mki.png',
-    links: [{ name: 'Website', link: 'https://www.traveloka.com/' }],
+    links: [{ name: 'Company Website', link: 'https://mediakernels.com/' }],
     location: 'Jakarta, Indonesia',
     roles: [
       {
         name: 'AI Engineer Intern',
         date: 'Sep 2024 - Present',
         description: [
-          'Developing an AI chatbot using retrieval augmented generation (RAG) architecture.',
+          'Worked directly under the CTO to research, design, and develop an advanced Retrieval-Augmented Generation (RAG) system leveraging diverse data sources, including social media, news outlets, and legal documents.',
         ],
       },
     ],
-    skills: [SKILLS.LLM, SKILLS.NLP],
+    skills: [SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.FastAPI, SKILLS.TypeScript, SKILLS.PostgreSQL],
   },
   {
     name: 'Traveloka',
     logo: 'images/companies/traveloka.png',
-    links: [{ name: 'Website', link: 'https://www.traveloka.com/' }],
+    links: [{ name: 'Company Website', link: 'https://www.traveloka.com/' }],
     location: 'Tangerang, Indonesia',
     roles: [
       {
@@ -36,30 +81,30 @@ const WorkExperience: SingularExperienceType[] = [
     ],
     skills: [SKILLS.Java, SKILLS.SpringBoot, SKILLS.AWS],
   },
-  {
-    name: 'Transjakarta (Project Based)',
-    logo: 'images/companies/transjakarta.png',
-    links: [{ name: 'Website', link: 'https://transjakarta.co.id/' }],
-    location: 'Depok, Indonesia',
-    roles: [
-      {
-        name: 'Machine Learning Engineer',
-        date: 'Oct 2023 - Present',
-        description: [
-          'Developed a backend system for an app that is integrated with an AI model.',
-          'The app features include live bus location, estimated time of arrival (ETA), the ability to search for the nearest bus stops, and many more.',
-        ],
-      },
-    ],
-    skills: [
-      SKILLS.ML,
-      SKILLS.Python,
-      SKILLS.FastAPI,
-      SKILLS.GoogleAPI,
-      SKILLS.Redis,
-      SKILLS.AWS,
-    ],
-  },
+  // {
+  //   name: 'Transjakarta (Project Based)',
+  //   logo: 'images/companies/transjakarta.png',
+  //   links: [{ name: 'Website', link: 'https://transjakarta.co.id/' }],
+  //   location: 'Depok, Indonesia',
+  //   roles: [
+  //     {
+  //       name: 'Machine Learning Engineer',
+  //       date: 'Oct 2023 - Present',
+  //       description: [
+  //         'Developed a backend system for an app that is integrated with an AI model.',
+  //         'The app features include live bus location, estimated time of arrival (ETA), the ability to search for the nearest bus stops, and many more.',
+  //       ],
+  //     },
+  //   ],
+  //   skills: [
+  //     SKILLS.ML,
+  //     SKILLS.Python,
+  //     SKILLS.FastAPI,
+  //     SKILLS.GoogleAPI,
+  //     SKILLS.Redis,
+  //     SKILLS.AWS,
+  //   ],
+  // },
   {
     name: 'Faculty of Computer Science, Universitas Indonesia',
     headlineRole: 'Teaching Assistant',
@@ -95,7 +140,7 @@ const WorkExperience: SingularExperienceType[] = [
   {
     name: 'SabilaMall',
     logo: 'images/companies/sabilamall.png',
-    links: [{ name: 'Website', link: 'https://www.sabilamall.co.id/' }],
+    links: [{ name: 'Company Website', link: 'https://www.sabilamall.co.id/' }],
     location: 'Depok, Indonesia',
     roles: [
       {
