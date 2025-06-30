@@ -30,7 +30,24 @@ const Hero = () => {
           a passionate <i className="font-bold">AI</i> and{' '}
           <i className="font-bold">Software Engineer.</i>
         </p>
-        <EducationCard />
+        <EducationCard
+          imgSrc="/assets/images/universities/tsinghua.png"
+          altText="Tsinghua University"
+          degree="Master of Advanced Computing"
+          university="Tsinghua University (清华大学)"
+          duration="2025-2027"
+          universityUrl="https://ac.cs.tsinghua.edu.cn/"
+          location="Beijing, China"
+        />
+        <EducationCard
+          imgSrc="/assets/images/universities/ui.png"
+          altText="University of Indonesia"
+          degree="Bachelor of Computer Science"
+          university="University of Indonesia"
+          duration="2021-2025"
+          location="Depok, Indonesia"
+          universityUrl="https://cs.ui.ac.id/"
+        />
         <Contacts />
       </div>
       <div className="z-10 hidden lg:max-h-[625px] max-h-[375px] overflow-hidden rounded-[75px] lg:flex lg:items-center">
