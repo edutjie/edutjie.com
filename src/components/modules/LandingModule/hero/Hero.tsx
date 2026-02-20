@@ -131,31 +131,74 @@ const Hero = () => {
             style={{ animation: 'animationIn 0.8s ease-out 0.4s both' }}
           >
             <a
-              href="#projects"
+              href="https://docs.google.com/document/d/1cqlbjsTYAD8AeFo9leEdtL_aYDpoy1_wxr4BWrC8-d4/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-6 py-3 text-sm font-medium text-white rounded-full bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 hover:brightness-110 transition-all shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] overflow-hidden cursor-target"
             >
               <span className="relative z-10 flex items-center gap-2 font-sans">
-                View Work
+                View Resume
                 <span className="iconify solar--arrow-right-linear group-hover:translate-x-1 transition-transform">
                   <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 12h16m0 0l-6-6m6 6l-6 6" /></svg>
                 </span>
               </span>
             </a>
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center gap-3">
               <a
                 href="mailto:edutjitrahardja@gmail.com"
-                className="text-slate-400 hover:text-blue-400 transition-colors cursor-target"
+                className="inline-flex items-center justify-center w-6 h-6 text-slate-400 hover:text-blue-400 transition-colors cursor-target"
               >
-                <span className="iconify solar--letter-linear w-5 h-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M22 12c0-4.714 0-7.071-1.465-8.535C19.072 2 16.714 2 12 2S4.928 2 3.465 3.465C2 4.928 2 7.286 2 12s0 7.071 1.465 8.535C4.928 22 7.286 22 12 22s7.071 0 8.535-1.465C22 19.072 22 16.714 22 12Z" /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m2 7l7.5 4.5a5 5 0 0 0 5 0L22 7" /></svg>
+                <span className="iconify solar--letter-linear w-6 h-6">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M22 12c0-4.714 0-7.071-1.465-8.535C19.072 2 16.714 2 12 2S4.928 2 3.465 3.465C2 4.928 2 7.286 2 12s0 7.071 1.465 8.535C4.928 22 7.286 22 12 22s7.071 0 8.535-1.465C22 19.072 22 16.714 22 12Z" /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m2 7l7.5 4.5a5 5 0 0 0 5 0L22 7" /></svg>
                 </span>
               </a>
               <a
                 href="https://github.com/edutjie"
-                className="text-slate-400 hover:text-blue-400 transition-colors cursor-target"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-6 h-6 text-slate-400 hover:text-blue-400 transition-colors cursor-target"
               >
-                <span className="iconify logos--github-icon w-5 h-5 grayscale hover:grayscale-0 transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /></svg>
+                <span className="iconify logos--github-icon w-6 h-6 grayscale hover:grayscale-0 transition-all">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /></svg>
+                </span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/edutjie/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-6 h-6 text-slate-400 hover:text-blue-400 transition-colors cursor-target"
+                aria-label="LinkedIn"
+              >
+                <span className="w-6 h-6 inline-flex">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.03-1.85-3.03c-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12a2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=33etmQUAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-6 h-6 text-slate-400 hover:text-blue-400 transition-colors cursor-target"
+                aria-label="Google Scholar"
+              >
+                <span className="w-6 h-6 inline-flex">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 3L1 9l11 6l9-4.91V17h2V9L12 3Zm0 9.75L4.74 9L12 5.25L19.26 9L12 12.75ZM5 13.66V17c0 2.21 3.13 4 7 4s7-1.79 7-4v-3.34L12 17.5L5 13.66Z"/>
+                  </svg>
+                </span>
+              </a>
+              <a
+                href="https://www.instagram.com/edutjie/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-6 h-6 text-slate-400 hover:text-blue-400 transition-colors cursor-target"
+                aria-label="Instagram"
+              >
+                <span className="w-6 h-6 inline-flex">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8Zm8.95 1.43a1.15 1.15 0 1 1 0 2.3a1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2a3.1 3.1 0 0 0 0-6.2Z"/>
+                  </svg>
                 </span>
               </a>
             </div>
