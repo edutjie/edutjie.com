@@ -3,11 +3,60 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'FrOG: Framework of Open GraphRAG',
+    image: 'images/projects/frog/image1.png',
+    date: '2025',
+    description:
+      'Conducted a study introducing an open GraphRAG, a system that integrates Retrieval-Augmented Generation (RAG) with knowledge graphs (KGs) for question-answering (QA). The research leveraged open source large language models (LLMs) to generate SPARQL queries on Wikidata, DBpedia and Local KGs.',
+    links: [
+      {
+        name: 'Paper',
+        link: 'https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf',
+      },
+    ],
+    skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
+    type: 'AI',
+  },
+  {
+    name: 'Towards an Open NLI LLM-based System for KGs: A Case Study of Wikidata',
+    image: 'images/projects/nli-kg/image1.png',
+    date: '2024',
+    description:
+      'Preliminary study for the FRoG: Framework of Open GraphRAG research. Manuscript has been published at the International Seminar on Research of Information Technology and Intelligent Systems (ISRITI) 2024.',
+    links: [
+      {
+        name: 'Proceedings',
+        link: 'https://ieeexplore.ieee.org/document/10963661',
+      },
+    ],
+    skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
+    type: 'AI',
+  },
+  {
+    name: 'Analysis of the 2024 Presidential Election Campaign...',
+    image: 'images/projects/election-analysis/image1.png',
+    date: '2024',
+    description:
+      'Conducted research analytics project employed innovative methods like lexical mutation analysis, stance classification, and civility assessment to provide insights into the dynamics of social media discourse during the election campaign.',
+    links: [
+      {
+        name: 'Slides',
+        link: 'https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view?usp=drive_link',
+      },
+      {
+        name: 'Proposal',
+        link: 'https://drive.google.com/file/d/1ndZ2PceM5PIP7JRswWmhNAPOXqh3pUu-/view?usp=drive_link',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Gephi, SKILLS.Python],
+    type: 'AI',
+  },
+  {
     name: 'Automatic Assignment of Community Reports on the CRM Platform Using Early Fusion Multimodal Transformer',
     image: 'images/projects/crm/image1.png',
     date: '2024',
     description:
-      'Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process.',
+      'Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process. Manuscript has been accepted for publication in the Journal of Computer Sciences and Information (JIKI) and expected to be published in the next volume in February 2026.',
     links: [
       {
         name: 'Paper',
@@ -19,7 +68,6 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.CV,
       SKILLS.NLP,
       SKILLS.Python,
-      SKILLS.HuggingFace,
     ],
     type: 'AI',
   },
@@ -88,7 +136,6 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.FastAPI,
       SKILLS.Redis,
       SKILLS.GCP,
-      SKILLS.HuggingFace,
     ],
     type: 'All',
   },
@@ -127,28 +174,26 @@ export const PROJECTS: ProjectType[] = [
         link: 'https://docs.google.com/document/d/1b2yb6K0zvnY7AKaKJ1S5jNREaXFXh69Dmo1Q34D6eEE/edit?usp=sharing',
       },
     ],
-    skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Python, SKILLS.HuggingFace],
+    skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Python],
     type: 'AI',
   },
   {
     name: 'Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR',
     image: 'images/projects/helm detection/image1.png',
-    date: '2023',
+    date: '2024',
     description:
-      'Conducted research for the purpose of GEMASTIK XVI selection. Utilized CCTVs from Bali Tower to create our own dataset.',
+      'Conducted research that leveraged Transformer-based object detection model, Deformable DETR to detect helmet usage on motorcycle riders. Utilized CCTVs from Bali Tower to create our own dataset. Manuscript published for publication to the National Student Performance Bulletin in Information and Communication Technology.',
     links: [
       {
-        name: 'Paper',
-        link: 'https://drive.google.com/file/d/1G57th3X3WgnTZwvZypZZSqBeoVZY_eaH/view?usp=drive_link',
+        name: 'Journal',
+        link: 'https://buletingemastik.id/index.php/bg/article/view/202404.009',
       },
     ],
     skills: [
       SKILLS.ML,
       SKILLS.CV,
       SKILLS.Python,
-      SKILLS.OpenCV,
       SKILLS.Pytorch,
-      SKILLS.HuggingFace,
     ],
     type: 'AI',
   },
