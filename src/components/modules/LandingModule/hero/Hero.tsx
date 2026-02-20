@@ -175,7 +175,7 @@ const Hero = () => {
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 shadow-lg cursor-target hover:bg-black/70 transition-colors z-10">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]"></div>
               <span className="text-[10px] font-mono uppercase tracking-widest text-white whitespace-nowrap">
-                Open to Roles
+                Bing Chilling...
               </span>
             </div>
           </div>
