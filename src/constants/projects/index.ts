@@ -7,7 +7,7 @@ export const PROJECTS: ProjectType[] = [
     image: 'images/projects/frog/image1.png',
     date: '2025',
     description:
-      'Conducted a study introducing an open GraphRAG, a system that integrates Retrieval-Augmented Generation (RAG) with knowledge graphs (KGs) for question-answering (QA). The research leveraged open source large language models (LLMs) to generate SPARQL queries on Wikidata, DBpedia and Local KGs.',
+      'Conducted a study introducing an open GraphRAG, a system that integrates Retrieval-Augmented Generation (RAG) with knowledge graphs (KGs) for question-answering (QA). The research leveraged open source large language models (LLMs) to generate SPARQL queries on Wikidata, DBpedia and Local KGs. Manuscript has been published at the ESWC LLM-TEXT2KG 2025.',
     links: [
       {
         name: 'Paper',
@@ -15,7 +15,7 @@ export const PROJECTS: ProjectType[] = [
       },
     ],
     skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
-    type: 'AI',
+    type: 'Research Publication',
   },
   {
     name: 'Towards an Open NLI LLM-based System for KGs: A Case Study of Wikidata',
@@ -30,10 +30,10 @@ export const PROJECTS: ProjectType[] = [
       },
     ],
     skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
-    type: 'AI',
+    type: 'Research Publication',
   },
   {
-    name: 'Analysis of the 2024 Presidential Election Campaign...',
+    name: 'Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media',
     image: 'images/projects/election-analysis/image1.png',
     date: '2024',
     description:
@@ -49,7 +49,7 @@ export const PROJECTS: ProjectType[] = [
       },
     ],
     skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Gephi, SKILLS.Python],
-    type: 'AI',
+    type: 'Project',
   },
   {
     name: 'Automatic Assignment of Community Reports on the CRM Platform Using Early Fusion Multimodal Transformer',
@@ -69,7 +69,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.NLP,
       SKILLS.Python,
     ],
-    type: 'AI',
+    type: 'Research Publication',
   },
   {
     name: 'PilgrimPal - Umroh AI App',
@@ -95,7 +95,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Redis,
       SKILLS.GCP,
     ],
-    type: 'All',
+    type: 'Project',
   },
   {
     name: 'Transjakarta Demo App',
@@ -111,7 +111,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Redis,
       SKILLS.AWS,
     ],
-    type: 'SE',
+    type: 'Project',
   },
   {
     name: 'Duren Search Engine',
@@ -137,7 +137,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Redis,
       SKILLS.GCP,
     ],
-    type: 'All',
+    type: 'Project',
   },
   {
     name: 'Image-based Drugs Search Engine using OCR and Levenshtein Algorithm',
@@ -156,7 +156,7 @@ export const PROJECTS: ProjectType[] = [
       },
     ],
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python, SKILLS.OpenCV],
-    type: 'AI',
+    type: 'Project',
   },
   {
     name: 'High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis',
@@ -175,7 +175,7 @@ export const PROJECTS: ProjectType[] = [
       },
     ],
     skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Python],
-    type: 'AI',
+    type: 'Project',
   },
   {
     name: 'Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR',
@@ -195,7 +195,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Python,
       SKILLS.Pytorch,
     ],
-    type: 'AI',
+    type: 'Research Publication',
   },
   {
     name: 'Data Analytics Dashboard Competition Grader Website, COMPFEST 15',
@@ -216,7 +216,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.PostgreSQL,
       SKILLS.Redis,
     ],
-    type: 'SE',
+    type: 'Project',
   },
   {
     name: 'Pesta Rakyat 2022 & 2023 Website, PERAK 2023',
@@ -239,7 +239,7 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.TailwindCSS,
       SKILLS.Strapi,
     ],
-    type: 'SE',
+    type: 'Project',
   },
   {
     name: 'Segmentation Self-Driving Car',
@@ -264,6 +264,6 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.OpenCV,
       SKILLS.Tensorflow,
     ],
-    type: 'AI',
+    type: 'Project',
   },
 ]

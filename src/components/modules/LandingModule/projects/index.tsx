@@ -6,15 +6,14 @@ import { PROJECTS } from 'src/constants/projects'
 import { ProjectModal } from '@elements'
 
 const Projects = () => {
-  const [activeTab, setActiveTab] = useState<'All' | 'AI' | 'SE'>('All')
+  const [activeTab, setActiveTab] = useState<'All' | 'Research Publication' | 'Project'>('All')
   const [expanded, setExpanded] = useState(false)
   const [selectedProject, setSelectedProject] = useState<any>(null)
 
   const filteredProjects = PROJECTS.filter((project) => {
-    if (activeTab === 'All') return true
-    if (activeTab === 'AI') return project.type === 'AI' || project.type === 'All'
-    if (activeTab === 'SE') return project.type === 'SE' || project.type === 'All'
-    return true
+    if (activeTab === 'Research Publication') return project.type === 'Research Publication'
+    if (activeTab === 'Project') return project.type === 'Project'
+    return project.type === 'Research Publication' || project.type === 'Project'
   })
 
   const visibleProjects = expanded ? filteredProjects : filteredProjects.slice(0, 4)
@@ -64,7 +63,7 @@ const Projects = () => {
         style={{ animation: 'animationIn 0.8s ease-out 0.2s both' }}
       >
         <div className="flex flex-wrap gap-2 p-1 bg-slate-900/40 border border-white/10 rounded-full w-fit backdrop-blur-md">
-          {['All', 'AI', 'SE'].map((tab) => (
+          {['All', 'Research Publication', 'Project'].map((tab) => (
             <button
               key={tab}
               onClick={() => {
@@ -76,7 +75,7 @@ const Projects = () => {
                 : 'text-slate-400 hover:text-white hover:bg-white/10'
                 }`}
             >
-              {tab === 'SE' ? 'Software Engineering' : tab === 'AI' ? 'Artificial Intelligence' : 'All'}
+              {tab === 'Research Publication' ? 'Research Publication' : tab === 'Project' ? 'Project' : 'All'}
             </button>
           ))}
         </div>

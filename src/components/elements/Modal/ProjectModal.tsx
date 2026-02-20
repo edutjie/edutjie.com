@@ -104,7 +104,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         <div className="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-16 text-white">
           <div className="md:col-span-8 flex flex-col gap-8">
             <h3 className="font-display text-2xl text-blue-400 -rotate-1">
-              {isAchievement ? 'The Story' : 'The Approach'}
+              {isAchievement ? 'The Story' : 'About'}
             </h3>
             <p id="modal-desc" className="font-sans text-base md:text-lg leading-relaxed text-slate-300 font-light">
               {project.description}
