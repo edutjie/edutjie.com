@@ -55,7 +55,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
       {/* Header Controls */}
       <div className="fixed top-0 left-0 w-full p-6 flex justify-between z-[110] pointer-events-none">
         <span className="text-blue-500/50 font-display text-lg rotate-2 pointer-events-auto mt-4">
-          {isAchievement ? 'Recognition' : 'Case Study'}
+          {isAchievement ? 'Recognition' : 'Selected Work'}
         </span>
         <button
           onClick={handleClose}
