@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: 'Inter',
-        'r-flex': ['R-Flex Regular', 'sans-serif'],
-        bold: ['R-Flex Bold', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-rock-salt)', 'cursive'],
+        sans: ['var(--font-inter)', 'sans-serif'],
       },
       colors: {
         primary: '#01162D',
