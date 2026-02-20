@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { EXPERIENCES } from 'src/constants/experience'
@@ -113,11 +114,23 @@ const Experiences = () => {
               {exp.roles.map((role, rIndex) => (
                 <div key={rIndex} className="mb-6 last:mb-0">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2 relative z-10">
-                    <div>
-                      <h3 className="text-xl font-medium text-white group-hover/item:text-blue-50 transition-colors font-sans">
-                        {role.name}
-                      </h3>
-                      <p className="text-blue-400 text-sm font-medium font-sans">{exp.name}</p>
+                    <div className="flex items-center gap-3">
+                      {exp.logo && (
+                        <div className="relative w-10 h-10 shrink-0">
+                          <Image
+                            src={`/assets/${exp.logo}`}
+                            alt={exp.name}
+                            fill
+                            className="rounded-full object-cover bg-white object-center"
+                          />
+                        </div>
+                      )}
+                      <div>
+                        <h3 className="text-xl font-medium text-white group-hover/item:text-blue-50 transition-colors font-sans">
+                          {role.name}
+                        </h3>
+                        <p className="text-blue-400 text-sm font-medium font-sans">{exp.name}</p>
+                      </div>
                     </div>
                     <span className="text-xs font-mono text-slate-500 bg-white/5 px-3 py-1 rounded-full w-fit group-hover/item:text-blue-300 group-hover/item:bg-blue-500/10 transition-colors whitespace-nowrap">
                       {role.date}
