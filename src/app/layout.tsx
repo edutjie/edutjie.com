@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, Rock_Salt, Playfair_Display } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
-import { CustomCursor, SmoothScroll, Footer, Navbar, UnicornScript, ScrollToTop } from '@elements'
+import { CustomCursor, SmoothScroll, Footer, Navbar, UnicornScript, ScrollToTop, AuraBackground } from '@elements'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'], variable: '--font-rock-salt' })
@@ -27,17 +27,8 @@ export default function RootLayout({
         <SmoothScroll />
         <CustomCursor />
 
-        {/* Global Ambient Background */}
-        <div className="aura-background-component fixed top-0 w-full h-screen -z-10 bg-[#030712]">
-          <div
-            data-us-project="qPVvnWEWLLiJgYtSkKyB"
-            className="absolute w-full h-full left-0 top-0 -z-10"
-          ></div>
-          {/* Plain tint — avoids mix-blend-mode compositing cost */}
-          <div className="absolute inset-0 bg-blue-950/30 pointer-events-none z-0"></div>
-          {/* Fade to page bg at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030712]/50 to-[#030712] pointer-events-none z-0"></div>
-        </div>
+        {/* Global Ambient Background — uses static gradient on mobile, WebGL on desktop */}
+        <AuraBackground />
 
         <UnicornScript />
 

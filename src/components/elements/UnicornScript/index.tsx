@@ -10,10 +10,12 @@ export const UnicornScript = () => {
       onLoad={() => {
         // @ts-ignore
         if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
+          const isMobile = window.innerWidth < 768
           // @ts-ignore
           window.UnicornStudio.init({
-            scale: 0.6, // render at 60% resolution — reduces GPU fill-rate significantly
-            fps: 30,    // cap at 30fps for a background element (was 60)
+            // Mobile gets ¼ the fill-rate and half the fps of desktop
+            scale: isMobile ? 0.3 : 0.6,
+            fps: isMobile ? 15 : 30,
           })
           // @ts-ignore
           window.UnicornStudio.isInitialized = true

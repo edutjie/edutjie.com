@@ -119,6 +119,99 @@
   }
 }
 
+/* ── Mobile Aura Orbs (CSS-only animated gradient blobs) ──────────────── */
+.aura-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.aura-orb-1 {
+  width: 70vw;
+  height: 70vw;
+  top: -15vw;
+  left: -10vw;
+  background: radial-gradient(ellipse at center, rgba(109, 40, 217, 0.55) 0%, transparent 70%);
+  animation: aura-drift-1 12s ease-in-out infinite;
+}
+
+.aura-orb-2 {
+  width: 60vw;
+  height: 60vw;
+  top: 5vw;
+  right: -15vw;
+  background: radial-gradient(ellipse at center, rgba(79, 22, 234, 0.45) 0%, transparent 70%);
+  animation: aura-drift-2 15s ease-in-out infinite;
+}
+
+.aura-orb-3 {
+  width: 55vw;
+  height: 55vw;
+  top: 20vw;
+  left: 20vw;
+  background: radial-gradient(ellipse at center, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+  animation: aura-drift-3 18s ease-in-out infinite;
+}
+
+@keyframes aura-drift-1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.85;
+  }
+
+  33% {
+    transform: translate(8vw, 6vw) scale(1.08);
+    opacity: 1;
+  }
+
+  66% {
+    transform: translate(-4vw, 3vw) scale(0.95);
+    opacity: 0.75;
+  }
+}
+
+@keyframes aura-drift-2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+
+  40% {
+    transform: translate(-6vw, 8vw) scale(1.1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translate(4vw, -3vw) scale(0.92);
+    opacity: 0.7;
+  }
+}
+
+@keyframes aura-drift-3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+
+  30% {
+    transform: translate(-5vw, -4vw) scale(1.05);
+    opacity: 0.9;
+  }
+
+  65% {
+    transform: translate(6vw, 5vw) scale(0.97);
+    opacity: 0.65;
+  }
+}
+
 @layer utilities {
   .animate-on-scroll {
     animation-play-state: paused !important;
