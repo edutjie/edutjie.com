@@ -4,6 +4,12 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { EXPERIENCES } from 'src/constants/experience'
+import { TabPills, SkillTag } from '@elements'
+
+const EXPERIENCE_TABS = [
+  { label: 'Professional', value: 'Work' },
+  { label: 'Volunteer / Org', value: 'Org' },
+]
 
 const Experiences = () => {
   const [activeTab, setActiveTab] = useState<'Work' | 'Org'>('Work')
@@ -71,25 +77,12 @@ const Experiences = () => {
         </p>
 
         {/* Experience Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 p-1 bg-slate-900/40 border border-white/10 rounded-full w-fit mx-auto backdrop-blur-md">
-          <button
-            onClick={() => setActiveTab('Work')}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-target font-sans ${activeTab === 'Work'
-              ? 'bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] hover:brightness-110'
-              : 'text-slate-400 hover:text-white hover:bg-white/10'
-              }`}
-          >
-            Professional
-          </button>
-          <button
-            onClick={() => setActiveTab('Org')}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-target font-sans ${activeTab === 'Org'
-              ? 'bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] hover:brightness-110'
-              : 'text-slate-400 hover:text-white hover:bg-white/10'
-              }`}
-          >
-            Volunteer / Org
-          </button>
+        <div className="flex justify-center">
+          <TabPills
+            tabs={EXPERIENCE_TABS}
+            activeTab={activeTab}
+            onTabChange={(value) => setActiveTab(value as 'Work' | 'Org')}
+          />
         </div>
       </div>
 
@@ -144,12 +137,7 @@ const Experiences = () => {
 
               <div className="flex flex-wrap gap-2 relative z-10">
                 {exp.skills?.map((skill, sIndex) => (
-                  <span
-                    key={sIndex}
-                    className="text-[10px] uppercase tracking-wider text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded group-hover/item:bg-blue-500/20 group-hover/item:border-blue-500/30 group-hover/item:text-blue-200 transition-colors duration-300 font-sans"
-                  >
-                    {skill.name}
-                  </span>
+                  <SkillTag key={sIndex} name={skill.name} />
                 ))}
               </div>
             </div>

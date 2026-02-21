@@ -1,9 +1,10 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ACHIEVEMENTS } from '@constants'
-import { ProjectModal } from '@elements'
+import { ProjectModal, SwiperNavButton, ExpandButton } from '@elements'
+import { createChunks } from '@utils'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Grid, Navigation, Pagination } from 'swiper/modules'
@@ -17,16 +18,6 @@ const Achievements = () => {
   const [selectedAchievement, setSelectedAchievement] = useState<any>(null)
 
   const visibleAchievements = expanded ? ACHIEVEMENTS : ACHIEVEMENTS.slice(0, 4)
-
-  // We chunk achievements into groups of 4 (2x2 grid) for the Swiper slides
-  const createChunks = (items: any[], size: number) => {
-    const chunks = []
-    for (let i = 0; i < items.length; i += size) {
-      chunks.push(items.slice(i, i + size))
-    }
-    return chunks
-  }
-
   const achievementChunks = createChunks(ACHIEVEMENTS, 4)
 
   useEffect(() => {
@@ -108,22 +99,7 @@ const Achievements = () => {
 
           {ACHIEVEMENTS.length > 4 && (
             <div className="w-full flex justify-center mt-8 col-span-full pb-8">
-              <button
-                onClick={() => setExpanded(!expanded)}
-                className="px-6 py-3 text-sm font-medium bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white rounded-full shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] hover:brightness-110 transition-all duration-300 cursor-target flex items-center gap-2"
-              >
-                <span>{expanded ? 'See Less' : 'See More'}</span>
-                <span
-                  className={`iconify transition-transform duration-300 ${expanded ? 'solar--alt-arrow-up-linear' : 'solar--alt-arrow-down-linear'
-                    }`}
-                >
-                  {expanded ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m19 15l-7-6l-7 6" /></svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m19 9l-7 6l-7-6" /></svg>
-                  )}
-                </span>
-              </button>
+              <ExpandButton expanded={expanded} onClick={() => setExpanded(!expanded)} />
             </div>
           )}
         </div>
@@ -207,20 +183,8 @@ const Achievements = () => {
             ))}
           </Swiper>
 
-          <button
-            className="achieve-swiper-button-prev absolute left-0 top-1/2 -translate-y-[calc(50%+1rem)] w-12 h-12 flex items-center justify-center bg-blue-600/20 hover:bg-blue-600 rounded-full backdrop-blur-md transition-all duration-300 border border-blue-500/30 hover:scale-110 z-20 cursor-target shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-black/60 disabled:border-white/10 disabled:cursor-not-allowed"
-          >
-            <span className="iconify solar--alt-arrow-left-linear w-7 h-7 text-white flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m15 19l-7-6l7-6" /></svg>
-            </span>
-          </button>
-          <button
-            className="achieve-swiper-button-next absolute right-0 top-1/2 -translate-y-[calc(50%+1rem)] w-12 h-12 flex items-center justify-center bg-blue-600/20 hover:bg-blue-600 rounded-full backdrop-blur-md transition-all duration-300 border border-blue-500/30 hover:scale-110 z-20 cursor-target shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-black/60 disabled:border-white/10 disabled:cursor-not-allowed"
-          >
-            <span className="iconify solar--alt-arrow-right-linear w-7 h-7 text-white flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m9 5l7 6l-7 6" /></svg>
-            </span>
-          </button>
+          <SwiperNavButton className="achieve-swiper-button-prev" direction="prev" />
+          <SwiperNavButton className="achieve-swiper-button-next" direction="next" />
 
           {/* Custom Pagination Container */}
           <div className="achieve-swiper-pagination w-full flex justify-center items-center mt-8"></div>

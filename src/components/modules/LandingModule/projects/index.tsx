@@ -1,9 +1,10 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PROJECTS } from 'src/constants/projects'
-import { ProjectModal } from '@elements'
+import { ProjectModal, SwiperNavButton, ExpandButton, TabPills } from '@elements'
+import { createChunks } from '@utils'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Grid, Navigation, Pagination } from 'swiper/modules'
@@ -11,6 +12,12 @@ import 'swiper/css'
 import 'swiper/css/grid'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+
+const PROJECT_TABS = [
+  { label: 'All', value: 'All' },
+  { label: 'Research Publication', value: 'Research Publication' },
+  { label: 'Project', value: 'Project' },
+]
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState<'All' | 'Research Publication' | 'Project'>('All')
@@ -23,17 +30,7 @@ const Projects = () => {
     return project.type === 'Research Publication' || project.type === 'Project'
   })
 
-  // We chunk projects into groups of 4 (2x2 grid) for the Swiper slides
-  const createChunks = (items: any[], size: number) => {
-    const chunks = []
-    for (let i = 0; i < items.length; i += size) {
-      chunks.push(items.slice(i, i + size))
-    }
-    return chunks
-  }
-
   const projectChunks = createChunks(filteredProjects, 4)
-
   const visibleProjects = expanded ? filteredProjects : filteredProjects.slice(0, 4)
 
   useEffect(() => {
@@ -80,23 +77,14 @@ const Projects = () => {
         className="max-w-7xl mx-auto px-6 mb-12 flex justify-center md:justify-start animate-on-scroll"
         style={{ animation: 'animationIn 0.8s ease-out 0.2s both' }}
       >
-        <div className="flex flex-wrap gap-2 p-1 bg-slate-900/40 border border-white/10 rounded-full w-fit backdrop-blur-md">
-          {['All', 'Research Publication', 'Project'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => {
-                setActiveTab(tab as any)
-                setExpanded(false)
-              }}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-target ${activeTab === tab
-                ? 'bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] hover:brightness-110'
-                : 'text-slate-400 hover:text-white hover:bg-white/10'
-                }`}
-            >
-              {tab === 'Research Publication' ? 'Research Publication' : tab === 'Project' ? 'Project' : 'All'}
-            </button>
-          ))}
-        </div>
+        <TabPills
+          tabs={PROJECT_TABS}
+          activeTab={activeTab}
+          onTabChange={(value) => {
+            setActiveTab(value as any)
+            setExpanded(false)
+          }}
+        />
       </div>
 
       {/* Projects Content */}
@@ -157,22 +145,7 @@ const Projects = () => {
 
           {filteredProjects.length > 4 && (
             <div className="w-full flex justify-center mt-12 col-span-full pb-8">
-              <button
-                onClick={() => setExpanded(!expanded)}
-                className="px-6 py-3 text-sm font-medium bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white rounded-full shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] hover:brightness-110 transition-all duration-300 cursor-target flex items-center gap-2"
-              >
-                <span>{expanded ? 'See Less' : 'See More'}</span>
-                <span
-                  className={`iconify transition-transform duration-300 ${expanded ? 'solar--alt-arrow-up-linear' : 'solar--alt-arrow-down-linear'
-                    }`}
-                >
-                  {expanded ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m19 15l-7-6l-7 6" /></svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m19 9l-7 6l-7-6" /></svg>
-                  )}
-                </span>
-              </button>
+              <ExpandButton expanded={expanded} onClick={() => setExpanded(!expanded)} />
             </div>
           )}
         </div>
@@ -274,21 +247,8 @@ const Projects = () => {
             ))}
           </Swiper>
 
-          {/* Custom Nav Buttons overlaying Swiper */}
-          <button
-            className="proj-swiper-button-prev absolute left-0 top-1/2 -translate-y-[calc(50%+1rem)] w-12 h-12 flex items-center justify-center bg-blue-600/20 hover:bg-blue-600 rounded-full backdrop-blur-md transition-all duration-300 border border-blue-500/30 hover:scale-110 z-20 cursor-target shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-black/60 disabled:border-white/10 disabled:cursor-not-allowed"
-          >
-            <span className="iconify solar--alt-arrow-left-linear w-7 h-7 text-white flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m15 19l-7-6l7-6" /></svg>
-            </span>
-          </button>
-          <button
-            className="proj-swiper-button-next absolute right-0 top-1/2 -translate-y-[calc(50%+1rem)] w-12 h-12 flex items-center justify-center bg-blue-600/20 hover:bg-blue-600 rounded-full backdrop-blur-md transition-all duration-300 border border-blue-500/30 hover:scale-110 z-20 cursor-target shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-black/60 disabled:border-white/10 disabled:cursor-not-allowed"
-          >
-            <span className="iconify solar--alt-arrow-right-linear w-7 h-7 text-white flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m9 5l7 6l-7 6" /></svg>
-            </span>
-          </button>
+          <SwiperNavButton className="proj-swiper-button-prev" direction="prev" />
+          <SwiperNavButton className="proj-swiper-button-next" direction="next" />
 
           {/* Custom Pagination Container */}
           <div className="proj-swiper-pagination w-full flex justify-center items-center mt-8"></div>
