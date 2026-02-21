@@ -258,8 +258,17 @@ const SkillChip = ({ skill, index, visible }: SkillChipProps) => {
   )
 }
 
-const TechnicalSkill = () => {
-  const containerSize = 400
+  const TechnicalSkill = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const containerSize = isMobile ? 320 : 400
 
   // Tab state: activeTab drives the sidebar highlight; displayedTab drives the content
   const [activeTab, setActiveTab] = useState(CATEGORIES[0].id)
@@ -344,12 +353,76 @@ const TechnicalSkill = () => {
         <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-1 opacity-50"></div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-        {/* Left Side: Interactive Tabs */}
+        {/* Top (Mobile) / Right (Desktop): Orbital Design */}
+        <div
+          ref={orbitRef}
+          className="relative flex justify-center items-center w-full order-1 lg:order-2"
+        >
+          <div
+            className="relative"
+            style={{ width: containerSize, height: containerSize, maxWidth: '100%' }}
+          >
+            {/* Orbit rings */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]"
+              style={{ width: containerSize * 0.88, height: containerSize * 0.88 }}
+            ></div>
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]"
+              style={{ width: containerSize * 0.56, height: containerSize * 0.56 }}
+            ></div>
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.08]"
+              style={{ width: containerSize * 0.28, height: containerSize * 0.28 }}
+            ></div>
+
+            {/* Crosshair lines */}
+            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/[0.04] -translate-y-1/2"></div>
+            <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.04] -translate-x-1/2"></div>
+
+            {/* Outer orbit icons */}
+            {outerSkills.map((item, idx) => (
+              <OrbitIcon
+                key={item.name}
+                item={item}
+                containerSize={containerSize}
+                orbitAngle={outerAngle}
+                hasEntered={orbitInView}
+                entranceDelay={idx * 70}
+              />
+            ))}
+
+            {/* Mid orbit icons */}
+            {midSkills.map((item, idx) => (
+              <OrbitIcon
+                key={item.name}
+                item={item}
+                containerSize={containerSize}
+                orbitAngle={midAngle}
+                hasEntered={orbitInView}
+                entranceDelay={outerSkills.length * 70 + idx * 70}
+              />
+            ))}
+
+            {/* Center Node */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center backdrop-blur-md shadow-[0_0_40px_rgba(59,130,246,0.25)] z-20"
+              style={{ width: 56, height: 56 }}
+            >
+              <div className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_12px_rgba(96,165,250,1)]"></div>
+            </div>
+
+            {/* Ambient glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-blue-600/10 blur-3xl pointer-events-none"></div>
+          </div>
+        </div>
+
+        {/* Bottom (Mobile) / Left (Desktop): Interactive Tabs */}
         <div
           ref={panelRef}
-          className="relative p-[1px] rounded-2xl bg-gradient-to-br from-white/10 to-transparent"
+          className="relative p-[1px] rounded-2xl bg-gradient-to-br from-white/10 to-transparent order-2 lg:order-1"
           style={{
             opacity: panelVisible ? 1 : 0,
             transform: panelVisible ? 'translateX(0)' : 'translateX(-32px)',
@@ -411,70 +484,6 @@ const TechnicalSkill = () => {
               </div>
             </div>
 
-          </div>
-        </div>
-
-        {/* Right Side: Orbital Design */}
-        <div
-          ref={orbitRef}
-          className="relative flex justify-center items-center w-full"
-        >
-          <div
-            className="relative"
-            style={{ width: containerSize, height: containerSize, maxWidth: '100%' }}
-          >
-            {/* Orbit rings */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]"
-              style={{ width: containerSize * 0.88, height: containerSize * 0.88 }}
-            ></div>
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]"
-              style={{ width: containerSize * 0.56, height: containerSize * 0.56 }}
-            ></div>
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.08]"
-              style={{ width: containerSize * 0.28, height: containerSize * 0.28 }}
-            ></div>
-
-            {/* Crosshair lines */}
-            <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/[0.04] -translate-y-1/2"></div>
-            <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.04] -translate-x-1/2"></div>
-
-            {/* Outer orbit icons */}
-            {outerSkills.map((item, idx) => (
-              <OrbitIcon
-                key={item.name}
-                item={item}
-                containerSize={containerSize}
-                orbitAngle={outerAngle}
-                hasEntered={orbitInView}
-                entranceDelay={idx * 70}
-              />
-            ))}
-
-            {/* Mid orbit icons */}
-            {midSkills.map((item, idx) => (
-              <OrbitIcon
-                key={item.name}
-                item={item}
-                containerSize={containerSize}
-                orbitAngle={midAngle}
-                hasEntered={orbitInView}
-                entranceDelay={outerSkills.length * 70 + idx * 70}
-              />
-            ))}
-
-            {/* Center Node */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center backdrop-blur-md shadow-[0_0_40px_rgba(59,130,246,0.25)] z-20"
-              style={{ width: 56, height: 56 }}
-            >
-              <div className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_12px_rgba(96,165,250,1)]"></div>
-            </div>
-
-            {/* Ambient glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-blue-600/10 blur-3xl pointer-events-none"></div>
           </div>
         </div>
 
