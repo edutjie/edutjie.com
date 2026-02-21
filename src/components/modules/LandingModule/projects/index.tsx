@@ -1,9 +1,16 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PROJECTS } from 'src/constants/projects'
 import { ProjectModal } from '@elements'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Grid, Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/grid'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState<'All' | 'Research Publication' | 'Project'>('All')
@@ -15,6 +22,17 @@ const Projects = () => {
     if (activeTab === 'Project') return project.type === 'Project'
     return project.type === 'Research Publication' || project.type === 'Project'
   })
+
+  // We chunk projects into groups of 4 (2x2 grid) for the Swiper slides
+  const createChunks = (items: any[], size: number) => {
+    const chunks = []
+    for (let i = 0; i < items.length; i += size) {
+      chunks.push(items.slice(i, i + size))
+    }
+    return chunks
+  }
+
+  const projectChunks = createChunks(filteredProjects, 4)
 
   const visibleProjects = expanded ? filteredProjects : filteredProjects.slice(0, 4)
 
@@ -83,7 +101,9 @@ const Projects = () => {
 
       {/* Projects Content */}
       <div className="proj-content block w-full max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full">
+
+        {/* Mobile & Tablet View: Grid with See More */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8 items-start w-full">
           {visibleProjects.map((project, index) => (
             <div
               key={project.name + index}
@@ -99,11 +119,6 @@ const Projects = () => {
                     alt={project.name}
                     className="w-full h-full object-cover grayscale-[70%] contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                   />
-                  {/* <div className="absolute bottom-4 left-6 z-20 pointer-events-none drop-shadow-2xl pr-4">
-                    <h2 className="font-display text-2xl md:text-3xl lg:text-4xl text-white group-hover:scale-105 transition-transform duration-500 origin-bottom-left leading-tight">
-                      {project.name}
-                    </h2>
-                  </div> */}
                 </div>
                 <div className="flex justify-between items-end px-2 pb-1 gap-4">
                   <div className="flex flex-col gap-2 min-w-0 flex-1">
@@ -160,6 +175,123 @@ const Projects = () => {
               </button>
             </div>
           )}
+        </div>
+
+        {/* Desktop View: Swiper Carousel 2x2 */}
+        <div className="hidden lg:block relative w-full group/carousel animate-on-scroll px-14" style={{ animation: `animationIn 0.8s ease-out 0.2s both` }}>
+          <style dangerouslySetInnerHTML={{
+            __html: `
+            .swiper-custom-bullet {
+              width: 8px;
+              height: 8px;
+              display: inline-block;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.2);
+              margin: 0 6px !important;
+              cursor: pointer;
+              transition: all 0.3s ease;
+            }
+            .swiper-custom-bullet:hover {
+              background: rgba(255, 255, 255, 0.4);
+            }
+            .swiper-custom-bullet.swiper-pagination-bullet-active {
+              background: #3b82f6;
+              width: 24px;
+              border-radius: 4px;
+            }
+          `}} />
+          <Swiper
+            modules={[Grid, Navigation, Pagination]}
+            spaceBetween={32}
+            slidesPerView={1}
+            navigation={{
+              prevEl: '.proj-swiper-button-prev',
+              nextEl: '.proj-swiper-button-next',
+            }}
+            pagination={{
+              el: '.proj-swiper-pagination',
+              clickable: true,
+              renderBullet: function (index, className) {
+                return '<span class="' + className + ' swiper-custom-bullet"></span>';
+              },
+            }}
+            className="pt-4"
+          >
+            {projectChunks.map((chunk, chunkIndex) => (
+              <SwiperSlide key={`chunk-${chunkIndex}`}>
+                <div className="grid grid-cols-2 gap-8 w-full h-full">
+                  {chunk.map((project: any, index: number) => (
+                    <div
+                      key={project.name + index}
+                      onClick={() => setSelectedProject(project)}
+                      className="grid-item group relative flex flex-col cursor-target project-trigger"
+                    >
+                      <div className="relative w-full h-full p-4 bg-[#0a0a0a]/80 backdrop-blur-md film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
+                        <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#111] mb-5 rounded-lg border border-white/5">
+                          <div className="absolute inset-0 bg-blue-900/20 z-10 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay"></div>
+                          <img
+                            src={`/assets/${project.image}`}
+                            alt={project.name}
+                            className="w-full h-full object-cover grayscale-[70%] contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                          />
+                        </div>
+                        <div className="flex justify-between items-end px-2 pb-1 gap-4">
+                          <div className="flex flex-col gap-2 min-w-0 flex-1">
+                            <span className="font-display text-sm tracking-[0.2em] text-slate-300 truncate block">
+                              {project.name}
+                            </span>
+                            <span className="font-sans text-xs uppercase tracking-[0.2em] text-blue-400">
+                              {project.type}
+                            </span>
+                            <div className="flex gap-2 flex-wrap">
+                              {project.skills?.slice(0, 2).map((skill: any, sIdx: number) => (
+                                <span
+                                  key={sIdx}
+                                  className="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300 font-mono whitespace-nowrap"
+                                >
+                                  {skill.name}
+                                </span>
+                              ))}
+                              {project.skills && project.skills.length > 2 && (
+                                <span className="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-slate-300 font-mono">
+                                  +{project.skills.length - 2}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2 text-white/50 group-hover:text-blue-400 transition-colors flex-shrink-0">
+                            <span className="font-display text-xl whitespace-nowrap">{project.date}</span>
+                            <span className="iconify solar--arrow-right-up-linear w-6 h-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 7L7 17m10-10v8m0-8H9" /></svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Custom Nav Buttons overlaying Swiper */}
+          <button
+            className="proj-swiper-button-prev absolute left-0 top-1/2 -translate-y-[calc(50%+1rem)] w-12 h-12 flex items-center justify-center bg-blue-600/20 hover:bg-blue-600 rounded-full backdrop-blur-md transition-all duration-300 border border-blue-500/30 hover:scale-110 z-20 cursor-target shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-black/60 disabled:border-white/10 disabled:cursor-not-allowed"
+          >
+            <span className="iconify solar--alt-arrow-left-linear w-7 h-7 text-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m15 19l-7-6l7-6" /></svg>
+            </span>
+          </button>
+          <button
+            className="proj-swiper-button-next absolute right-0 top-1/2 -translate-y-[calc(50%+1rem)] w-12 h-12 flex items-center justify-center bg-blue-600/20 hover:bg-blue-600 rounded-full backdrop-blur-md transition-all duration-300 border border-blue-500/30 hover:scale-110 z-20 cursor-target shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-black/60 disabled:border-white/10 disabled:cursor-not-allowed"
+          >
+            <span className="iconify solar--alt-arrow-right-linear w-7 h-7 text-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m9 5l7 6l-7 6" /></svg>
+            </span>
+          </button>
+
+          {/* Custom Pagination Container */}
+          <div className="proj-swiper-pagination w-full flex justify-center items-center mt-8"></div>
         </div>
       </div>
 

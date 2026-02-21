@@ -99,20 +99,19 @@ export const Navbar: React.FC = () => {
       <header className="fixed top-0 left-0 w-full z-40 pointer-events-none flex justify-center pt-8 px-4 md:px-6">
         <div
           id="nav-pill"
-          className="pointer-events-auto w-full h-20 rounded-full flex items-center justify-between px-8 relative overflow-hidden group origin-top will-change-transform z-50 bg-slate-900/10 backdrop-blur-md border border-white/5 animate-on-scroll animate"
+          className="pointer-events-auto w-full h-20 rounded-full flex items-center justify-between px-4 md:px-8 relative overflow-hidden group origin-top will-change-transform z-50 bg-slate-900/10 backdrop-blur-md border border-white/5 animate-on-scroll animate"
           style={{ animation: 'animationIn 0.8s ease-out 0s both' }}
         >
           {/* Left: Menu Trigger */}
-          <div className="flex items-center z-10 w-[160px] h-full">
+          <div className="flex items-center z-10 w-auto md:w-[160px] h-full">
             <button
               id="nav-menu-btn"
               onClick={toggleMenu}
               className="cursor-target text-white hover:text-white/80 text-[16px] font-sans font-medium transition-colors duration-300 origin-left whitespace-nowrap flex items-center gap-2 group-hover:text-blue-400"
             >
               <div
-                className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                  isMenuOpen ? 'bg-blue-400' : 'bg-white group-hover:bg-blue-400'
-                }`}
+                className={`w-1.5 h-1.5 rounded-full transition-colors ${isMenuOpen ? 'bg-blue-400' : 'bg-white group-hover:bg-blue-400'
+                  }`}
                 id="menu-dot"
               ></div>
               <span id="menu-text" className="translate-y-[1px]">
@@ -124,16 +123,16 @@ export const Navbar: React.FC = () => {
           {/* Center: Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 cursor-target h-full flex items-center justify-center">
             <h1
-              className="antialiased origin-center whitespace-nowrap text-xl font-bold text-white tracking-tight pt-1 font-sans"
+              className="antialiased origin-center whitespace-nowrap text-xl text-white tracking-tight pt-1 font-sans"
               id="nav-logo"
             >
-              edutjie
+              edu<span className="font-bold">tjie</span>
             </h1>
           </div>
 
           {/* Right: Meta Info & Icons */}
           <div
-            className="flex items-center justify-end gap-6 z-10 text-white w-[160px] h-full origin-right"
+            className="flex items-center justify-end gap-6 z-10 text-white w-auto md:w-[160px] h-full origin-right"
             id="nav-right-group"
           >
             <div
@@ -151,7 +150,7 @@ export const Navbar: React.FC = () => {
                 className="cursor-target hover:text-blue-400 transition-colors duration-300 flex items-center justify-center p-1 rounded-full"
               >
                 <span className="iconify solar--folder-with-files-linear w-5 h-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 11h5m-5 4h5M2.5 10.5V17a3 3 0 0 0 3 3h13a3 3 0 0 0 3-3V10.5M2.5 10.5v-3a3 3 0 0 1 3-3h3.586a2 2 0 0 1 1.414.586l1.828 1.828A2 2 0 0 0 13.743 7H18.5a3 3 0 0 1 3 3v.5M2.5 10.5h19"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 11h5m-5 4h5M2.5 10.5V17a3 3 0 0 0 3 3h13a3 3 0 0 0 3-3V10.5M2.5 10.5v-3a3 3 0 0 1 3-3h3.586a2 2 0 0 1 1.414.586l1.828 1.828A2 2 0 0 0 13.743 7H18.5a3 3 0 0 1 3 3v.5M2.5 10.5h19" /></svg>
                 </span>
               </a>
             </div>

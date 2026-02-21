@@ -30,7 +30,7 @@ const Hero = () => {
     <div className="w-full relative flex justify-center">
       {/* Hero-Specific Ambient Background Overlay */}
       <div
-        className="aura-background-component absolute top-0 left-0 w-full h-[100vh] min-h-[800px] -z-[5] brightness-110 opacity-70 mix-blend-screen pointer-events-none"
+        className="aura-background-component absolute top-0 left-0 w-full h-[100vh] min-h-[800px] -z-[5] brightness-110 opacity-30 md:opacity-70 mix-blend-screen pointer-events-none"
         data-alpha-mask="80"
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
@@ -44,7 +44,7 @@ const Hero = () => {
 
       <section
         id="home"
-        className="grid grid-cols-1 md:h-screen md:px-8 md:grid-cols-12 md:gap-6 z-10 w-full max-w-7xl pt-32 pr-4 pb-10 pl-4 items-center mx-auto relative"
+        className="grid grid-cols-1 md:h-screen md:grid-cols-12 md:gap-6 z-10 w-full max-w-7xl pt-32 px-8 pb-10 items-center mx-auto relative"
         ref={containerRef}
       >
         {/* Left Column: Title & Intro */}
@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
 
           <div className="animate-on-scroll" style={{ animation: 'animationIn 0.8s ease-out 0.3s both' }}>
-            <h1 className="text-5xl md:text-[80px] leading-[1] font-semibold text-transparent bg-clip-text tracking-tight bg-gradient-to-b from-white via-slate-200 to-slate-500 pb-2 font-sans">
+            <h1 className="text-4xl md:text-[80px] leading-[1] font-semibold text-transparent bg-clip-text tracking-tight bg-gradient-to-b from-white via-slate-200 to-slate-500 pb-2 font-sans">
               Eduardus Tjitrahardja
             </h1>
             <div className="flex flex-col mt-5 gap-0 w-fit">
@@ -127,7 +127,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="flex gap-6 items-center mt-4 animate-on-scroll"
+            className="flex flex-col md:flex-row gap-6 items-center mt-4 animate-on-scroll"
             style={{ animation: 'animationIn 0.8s ease-out 0.4s both' }}
           >
             <a
@@ -138,17 +138,17 @@ const Hero = () => {
             >
               {/* Floating particles around the button */}
               <div className="absolute inset-0 overflow-visible pointer-events-none z-0">
-                <svg className="absolute -top-3 left-8 w-2 h-2 text-blue-300 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
-                <svg className="absolute bottom-1 -right-2 w-2.5 h-2.5 text-blue-200 animate-[pulse_1.5s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
-                <svg className="absolute top-2 -right-4 w-1.5 h-1.5 text-white animate-[pulse_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
-                <svg className="absolute -bottom-4 left-12 w-1.5 h-1.5 text-blue-400 animate-[pulse_2.5s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
+                <svg className="absolute -top-3 left-8 w-2 h-2 text-blue-300 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z" /></svg>
+                <svg className="absolute bottom-1 -right-2 w-2.5 h-2.5 text-blue-200 animate-[pulse_1.5s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z" /></svg>
+                <svg className="absolute top-2 -right-4 w-1.5 h-1.5 text-white animate-[pulse_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z" /></svg>
+                <svg className="absolute -bottom-4 left-12 w-1.5 h-1.5 text-blue-400 animate-[pulse_2.5s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z" /></svg>
               </div>
 
               {/* Inner wrapper for spinning border */}
               <div className="relative rounded-full p-[1px] overflow-hidden w-full z-10">
                 {/* Spinning white light */}
                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_80%,rgba(255,255,255,0.8)_95%,transparent_100%)]" />
-                
+
                 {/* Actual button surface */}
                 <span className="relative flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white rounded-full bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] h-full w-full transition-all group-hover:from-blue-500 group-hover:to-blue-400">
                   <span className="relative z-10 flex items-center gap-2 drop-shadow-md">
@@ -160,7 +160,7 @@ const Hero = () => {
                 </span>
               </div>
             </a>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-4 md:gap-3">
               <a
                 href="mailto:edutjitrahardja@gmail.com"
                 className="inline-flex items-center justify-center w-6 h-6 text-slate-400 hover:text-blue-400 transition-colors cursor-target"
@@ -188,7 +188,7 @@ const Hero = () => {
               >
                 <span className="w-6 h-6 inline-flex">
                   <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.03-1.85-3.03c-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12a2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+                    <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.03-1.85-3.03c-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12a2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
                   </svg>
                 </span>
               </a>
@@ -201,7 +201,7 @@ const Hero = () => {
               >
                 <span className="w-6 h-6 inline-flex">
                   <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M12 3L1 9l11 6l9-4.91V17h2V9L12 3Zm0 9.75L4.74 9L12 5.25L19.26 9L12 12.75ZM5 13.66V17c0 2.21 3.13 4 7 4s7-1.79 7-4v-3.34L12 17.5L5 13.66Z"/>
+                    <path fill="currentColor" d="M12 3L1 9l11 6l9-4.91V17h2V9L12 3Zm0 9.75L4.74 9L12 5.25L19.26 9L12 12.75ZM5 13.66V17c0 2.21 3.13 4 7 4s7-1.79 7-4v-3.34L12 17.5L5 13.66Z" />
                   </svg>
                 </span>
               </a>
@@ -214,7 +214,7 @@ const Hero = () => {
               >
                 <span className="w-6 h-6 inline-flex">
                   <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8Zm8.95 1.43a1.15 1.15 0 1 1 0 2.3a1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2a3.1 3.1 0 0 0 0-6.2Z"/>
+                    <path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8Zm8.95 1.43a1.15 1.15 0 1 1 0 2.3a1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2a3.1 3.1 0 0 0 0-6.2Z" />
                   </svg>
                 </span>
               </a>
@@ -224,11 +224,11 @@ const Hero = () => {
 
         {/* Right Column: AI Bento Grid (3D Canvas) */}
         <div
-          className="md:col-span-5 flex justify-center items-center order-1 md:order-2 mt-10 lg:mt-0 relative group animate-on-scroll z-10"
+          className="md:col-span-5 flex justify-center items-center order-1 md:order-2 mb-8 md:mb-0 lg:mt-0 relative group animate-on-scroll z-10"
           style={{ animation: 'animationIn 0.8s ease-out 0.4s both' }}
         >
           <div className="absolute inset-0 bg-blue-600/20 blur-[100px] rounded-full scale-90 group-hover:bg-blue-500/30 transition-colors duration-700 pointer-events-none"></div>
-          <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-[2.5rem] overflow-hidden ios-glass border border-white/10 p-2 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-video md:aspect-[4/5] rounded-[2.5rem] overflow-hidden ios-glass border border-white/10 p-2 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
             {/* 3D AI Core Canvas */}
             <AiCoreCanvas />
 

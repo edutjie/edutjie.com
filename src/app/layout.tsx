@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'], variable: '--font-rock-salt' })
 
 export const metadata: Metadata = {
-  title: 'Alex Vance | Personal Website', // Mock name according to reference, replace with actual if needed
+  title: 'Eduardus Tjitrahardja | Personal Website', // Mock name according to reference, replace with actual if needed
   description:
-    "A Computer Science student who is very passionate and interested in technology and computer especially in Artificial Intelligence.",
+    "Master's Researcher at the Tsinghua Key Laboratory of Pervasive Computing, focusing on Vision Language Models (VLM), Multimodal AI, and Human-Computer Interaction (HCI).",
 }
 
 export default function RootLayout({

@@ -12,12 +12,12 @@ export const Footer: React.FC = () => {
           </span>
           <span className="text-sm font-medium text-white">Eduardus Tjitrahardja</span>
         </div>
-        <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-slate-400">
           {CONTACTS.filter(contact => ['Google Scholar', 'Linkedin', 'Github'].includes(contact.name)).map(contact => (
             <a
               key={contact.name}
               href={contact.url}
-              className="hover:text-white transition-colors cursor-target"
+              className="hover:text-white transition-colors cursor-target py-2 md:py-0"
               target="_blank"
               rel="noreferrer"
             >
