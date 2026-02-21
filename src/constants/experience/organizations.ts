@@ -6,12 +6,12 @@ const OrgExperience: SingularExperienceType[] = [
     name: 'RISTEK Fasilkom UI',
     logo: 'images/companies/ristek.png',
     links: [{ name: 'Website', link: 'https://ristek.cs.ui.ac.id/' }],
-    date: 'Feb 2023 - Present',
+    date: 'Feb 2023 - Feb 2025',
     location: 'Depok, Indonesia',
     roles: [
       {
         name: 'Lead of Data Science & Analytics SIG',
-        date: 'Feb 2024 - Present',
+        date: 'Feb 2024 - Feb 2025',
         description: [
           'Actively participated and contributed to achievement in various data science competitions.',
           'Guided and mentored team members to enhance their proficiency in the data science domain such as NLP, CV, Generative AI, etc.',
@@ -50,9 +50,16 @@ const OrgExperience: SingularExperienceType[] = [
       { name: 'DAD Competition Website', link: 'https://dad.compfest.id/' },
       { name: 'COMPFEST Main Website', link: 'http://compfest.id/' },
     ],
-    date: 'Oct 2021 - Aug 2023',
+    date: 'Oct 2021 - Aug 2023, Aug 2024, Aug 2025',
     location: 'Depok, Indonesia',
     roles: [
+      {
+        name: 'Data Science Academy Mentor',
+        date: 'Aug 2024, Aug 2025',
+        description: [
+          'Guided and consulted a group of students on their final projects, providing advice on data science concepts, methodologies, and best practices.',
+        ],
+      },
       {
         name: 'Technical Committee of Data Analytics Dashboard Competition',
         date: 'Jan 2023 - Aug 2023',
@@ -71,6 +78,7 @@ const OrgExperience: SingularExperienceType[] = [
       },
     ],
     skills: [
+      SKILLS.ML,
       SKILLS.Go,
       SKILLS.Fiber,
       SKILLS.PGX,
