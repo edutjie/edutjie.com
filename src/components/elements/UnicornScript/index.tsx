@@ -11,7 +11,10 @@ export const UnicornScript = () => {
         // @ts-ignore
         if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
           // @ts-ignore
-          window.UnicornStudio.init()
+          window.UnicornStudio.init({
+            scale: 0.6, // render at 60% resolution — reduces GPU fill-rate significantly
+            fps: 30,    // cap at 30fps for a background element (was 60)
+          })
           // @ts-ignore
           window.UnicornStudio.isInitialized = true
         }
