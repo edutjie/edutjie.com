@@ -13,6 +13,14 @@ const nextConfig = {
                 protocol: 'http',
                 hostname: 'localhost',
             },
+            {
+                protocol: 'https',
+                hostname: 'cdn.simpleicons.org',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.jsdelivr.net',
+            },
         ],
     },
     webpack(config) {
