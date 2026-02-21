@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useCallback } from 'react'
 import gsap from 'gsap'
 
 interface ProjectModalProps {
@@ -30,7 +30,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
     }
   }, [project])
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     if (!modalRef.current) {
       onClose()
       return
@@ -44,7 +44,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         onClose()
       },
     })
-  }
+  }, [onClose])
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [handleClose])
 
   return (
     <div
