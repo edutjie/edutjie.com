@@ -45,7 +45,7 @@ const Achievements = () => {
 
   return (
     <section
-      id="achievements"
+      id="recognitions"
       className="w-full relative z-10 pb-32 overflow-hidden border-t border-white/5 pt-24 bg-gradient-to-b from-transparent to-[#030712] font-sans"
     >
       <div

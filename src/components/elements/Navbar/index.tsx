@@ -169,10 +169,10 @@ export const Navbar: React.FC = () => {
         </div>
         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row w-full h-full pt-32 pb-12 relative z-10">
           <nav className="flex-1 flex flex-col justify-center items-start gap-4 md:gap-6">
-            {['Home', 'Experience', 'Projects', 'Achievements'].map((item) => (
+            {['Home', 'Experience', 'Selected Work', 'Recognitions'].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item.toLowerCase().replace(' ', '-')}`}
                 className="menu-item cursor-target group block overflow-hidden"
                 onClick={toggleMenu}
               >

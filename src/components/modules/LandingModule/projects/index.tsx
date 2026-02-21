@@ -57,7 +57,7 @@ const Projects = () => {
   }, [activeTab, expanded])
 
   return (
-    <section id="projects" className="w-full relative z-10 pt-32 pb-16 overflow-hidden font-sans">
+    <section id="selected-work" className="w-full relative z-10 pt-32 pb-16 overflow-hidden font-sans">
       <div
         className="max-w-7xl mx-auto px-6 mb-12 text-center md:text-left md:flex md:items-end justify-between animate-on-scroll"
         style={{ animation: 'animationIn 0.8s ease-out 0.1s both' }}
