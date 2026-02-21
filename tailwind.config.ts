@@ -12,6 +12,8 @@ const config: Config = {
         inter: ['var(--font-inter)', 'sans-serif'],
         display: ['var(--font-rock-salt)', 'cursive'],
         sans: ['var(--font-inter)', 'sans-serif'],
+        playfairDisplay: ['var(--font-playfair-display)', 'serif'],
+        dotage: ['var(--font-dotage)', 'sans-serif'],
       },
       colors: {
         primary: '#01162D',

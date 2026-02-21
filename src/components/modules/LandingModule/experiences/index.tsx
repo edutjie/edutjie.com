@@ -69,7 +69,7 @@ const Experiences = () => {
         className="mb-12 text-center animate-on-scroll"
         style={{ animation: 'animationIn 0.8s ease-out 0.1s both' }}
       >
-        <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-4 font-sans">
+        <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-4">
           Experience
         </h2>
         <p className="text-slate-400 text-sm max-w-xl mx-auto mb-8 font-sans">

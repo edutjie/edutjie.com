@@ -114,7 +114,7 @@ export const Navbar: React.FC = () => {
                   }`}
                 id="menu-dot"
               ></div>
-              <span id="menu-text" className="translate-y-[1px]">
+              <span id="menu-text" className="translate-y-[1px] font-mono">
                 {isMenuOpen ? 'Close' : 'Menu'}
               </span>
             </button>
@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
           {/* Center: Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 cursor-target h-full flex items-center justify-center">
             <h1
-              className="antialiased origin-center whitespace-nowrap text-xl text-white tracking-tight pt-1 font-sans"
+              className="antialiased origin-center whitespace-nowrap text-xl text-white tracking-tight pt-1 font-dotage"
               id="nav-logo"
             >
               edu<span className="font-bold">tjie</span>

@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
 
           <div className="animate-on-scroll" style={{ animation: 'animationIn 0.8s ease-out 0.3s both' }}>
-            <h1 className="text-4xl md:text-[80px] leading-[1] font-semibold text-transparent bg-clip-text tracking-tight bg-gradient-to-b from-white via-slate-200 to-slate-500 pb-2 font-sans">
+            <h1 className="text-4xl md:text-[80px] leading-[1] font-semibold text-transparent bg-clip-text tracking-tight bg-gradient-to-b from-white via-slate-200 to-slate-500 pb-2">
               Eduardus Tjitrahardja
             </h1>
             <div className="flex flex-col mt-5 gap-0 w-fit">
