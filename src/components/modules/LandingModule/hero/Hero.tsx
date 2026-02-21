@@ -236,13 +236,13 @@ const Hero = () => {
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]"></div>
               <span className="text-[10px] font-mono uppercase tracking-widest text-white whitespace-nowrap">
                 <Typewriter
-                options={{
-                  strings: ['Bing Chilling...', 'Researching...', 'Coding...', 'Brewing...'],
-                  autoStart: true,
-                  loop: true,
-                  delay: 50,
-                }}
-              />
+                  options={{
+                    strings: ['Bing chilling...', 'Sigma grindset loading...', 'No cap fr fr...', 'Glazing the codebase...', 'Eating gyatt for breakfast...', 'Skibidi compiling...', 'Rizzing up the API...', 'NPC behavior detected...', 'Touching grass.exe failed...', 'Caught in 4K...'],
+                    autoStart: true,
+                    loop: true,
+                    delay: 50,
+                  }}
+                />
               </span>
             </div>
           </div>

@@ -265,6 +265,8 @@ const TechnicalSkill = () => {
   const [activeTab, setActiveTab] = useState(CATEGORIES[0].id)
   const [displayedTab, setDisplayedTab] = useState(CATEGORIES[0].id)
   const [chipsVisible, setChipsVisible] = useState(true)
+  const [isPaused, setIsPaused] = useState(false)
+  const [timerKey, setTimerKey] = useState(0)
 
   // Animated content height
   const contentRef = useRef<HTMLDivElement>(null)
@@ -298,12 +300,33 @@ const TechnicalSkill = () => {
   const handleTabChange = (id: string) => {
     if (id === activeTab) return
     setActiveTab(id)
+    setTimerKey(k => k + 1)
     setChipsVisible(false)
     setTimeout(() => {
       setDisplayedTab(id)
       setChipsVisible(true)
     }, 160)
   }
+
+  // Auto-rotate tabs every 5s, pause on hover
+  useEffect(() => {
+    if (isPaused) return
+    const interval = setInterval(() => {
+      setActiveTab(prev => {
+        const currentIdx = CATEGORIES.findIndex(c => c.id === prev)
+        const nextIdx = (currentIdx + 1) % CATEGORIES.length
+        const nextId = CATEGORIES[nextIdx].id
+        setTimerKey(k => k + 1)
+        setChipsVisible(false)
+        setTimeout(() => {
+          setDisplayedTab(nextId)
+          setChipsVisible(true)
+        }, 160)
+        return nextId
+      })
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [isPaused])
 
   const activeCategory = CATEGORIES.find(c => c.id === displayedTab) ?? CATEGORIES[0]
   const outerSkills = ORBIT_SKILLS.filter(s => s.orbit === 'outer')
@@ -332,6 +355,8 @@ const TechnicalSkill = () => {
             transform: panelVisible ? 'translateX(0)' : 'translateX(-32px)',
             transition: 'opacity 0.6s ease, transform 0.6s ease',
           }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div className="flex flex-col sm:flex-row h-full w-full bg-[#0b0f19] rounded-2xl overflow-hidden border border-white/[0.05]">
 
@@ -352,7 +377,16 @@ const TechnicalSkill = () => {
                     }}
                   >
                     {isActive && (
-                      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-blue-400 to-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)] rounded-r-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[3px] overflow-hidden rounded-r-full">
+                        <div
+                          key={timerKey}
+                          className="w-full bg-gradient-to-b from-blue-400 to-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)] rounded-r-full"
+                          style={{
+                            height: isPaused ? undefined : '0%',
+                            animation: isPaused ? 'none' : 'tabProgress 5s linear forwards',
+                          }}
+                        />
+                      </div>
                     )}
                     <span className="text-sm font-medium leading-tight">{cat.label}</span>
                   </button>
