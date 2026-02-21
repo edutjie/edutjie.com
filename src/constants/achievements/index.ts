@@ -8,6 +8,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/ristek/image2024.jpg',
     date: '2024',
     medal: 'none',
+    type: 'award',
     description:
       'Awarded as the best lead of the Data Science & Analytics Special Interest Group (SIG) during the second quarter of RISTEK 2024. Our SIG, Data Science & Analytics SIG also awarded as the most outstanding SIG during the second quarter of RISTEK 2024.',
     links: [
@@ -25,6 +26,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/gemastik/image20241.jpg',
     date: 'Sep 2024',
     medal: 'gold',
+    type: 'competition',
     description:
       'Achieved the gold medal in a prestigious national competition, outperforming 250+ teams through both our research, titled "Automated Assignment of Community Reports Using Early Fusion Multimodal Transformer," and our best performance in classifying tuition fee categories in the final round by leveraging cost-sensitive learning and a hill climbing ensemble method.',
     links: [
@@ -54,6 +56,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/satria data/image20241.jpg',
     date: 'Aug 2024',
     medal: 'silver',
+    type: 'competition',
     description:
       'Achieved the silver medal by overcoming 400+ teams in a prestigious national competition by developing and implementing a unique analytical method for the study "Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media."',
     links: [
@@ -82,6 +85,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/data slayer/image1.jpg',
     date: 'Jan 2024',
     medal: 'gold',
+    type: 'competition',
     description:
       'Overcome other 120+ teams with proposed multi-layered stacking machine learning models to estimate the CO2 vehicle emissions in Indonesia.',
     links: [
@@ -106,6 +110,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/dataquest/image1.jpg',
     date: 'Oct 2023',
     medal: 'gold',
+    type: 'competition',
     description:
       'Our team, Three Outliers, created a highly effective "Image-based Drugs Search Engine using OCR and Levenshtein Algorithm." We also employed an ensemble method to predict rainfall during the selection phase. As a result, we secured first place in the competition, surpassing over 200 participants from more than 20 national universities.',
     links: [
@@ -130,6 +135,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/intelligo/image1.jpg',
     date: 'Oct 2023',
     medal: 'silver',
+    type: 'competition',
     description:
       'My team, Three Outliers, utilized NLP techniques to develop a "High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis". As a result, we were able to secure the 2nd place in the competition.',
     links: [
@@ -151,6 +157,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/gemastik/image1.jpeg',
     date: 'Sep 2023',
     medal: 'none',
+    type: 'competition',
     description:
       'Conducted a computer vision research project, utilizing CCTVs to create our own dataset. The objective of our study was to develop a paper titled "Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR".',
     links: [
@@ -176,6 +183,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/satria data/image1.png',
     date: 'Sep 2023',
     medal: 'none',
+    type: 'competition',
     description:
       'Our team, Three Outliers, successfully ranked in the top 10 by utilizing a fine-tuned model and Faster RCNN to develop an OCR for detecting Indonesian car plate numbers.',
     links: [
@@ -192,6 +200,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/ristek/image2023.jpg',
     date: '2023',
     medal: 'none',
+    type: 'award',
     description:
       'Awarded as the best lead of the Web Development Special Interest Group (SIG) during the first quarter of RISTEK 2023.',
     links: [
@@ -208,6 +217,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/joints/image1.jpeg',
     date: 'May 2023',
     medal: 'silver',
+    type: 'competition',
     description:
       'Achieved second place by implementing an ensemble model for earthquake damage classification and utilizing the CNN method for fire detection in images. Outperformed over 200 participants from more than 20 national universities.',
     links: [
@@ -232,6 +242,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     image: 'images/achievements/datathon/image1.jpg',
     date: 'Dec 2022',
     medal: 'silver',
+    type: 'competition',
     description:
       'Utilized a multimodal model consisting of both images and text to assess whether the tweets contained any useful intelligence that could aid in disaster management and recovery e orts.',
     links: [

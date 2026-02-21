@@ -87,7 +87,7 @@ const Achievements = () => {
                 </div>
                 <div className="flex justify-between items-center px-2 pb-1">
                   <span className="font-sans text-[10px] uppercase tracking-widest text-slate-400 truncate">
-                    COMPETITION • {achievement.issuer}
+                    {achievement.type.toUpperCase()} • {achievement.issuer}
                   </span>
                   <span className="iconify solar--maximize-linear w-5 h-5 text-slate-500 group-hover:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14 10l6-6m0 0h-4m4 0v4m-6 6l-6 6m0 0h4m-4 0v-4" /></svg>
