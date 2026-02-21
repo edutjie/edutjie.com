@@ -3,6 +3,33 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'MyoPong: Goal-Conditioned Synergistic Action and Latent Exploration for Musculoskeletal Table Tennis Control with Training-Free High-Level Policy',
+    image: 'images/projects/myopong/image1.gif',
+    date: '2025',
+    description:
+      'Controlling bio-inspired musculoskeletal systems (MSK) remains a significant challenge in robotics due to their high dimensionality, overactuated nature, and the sparse rewards typical of complex tasks like table tennis. We introduces MyoPong, a framework designed to tackle the MyoChallenge Table-Tennis task using a musculoskeletal model (myoArm and myoTorso) with up to 210 muscles. To overcome the challenges of sparse rewards and high dimensionality, the system combines a training-free, physics-based high-level planner with a low-level PPO actor integrated with muscle synergy extraction and latent exploration (the Lattice method). Experimental results show that while standard PPO baselines fail completely, the proposed hierarchical architecture achieves a near-optimal 94% success rate. The findings demonstrate that combining hierarchical structures with inductive biases in the action and exploration spaces is essential for mastering musculoskeletal control, with the Lattice-based approach emerging as the most energy-efficient solution for balancing task success and minimal control effort.',
+    links: [
+      {
+        name: 'Website',
+        link: 'https://myopong.github.io/',
+      },
+      {
+        name: 'Paper',
+        link: 'https://drive.google.com/file/d/1YqSnlScmCXe63-ODhYDtki8THT16obzC/view?usp=drive_link',
+      },
+      {
+        name: 'Slides',
+        link: 'https://docs.google.com/presentation/d/1De7Lu-FLRBTDBbWex9SmLbfuHvYeMOFJ/edit?usp=sharing&ouid=103019041701168024232&rtpof=true&sd=true',
+      },
+      {
+        name: 'Source Code',
+        link: 'https://github.com/alfonsusrr/MyoPong',
+      },
+    ],
+    skills: [SKILLS.RL, SKILLS.ML, SKILLS.Python, SKILLS.Pytorch],
+    type: 'Project',
+  },
+  {
     name: 'FrOG: Framework of Open GraphRAG',
     image: 'images/projects/frog/image1.png',
     date: '2025',

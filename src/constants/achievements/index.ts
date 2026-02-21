@@ -3,6 +3,22 @@ import { AchievementType } from './interface'
 
 export const ACHIEVEMENTS: AchievementType[] = [
   {
+    name: 'Best Lead of Data Science & Analytics SIG, RISTEK 2024 Q2',
+    issuer: 'RISTEK Fasilkom UI',
+    image: 'images/achievements/ristek/image2024.jpg',
+    date: '2024',
+    medal: 'none',
+    description:
+      'Awarded as the best lead of the Data Science & Analytics Special Interest Group (SIG) during the second quarter of RISTEK 2024. Our SIG, Data Science & Analytics SIG also awarded as the most outstanding SIG during the second quarter of RISTEK 2024.',
+    links: [
+      {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1JvAupLQcdfikTIEoBEY6xJRka4_q4eNk/view?usp=drive_link',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python],
+  },
+  {
     name: '1st Winner of Data Mining, GEMASTIK XVII',
     issuer:
       'Indonesian Ministry of Education, Culture, Research, and Technology',
@@ -169,6 +185,22 @@ export const ACHIEVEMENTS: AchievementType[] = [
       },
     ],
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python],
+  },
+  {
+    name: 'Best Lead of Web Development SIG, RISTEK 2023 Q1',
+    issuer: 'RISTEK Fasilkom UI',
+    image: 'images/achievements/ristek/image2023.jpg',
+    date: '2023',
+    medal: 'none',
+    description:
+      'Awarded as the best lead of the Web Development Special Interest Group (SIG) during the first quarter of RISTEK 2023.',
+    links: [
+      {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1pP1CsDuR71Rs0owoqqicpCiUmuYeMwdL/view',
+      },
+    ],
+    skills: [SKILLS.ReactJS, SKILLS.NextJS, SKILLS.TypeScript, SKILLS.Django, SKILLS.PostgreSQL, SKILLS.Redis, SKILLS.TailwindCSS, SKILLS.AWS],
   },
   {
     name: '2nd Winner of Data Competition, JOINTS 2023',

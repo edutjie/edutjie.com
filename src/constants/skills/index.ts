@@ -259,4 +259,10 @@ export const SKILLS: SkillType = {
     link: 'https://gephi.org/',
     color: '#FFD6A5',
   },
+  RL: {
+    name: 'RL',
+    logo: '/images/logo/rl.svg',
+    link: '',
+    color: '#FFD6A5',
+  },
 }
