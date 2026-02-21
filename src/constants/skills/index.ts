@@ -187,6 +187,18 @@ export const SKILLS: SkillType = {
     link: '#',
     color: '#FFD6A5',
   },
+  VLM: {
+    name: 'VLM',
+    logo: '',
+    link: '#',
+    color: '#FFD6A5',
+  },
+  HCI: {
+    name: 'HCI',
+    logo: '',
+    link: '#',
+    color: '#FFD6A5',
+  },
   OpenCV: {
     name: 'OpenCV',
     logo: '/images/logo/chakra-ui.svg',
@@ -209,6 +221,48 @@ export const SKILLS: SkillType = {
     name: 'Hugging Face',
     logo: '/images/logo/huggingface.svg',
     link: 'https://huggingface.co/',
+    color: '#FFD6A5',
+  },
+  LangChain: {
+    name: 'LangChain',
+    logo: '/images/logo/langchain.svg',
+    link: 'https://langchain.com/',
+    color: '#FFD6A5',
+  },
+  LangGraph: {
+    name: 'LangGraph',
+    logo: '/images/logo/langgraph.svg',
+    link: '',
+    color: '#FFD6A5',
+  },
+  KnowledgeGraph: {
+    name: 'Knowledge Graph',
+    logo: '/images/logo/kg.svg',
+    link: '',
+    color: '#FFD6A5',
+  },
+  RAG: {
+    name: 'RAG',
+    logo: '/images/logo/rag.svg',
+    link: '',
+    color: '#FFD6A5',
+  },
+  SPARQL: {
+    name: 'SPARQL',
+    logo: '/images/logo/sparql.svg',
+    link: '',
+    color: '#FFD6A5',
+  },
+  Gephi: {
+    name: 'Gephi',
+    logo: '/images/logo/gephi.svg',
+    link: 'https://gephi.org/',
+    color: '#FFD6A5',
+  },
+  RL: {
+    name: 'RL',
+    logo: '/images/logo/rl.svg',
+    link: '',
     color: '#FFD6A5',
   },
 }

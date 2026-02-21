@@ -3,6 +3,22 @@ import { AchievementType } from './interface'
 
 export const ACHIEVEMENTS: AchievementType[] = [
   {
+    name: 'Best Lead of Data Science & Analytics SIG, RISTEK 2024 Q2',
+    issuer: 'RISTEK Fasilkom UI',
+    image: 'images/achievements/ristek/image2024.jpg',
+    date: '2024',
+    medal: 'none',
+    description:
+      'Awarded as the best lead of the Data Science & Analytics Special Interest Group (SIG) during the second quarter of RISTEK 2024. Our SIG, Data Science & Analytics SIG also awarded as the most outstanding SIG during the second quarter of RISTEK 2024.',
+    links: [
+      {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1JvAupLQcdfikTIEoBEY6xJRka4_q4eNk/view?usp=drive_link',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python],
+  },
+  {
     name: '1st Winner of Data Mining, GEMASTIK XVII',
     issuer:
       'Indonesian Ministry of Education, Culture, Research, and Technology',
@@ -13,16 +29,16 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Achieved the gold medal in a prestigious national competition, outperforming 250+ teams through both our research, titled "Automated Assignment of Community Reports Using Early Fusion Multimodal Transformer," and our best performance in classifying tuition fee categories in the final round by leveraging cost-sensitive learning and a hill climbing ensemble method.',
     links: [
       {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/15b42mmzUbx5tTK4GC_v89MtPCUuHynTW/view?usp=drive_link',
+      },
+      {
         name: 'Selection Paper',
         link: 'https://drive.google.com/file/d/1c45OuSPu52IWSw-3SGVDhqIoO7YcZMrq/view?usp=drive_link',
       },
       {
         name: 'Final Slides',
         link: 'https://drive.google.com/file/d/1Fdxq0KfULVVEbYctaL3gzTDJuFDdDVc7/view?usp=drive_link',
-      },
-      {
-        name: 'Certificate',
-        link: 'https://drive.google.com/file/d/15b42mmzUbx5tTK4GC_v89MtPCUuHynTW/view?usp=drive_link',
       },
       {
         name: 'Awarding Announcement',
@@ -42,16 +58,16 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Achieved the silver medal by overcoming 400+ teams in a prestigious national competition by developing and implementing a unique analytical method for the study "Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media."',
     links: [
       {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1Wax-3T6rObh-jCLWH23GwlI_yFbZCeVs/view?usp=sharing',
+      },
+      {
         name: 'Paper',
         link: 'https://drive.google.com/file/d/1ndZ2PceM5PIP7JRswWmhNAPOXqh3pUu-/view?usp=sharing',
       },
       {
         name: 'Slides',
         link: 'https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view?usp=sharing',
-      },
-      {
-        name: 'Certificate',
-        link: 'https://drive.google.com/file/d/1Wax-3T6rObh-jCLWH23GwlI_yFbZCeVs/view?usp=sharing',
       },
       {
         name: 'Awarding Announcement',
@@ -70,12 +86,12 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Overcome other 120+ teams with proposed multi-layered stacking machine learning models to estimate the CO2 vehicle emissions in Indonesia.',
     links: [
       {
-        name: 'Slides',
-        link: 'https://drive.google.com/file/d/1abA4RgYQgsyJTtCBlHqgU36Tv0KO2y4m/view?usp=drive_link',
-      },
-      {
         name: 'Certificate',
         link: 'https://drive.google.com/file/d/1-yb4eHYmK_kgxllidt9ObAEE79m2AHGv/view?usp=sharing',
+      },
+      {
+        name: 'Slides',
+        link: 'https://drive.google.com/file/d/1abA4RgYQgsyJTtCBlHqgU36Tv0KO2y4m/view?usp=drive_link',
       },
       {
         name: 'Awarding Announcement',
@@ -94,12 +110,12 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Our team, Three Outliers, created a highly effective "Image-based Drugs Search Engine using OCR and Levenshtein Algorithm." We also employed an ensemble method to predict rainfall during the selection phase. As a result, we secured first place in the competition, surpassing over 200 participants from more than 20 national universities.',
     links: [
       {
-        name: 'Slides',
-        link: 'https://docs.google.com/presentation/d/1BlHTQLov80DPzyMtRfwblcDp1_Zq5TSP1d2mNSw9es0/edit?usp=drive_link',
-      },
-      {
         name: 'Certificate',
         link: 'https://drive.google.com/file/d/14So0j4UBH65SZmJVstaL6sahd_W1ZiFu/view?usp=sharing',
+      },
+      {
+        name: 'Slides',
+        link: 'https://docs.google.com/presentation/d/1BlHTQLov80DPzyMtRfwblcDp1_Zq5TSP1d2mNSw9es0/edit?usp=drive_link',
       },
       {
         name: 'Awarding Announcement',
@@ -118,12 +134,12 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'My team, Three Outliers, utilized NLP techniques to develop a "High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis". As a result, we were able to secure the 2nd place in the competition.',
     links: [
       {
-        name: 'Slides',
-        link: 'https://drive.google.com/file/d/16Ugk3XKhC1eP6crN-LEElWyZTOA_0x4m/view?usp=drive_link',
-      },
-      {
         name: 'Certificate',
         link: 'https://drive.google.com/file/d/1eNNhNaFVrr3KoQ-EtZogt6qFkRJPzDis/view?usp=drive_link',
+      },
+      {
+        name: 'Slides',
+        link: 'https://drive.google.com/file/d/16Ugk3XKhC1eP6crN-LEElWyZTOA_0x4m/view?usp=drive_link',
       },
     ],
     skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Python],
@@ -139,16 +155,16 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Conducted a computer vision research project, utilizing CCTVs to create our own dataset. The objective of our study was to develop a paper titled "Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR".',
     links: [
       {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/18MH45PhX9VFLr8l_xDwbadrw-lkQ-Avj/view?usp=sharing',
+      },
+      {
         name: 'Selection Paper',
         link: 'https://drive.google.com/file/d/1G57th3X3WgnTZwvZypZZSqBeoVZY_eaH/view?usp=drive_link',
       },
       {
         name: 'Final Slides',
         link: 'https://drive.google.com/file/d/18bmjCFo_86BSUao0PAMpzwdZcz1DVdTf/view?usp=drive_link',
-      },
-      {
-        name: 'Certificate',
-        link: 'https://drive.google.com/file/d/18MH45PhX9VFLr8l_xDwbadrw-lkQ-Avj/view?usp=sharing',
       },
     ],
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.Python],
@@ -171,6 +187,22 @@ export const ACHIEVEMENTS: AchievementType[] = [
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python],
   },
   {
+    name: 'Best Lead of Web Development SIG, RISTEK 2023 Q1',
+    issuer: 'RISTEK Fasilkom UI',
+    image: 'images/achievements/ristek/image2023.jpg',
+    date: '2023',
+    medal: 'none',
+    description:
+      'Awarded as the best lead of the Web Development Special Interest Group (SIG) during the first quarter of RISTEK 2023.',
+    links: [
+      {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1pP1CsDuR71Rs0owoqqicpCiUmuYeMwdL/view',
+      },
+    ],
+    skills: [SKILLS.ReactJS, SKILLS.NextJS, SKILLS.TypeScript, SKILLS.Django, SKILLS.PostgreSQL, SKILLS.Redis, SKILLS.TailwindCSS, SKILLS.AWS],
+  },
+  {
     name: '2nd Winner of Data Competition, JOINTS 2023',
     issuer: 'HIMAKOM Universitas Gadjah Mada',
     image: 'images/achievements/joints/image1.jpeg',
@@ -180,16 +212,16 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Achieved second place by implementing an ensemble model for earthquake damage classification and utilizing the CNN method for fire detection in images. Outperformed over 200 participants from more than 20 national universities.',
     links: [
       {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1VB5BHvBtEEx5lG7NSctTJzyiKtSeqvZg/view?usp=drive_link',
+      },
+      {
         name: 'Selection Methodology',
         link: 'https://drive.google.com/file/d/1TCMRumWNdt3XMSphyG5xL2gLgiJ9Lxf2/view?usp=drive_link',
       },
       {
         name: 'Final Slides',
         link: 'https://drive.google.com/file/d/1_tvkBcP26Jn8eUFJVBg3QLRFtQL431S4/view?usp=drive_link',
-      },
-      {
-        name: 'Certificate',
-        link: 'https://drive.google.com/file/d/1VB5BHvBtEEx5lG7NSctTJzyiKtSeqvZg/view?usp=drive_link',
       },
     ],
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.Python],
@@ -204,16 +236,16 @@ export const ACHIEVEMENTS: AchievementType[] = [
       'Utilized a multimodal model consisting of both images and text to assess whether the tweets contained any useful intelligence that could aid in disaster management and recovery e orts.',
     links: [
       {
+        name: 'Certificate',
+        link: 'https://drive.google.com/file/d/1DMiMpirMe6TsKo_pR5QRJywOwKQJYVga/view?usp=drive_link',
+      },
+      {
         name: 'Source Code',
         link: 'https://github.com/edutjie/Ristek-Datathon-2022',
       },
       {
         name: 'Methodology',
         link: 'https://drive.google.com/file/d/19LTAhhMPm24PQYMFjEYVFrstMtsCqrZP/view?usp=drive_link',
-      },
-      {
-        name: 'Certificate',
-        link: 'https://drive.google.com/file/d/1DMiMpirMe6TsKo_pR5QRJywOwKQJYVga/view?usp=drive_link',
       },
     ],
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.Python],

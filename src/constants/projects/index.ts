@@ -3,11 +3,87 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'MyoPong: Goal-Conditioned Synergistic Action and Latent Exploration for Musculoskeletal Table Tennis Control with Training-Free High-Level Policy',
+    image: 'images/projects/myopong/image1.gif',
+    date: '2025',
+    description:
+      'Controlling bio-inspired musculoskeletal systems (MSK) remains a significant challenge in robotics due to their high dimensionality, overactuated nature, and the sparse rewards typical of complex tasks like table tennis. We introduces MyoPong, a framework designed to tackle the MyoChallenge Table-Tennis task using a musculoskeletal model (myoArm and myoTorso) with up to 210 muscles. To overcome the challenges of sparse rewards and high dimensionality, the system combines a training-free, physics-based high-level planner with a low-level PPO actor integrated with muscle synergy extraction and latent exploration (the Lattice method). Experimental results show that while standard PPO baselines fail completely, the proposed hierarchical architecture achieves a near-optimal 94% success rate. The findings demonstrate that combining hierarchical structures with inductive biases in the action and exploration spaces is essential for mastering musculoskeletal control, with the Lattice-based approach emerging as the most energy-efficient solution for balancing task success and minimal control effort.',
+    links: [
+      {
+        name: 'Website',
+        link: 'https://myopong.github.io/',
+      },
+      {
+        name: 'Paper',
+        link: 'https://drive.google.com/file/d/1YqSnlScmCXe63-ODhYDtki8THT16obzC/view?usp=drive_link',
+      },
+      {
+        name: 'Slides',
+        link: 'https://docs.google.com/presentation/d/1De7Lu-FLRBTDBbWex9SmLbfuHvYeMOFJ/edit?usp=sharing&ouid=103019041701168024232&rtpof=true&sd=true',
+      },
+      {
+        name: 'Source Code',
+        link: 'https://github.com/alfonsusrr/MyoPong',
+      },
+    ],
+    skills: [SKILLS.RL, SKILLS.ML, SKILLS.Python, SKILLS.Pytorch],
+    type: 'Project',
+  },
+  {
+    name: 'FrOG: Framework of Open GraphRAG',
+    image: 'images/projects/frog/image1.png',
+    date: '2025',
+    description:
+      'Conducted a study introducing an open GraphRAG, a system that integrates Retrieval-Augmented Generation (RAG) with knowledge graphs (KGs) for question-answering (QA). The research leveraged open source large language models (LLMs) to generate SPARQL queries on Wikidata, DBpedia and Local KGs. Manuscript has been published at the ESWC LLM-TEXT2KG 2025.',
+    links: [
+      {
+        name: 'Paper',
+        link: 'https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf',
+      },
+    ],
+    skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
+    type: 'Research Publication',
+  },
+  {
+    name: 'Towards an Open NLI LLM-based System for KGs: A Case Study of Wikidata',
+    image: 'images/projects/nli-kg/image1.png',
+    date: '2024',
+    description:
+      'Preliminary study for the FRoG: Framework of Open GraphRAG research. Manuscript has been published at the International Seminar on Research of Information Technology and Intelligent Systems (ISRITI) 2024.',
+    links: [
+      {
+        name: 'Proceedings',
+        link: 'https://ieeexplore.ieee.org/document/10963661',
+      },
+    ],
+    skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
+    type: 'Research Publication',
+  },
+  {
+    name: 'Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media',
+    image: 'images/projects/election-analysis/image1.png',
+    date: '2024',
+    description:
+      'Conducted research analytics project employed innovative methods like lexical mutation analysis, stance classification, and civility assessment to provide insights into the dynamics of social media discourse during the election campaign.',
+    links: [
+      {
+        name: 'Slides',
+        link: 'https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view?usp=drive_link',
+      },
+      {
+        name: 'Proposal',
+        link: 'https://drive.google.com/file/d/1ndZ2PceM5PIP7JRswWmhNAPOXqh3pUu-/view?usp=drive_link',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Gephi, SKILLS.Python],
+    type: 'Project',
+  },
+  {
     name: 'Automatic Assignment of Community Reports on the CRM Platform Using Early Fusion Multimodal Transformer',
     image: 'images/projects/crm/image1.png',
-    date: 'May 2024-Jun 2024',
+    date: '2024',
     description:
-      'Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process.',
+      'Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process. Manuscript has been accepted for publication in the Journal of Computer Sciences and Information (JIKI) and expected to be published in the next volume in February 2026.',
     links: [
       {
         name: 'Paper',
@@ -19,14 +95,13 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.CV,
       SKILLS.NLP,
       SKILLS.Python,
-      SKILLS.HuggingFace,
     ],
-    type: 'AI',
+    type: 'Research Publication',
   },
   {
     name: 'PilgrimPal - Umroh AI App',
     image: 'images/projects/pilgrimpal/image1.jpeg',
-    date: 'Jan 2024-Feb 2024',
+    date: '2024',
     description:
       'PilgrimPal is an AI-based mobile application that aims to help pilgrims with their activities related to Umrah. This app contributes to helping pilgrims communicate, informing them of crowdedness in an area, and identifying their future needs. Our two main features are live CCTV crowd detection and AI chatbot assistant.',
     links: [
@@ -47,12 +122,12 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Redis,
       SKILLS.GCP,
     ],
-    type: 'All',
+    type: 'Project',
   },
   {
-    name: 'Transjakarta App',
+    name: 'Transjakarta Demo App',
     image: 'images/projects/tj app/image1.png',
-    date: 'Oct 2023-Present',
+    date: '2023',
     description:
       'Developing an app for PT Transjakarta that leverages an AI model and live GPS to provide live bus location, ETA, and nearby bus stops.',
     skills: [
@@ -63,12 +138,12 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.Redis,
       SKILLS.AWS,
     ],
-    type: 'SE',
+    type: 'Project',
   },
   {
     name: 'Duren Search Engine',
     image: 'images/projects/duren/image1.png',
-    date: 'Dec 2023',
+    date: '2023',
     description:
       'Developed a search engine website that utilizes a Learning to Rank technique. The technique is trained and indexed using the WikiCLIR dataset.',
     links: [
@@ -88,14 +163,13 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.FastAPI,
       SKILLS.Redis,
       SKILLS.GCP,
-      SKILLS.HuggingFace,
     ],
-    type: 'All',
+    type: 'Project',
   },
   {
     name: 'Image-based Drugs Search Engine using OCR and Levenshtein Algorithm',
     image: 'images/projects/drug ocr/image1.png',
-    date: 'Oct 2023',
+    date: '2023',
     description:
       'Developed an OCR-based drug brand detector for the Kasir Pintar® company during the Airnology 2.0 Data Competition.',
     links: [
@@ -109,12 +183,12 @@ export const PROJECTS: ProjectType[] = [
       },
     ],
     skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python, SKILLS.OpenCV],
-    type: 'AI',
+    type: 'Project',
   },
   {
     name: 'High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis',
     image: 'images/projects/cb sentiment analysis/image1.png',
-    date: 'Oct 2023',
+    date: '2023',
     description:
       'Conducted an experimentona "High-Accuracy, Low-Cost" model for sentiment analysis using self-acquired and pseudo-labeled data obtained through web scraping. The focus of the analysis was on the Indonesian logistics industry.',
     links: [
@@ -127,35 +201,33 @@ export const PROJECTS: ProjectType[] = [
         link: 'https://docs.google.com/document/d/1b2yb6K0zvnY7AKaKJ1S5jNREaXFXh69Dmo1Q34D6eEE/edit?usp=sharing',
       },
     ],
-    skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Python, SKILLS.HuggingFace],
-    type: 'AI',
+    skills: [SKILLS.ML, SKILLS.NLP, SKILLS.Python],
+    type: 'Project',
   },
   {
     name: 'Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR',
     image: 'images/projects/helm detection/image1.png',
-    date: 'Jul 2023',
+    date: '2024',
     description:
-      'Conducted research for the purpose of GEMASTIK XVI selection. Utilized CCTVs from Bali Tower to create our own dataset.',
+      'Conducted research that leveraged Transformer-based object detection model, Deformable DETR to detect helmet usage on motorcycle riders. Utilized CCTVs from Bali Tower to create our own dataset. Manuscript published for publication to the National Student Performance Bulletin in Information and Communication Technology.',
     links: [
       {
-        name: 'Paper',
-        link: 'https://drive.google.com/file/d/1G57th3X3WgnTZwvZypZZSqBeoVZY_eaH/view?usp=drive_link',
+        name: 'Journal',
+        link: 'https://buletingemastik.id/index.php/bg/article/view/202404.009',
       },
     ],
     skills: [
       SKILLS.ML,
       SKILLS.CV,
       SKILLS.Python,
-      SKILLS.OpenCV,
       SKILLS.Pytorch,
-      SKILLS.HuggingFace,
     ],
-    type: 'AI',
+    type: 'Research Publication',
   },
   {
     name: 'Data Analytics Dashboard Competition Grader Website, COMPFEST 15',
     image: 'images/projects/dad/image1.png',
-    date: 'Jun 2023',
+    date: '2023',
     description:
       "This website serves as the platform for the COMPFEST 15 Data Analytics Dash Competition. It is designed to evaluate participants' queries, provide information about the competition, and offer details about the questions. Developed the website using Next.js 13, Fiber, and raw query builder PGX.",
     links: [
@@ -171,12 +243,12 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.PostgreSQL,
       SKILLS.Redis,
     ],
-    type: 'SE',
+    type: 'Project',
   },
   {
     name: 'Pesta Rakyat 2022 & 2023 Website, PERAK 2023',
     image: 'images/projects/perak/image1.png',
-    date: 'May 2022, Jun 2023',
+    date: '2022 & 2023',
     description:
       'Developed the 2022 website and led the team to make the 2023 website to accommodate the Pesta Rakyat Komputer event. It had features like mini e-commerce, a leaderboard, built-in games, a Scan Me game, and many more. Developed the website using T3stack (Next.js + tRPC +Prisma) and utilized NextAuth.js for authentication.',
     links: [
@@ -194,12 +266,12 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.TailwindCSS,
       SKILLS.Strapi,
     ],
-    type: 'SE',
+    type: 'Project',
   },
   {
     name: 'Segmentation Self-Driving Car',
     image: 'images/projects/segmentation car/image1.png',
-    date: 'Aug 2022',
+    date: '2022',
     description:
       'This project involved training a semantic segmentation model using an image dataset from Cityscapes. Three experiments were conducted using three di erent models namely U-Net, FCN8s, and U-Net x Mobile-Net V2.',
     links: [
@@ -219,6 +291,6 @@ export const PROJECTS: ProjectType[] = [
       SKILLS.OpenCV,
       SKILLS.Tensorflow,
     ],
-    type: 'AI',
+    type: 'Project',
   },
 ]

@@ -7,7 +7,7 @@ export interface ProjectType {
   description?: string
   skills: SkillTypeObject[]
   links?: LinkType[]
-  type: 'AI' | 'SE' | 'All'
+  type: 'Research Publication' | 'Project'
 }
 
 interface LinkType {
