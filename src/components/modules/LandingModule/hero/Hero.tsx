@@ -30,16 +30,16 @@ const Hero = () => {
     <div className="w-full relative flex justify-center">
       {/* Hero-Specific Ambient Background Overlay */}
       <div
-        className="aura-background-component absolute top-0 left-0 w-full h-[80vh] min-h-[800px] -z-[5] brightness-110 opacity-70 mix-blend-screen pointer-events-none"
+        className="aura-background-component absolute top-0 left-0 w-full h-[100vh] min-h-[800px] -z-[5] brightness-110 opacity-70 mix-blend-screen pointer-events-none"
         data-alpha-mask="80"
         style={{
-          maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 70%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 5%, black 70%, transparent)',
+          maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
         }}
       >
         <div data-us-project="bmaMERjX2VZDtPrh4Zwx" className="absolute w-full h-full left-0 top-0 -z-10"></div>
         {/* Radial vignette just for the hero section */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(3,7,18,0.8)_50%,rgba(3,7,18,1)_100%)] pointer-events-none z-0"></div>
+        {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(3,7,18,0.8)_50%,rgba(3,7,18,1)_100%)] pointer-events-none z-0"></div> */}
       </div>
 
       <section
@@ -58,20 +58,20 @@ const Hero = () => {
               <span className="inline-flex h-2.5 w-2.5 bg-blue-500 rounded-full relative"></span>
             </span>
             <span className="uppercase text-xs font-mono text-blue-400 tracking-widest">
-              AI Engineer &amp; Researcher
-            </span>
-          </div>
-
-          <div className="animate-on-scroll" style={{ animation: 'animationIn 0.8s ease-out 0.3s both' }}>
-            <h1 className="text-5xl md:text-[80px] leading-[1] font-semibold text-transparent bg-clip-text tracking-tight bg-gradient-to-b from-white via-slate-200 to-slate-500 pb-2 font-sans">
               <Typewriter
                 options={{
-                  strings: ['Eduardus<br>Tjitrahardja', '徐和平'],
+                  strings: ['AI Engineer & Researcher'],
                   autoStart: true,
                   loop: true,
                   delay: 50,
                 }}
               />
+            </span>
+          </div>
+
+          <div className="animate-on-scroll" style={{ animation: 'animationIn 0.8s ease-out 0.3s both' }}>
+            <h1 className="text-5xl md:text-[80px] leading-[1] font-semibold text-transparent bg-clip-text tracking-tight bg-gradient-to-b from-white via-slate-200 to-slate-500 pb-2 font-sans">
+              Eduardus Tjitrahardja
             </h1>
             <div className="flex flex-col mt-5 gap-0 w-fit">
               {/* Education timeline connector */}
@@ -134,14 +134,31 @@ const Hero = () => {
               href="https://docs.google.com/document/d/1cqlbjsTYAD8AeFo9leEdtL_aYDpoy1_wxr4BWrC8-d4/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-6 py-3 text-sm font-medium text-white rounded-full bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 hover:brightness-110 transition-all shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] overflow-hidden cursor-target"
+              className="group relative inline-flex p-[4px] rounded-full bg-blue-900/20 border border-blue-500/20 shadow-[0_0_20px_-5px_rgba(59,130,246,0.3)] cursor-target transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)] hover:border-blue-400/40 hover:bg-blue-900/30"
             >
-              <span className="relative z-10 flex items-center gap-2 font-sans">
-                View Resume
-                <span className="iconify solar--arrow-right-linear group-hover:translate-x-1 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 12h16m0 0l-6-6m6 6l-6 6" /></svg>
+              {/* Floating particles around the button */}
+              <div className="absolute inset-0 overflow-visible pointer-events-none z-0">
+                <svg className="absolute -top-3 left-8 w-2 h-2 text-blue-300 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
+                <svg className="absolute bottom-1 -right-2 w-2.5 h-2.5 text-blue-200 animate-[pulse_1.5s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
+                <svg className="absolute top-2 -right-4 w-1.5 h-1.5 text-white animate-[pulse_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
+                <svg className="absolute -bottom-4 left-12 w-1.5 h-1.5 text-blue-400 animate-[pulse_2.5s_ease-in-out_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/></svg>
+              </div>
+
+              {/* Inner wrapper for spinning border */}
+              <div className="relative rounded-full p-[1px] overflow-hidden w-full z-10">
+                {/* Spinning white light */}
+                <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_80%,rgba(255,255,255,0.8)_95%,transparent_100%)]" />
+                
+                {/* Actual button surface */}
+                <span className="relative flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white rounded-full bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] h-full w-full transition-all group-hover:from-blue-500 group-hover:to-blue-400">
+                  <span className="relative z-10 flex items-center gap-2 drop-shadow-md">
+                    View Resume
+                    <span className="iconify solar--arrow-right-linear group-hover:translate-x-1 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 12h16m0 0l-6-6m6 6l-6 6" /></svg>
+                    </span>
+                  </span>
                 </span>
-              </span>
+              </div>
             </a>
             <div className="flex items-center gap-3">
               <a
