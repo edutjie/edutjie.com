@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           ))}
         </div>
         <p className="text-xs text-slate-600 font-mono uppercase tracking-widest text-center">
-          © {new Date().getFullYear()} Portfolio Website
+          © {new Date().getFullYear()} Eduardus Tjitrahardja
         </p>
       </div>
     </footer>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
 import { Inter, Rock_Salt } from 'next/font/google'
 import './globals.css'
-import { CustomCursor, SmoothScroll, Footer, Navbar, UnicornScript } from '@elements'
+import { CustomCursor, SmoothScroll, Footer, Navbar, UnicornScript, ScrollToTop } from '@elements'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'], variable: '--font-rock-salt' })
@@ -48,6 +48,7 @@ export default function RootLayout({
 
         <Navbar />
         {children}
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
