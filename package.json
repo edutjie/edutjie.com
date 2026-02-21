@@ -18,9 +18,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.17",
-    "@iconify/icons-solar": "^1.2.3",
-    "@iconify/react": "^6.0.2",
     "@types/three": "^0.183.0",
     "gsap": "^3.14.2",
     "lenis": "^1.3.17",

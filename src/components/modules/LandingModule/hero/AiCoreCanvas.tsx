@@ -20,7 +20,7 @@ export const AiCoreCanvas = () => {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
     renderer.setSize(container.clientWidth, container.clientHeight)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
     container.appendChild(renderer.domElement)
 
     // --- 1. Torus Knot AI Core ---
@@ -158,15 +158,26 @@ export const AiCoreCanvas = () => {
       }, 5000)
       cleanupToggle = () => clearInterval(toggleInterval)
     }, 1000)
-    let cleanupToggle = () => {}
+    let cleanupToggle = () => { }
 
 
     const clock = new THREE.Clock()
     let animationFrameId: number
+    let isVisible = true
 
-    // --- 5. Animation Loop ---
+    // Pause rendering when the canvas is off-screen to save GPU/CPU
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        isVisible = entries[0].isIntersecting
+        if (isVisible) clock.start()
+      },
+      { threshold: 0 }
+    )
+    intersectionObserver.observe(container)
+
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate)
+      if (!isVisible) return  // skip rendering when canvas is off-screen
       const elapsedTime = clock.getElapsedTime()
 
       const baseTorusScale = 1 + Math.sin(elapsedTime * 1.5) * 0.03
@@ -230,6 +241,7 @@ export const AiCoreCanvas = () => {
       window.removeEventListener('resize', onResize)
       clearTimeout(initialTimeout)
       cleanupToggle()
+      intersectionObserver.disconnect()
       cancelAnimationFrame(animationFrameId)
       if (container && renderer.domElement) {
         container.removeChild(renderer.domElement)
