@@ -1,6 +1,6 @@
 "use client";
 
-import type React from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../../lib/utils";
 
@@ -26,8 +26,23 @@ export function FallingPattern({
     // eslint-disable-next-line react/prop-types
     className,
 }: FallingPatternProps) {
-    // Generate background image style with customizable color
-    const generateBackgroundImage = () => {
+    // Pause animation when the section is off-screen to save GPU
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.01 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
+    // Memoize the expensive background-image string — only recompute when `color` changes
+    const backgroundImage = useMemo(() => {
         const patterns = [
             // Row 1
             `radial-gradient(4px 100px at 0px 235px, ${color}, transparent)`,
@@ -78,55 +93,23 @@ export function FallingPattern({
             `radial-gradient(4px 100px at 300px 210px, ${color}, transparent)`,
             `radial-gradient(1.5px 1.5px at 150px 105px, ${color} 100%, transparent 150%)`,
         ];
-
         return patterns.join(", ");
-    };
+    }, [color]);
 
-    const backgroundSizes = [
-        "300px 235px",
-        "300px 235px",
-        "300px 235px",
-        "300px 252px",
-        "300px 252px",
-        "300px 252px",
-        "300px 150px",
-        "300px 150px",
-        "300px 150px",
-        "300px 253px",
-        "300px 253px",
-        "300px 253px",
-        "300px 204px",
-        "300px 204px",
-        "300px 204px",
-        "300px 134px",
-        "300px 134px",
-        "300px 134px",
-        "300px 179px",
-        "300px 179px",
-        "300px 179px",
-        "300px 299px",
-        "300px 299px",
-        "300px 299px",
-        "300px 215px",
-        "300px 215px",
-        "300px 215px",
-        "300px 281px",
-        "300px 281px",
-        "300px 281px",
-        "300px 158px",
-        "300px 158px",
-        "300px 158px",
-        "300px 210px",
-        "300px 210px",
-    ].join(", ");
+    const backgroundSizes =
+        "300px 235px, 300px 235px, 300px 235px, 300px 252px, 300px 252px, 300px 252px, 300px 150px, 300px 150px, 300px 150px, 300px 253px, 300px 253px, 300px 253px, 300px 204px, 300px 204px, 300px 204px, 300px 134px, 300px 134px, 300px 134px, 300px 179px, 300px 179px, 300px 179px, 300px 299px, 300px 299px, 300px 299px, 300px 215px, 300px 215px, 300px 215px, 300px 281px, 300px 281px, 300px 281px, 300px 158px, 300px 158px, 300px 158px, 300px 210px, 300px 210px";
 
     const startPositions =
         "0px 220px, 3px 220px, 151.5px 337.5px, 25px 24px, 28px 24px, 176.5px 150px, 50px 16px, 53px 16px, 201.5px 91px, 75px 224px, 78px 224px, 226.5px 230.5px, 100px 19px, 103px 19px, 251.5px 121px, 125px 120px, 128px 120px, 276.5px 187px, 150px 31px, 153px 31px, 301.5px 120.5px, 175px 235px, 178px 235px, 326.5px 384.5px, 200px 121px, 203px 121px, 351.5px 228.5px, 225px 224px, 228px 224px, 376.5px 364.5px, 250px 26px, 253px 26px, 401.5px 105px, 275px 75px, 278px 75px, 426.5px 180px";
     const endPositions =
         "0px 6800px, 3px 6800px, 151.5px 6917.5px, 25px 13632px, 28px 13632px, 176.5px 13758px, 50px 5416px, 53px 5416px, 201.5px 5491px, 75px 17175px, 78px 17175px, 226.5px 17301.5px, 100px 5119px, 103px 5119px, 251.5px 5221px, 125px 8428px, 128px 8428px, 276.5px 8495px, 150px 9876px, 153px 9876px, 301.5px 9965.5px, 175px 13391px, 178px 13391px, 326.5px 13540.5px, 200px 14741px, 203px 14741px, 351.5px 14848.5px, 225px 18770px, 228px 18770px, 376.5px 18910.5px, 250px 5082px, 253px 5082px, 401.5px 5161px, 275px 6375px, 278px 6375px, 426.5px 6480px";
 
+    // CSS-only dot-grid overlay — visually identical to the old backdrop-filter version
+    // but entirely paint-based (no GPU composition needed)
+    const dotSize = 8 * density;
+
     return (
-        <div className={cn("relative h-full w-full p-1", className)}>
+        <div ref={containerRef} className={cn("relative h-full w-full p-1", className)}>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -137,21 +120,30 @@ export function FallingPattern({
                     className="relative w-full h-full z-0 pointer-events-none"
                     style={{
                         backgroundColor,
-                        backgroundImage: generateBackgroundImage(),
+                        backgroundImage,
                         backgroundSize: backgroundSizes,
-                        animation: `falling-pattern ${duration}s linear infinite`
+                        animationPlayState: isVisible ? "running" : "paused",
+                        animation: `falling-pattern ${duration}s linear infinite`,
+                        willChange: "background-position",
+                        transform: "translateZ(0)",
+                        // filter: blur() on the element itself is much cheaper than
+                        // backdropFilter: blur() — same soft visual, no viewport compositing
+                        filter: `blur(${blurIntensity})`,
                     }}
                 />
             </motion.div>
+
+            {/* Dot-grid overlay: punches transparent holes in the background color,
+                revealing the blurred falling lines through them */}
             <div
-                className="absolute inset-0 z-1"
+                className="absolute inset-0 z-1 pointer-events-none"
                 style={{
-                    backdropFilter: `blur(${blurIntensity})`,
                     backgroundImage: `radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, ${backgroundColor} 2px)`,
-                    backgroundSize: `${8 * density}px ${8 * density}px`,
+                    backgroundSize: `${dotSize}px ${dotSize}px`,
                 }}
             />
-            {/* Inject falling pattern keyframes globally through standard style tag to avoid styled-jsx issues in App Router */}
+
+            {/* Inject falling pattern keyframes globally */}
             <style dangerouslySetInnerHTML={{
                 __html: `
                 @keyframes falling-pattern {

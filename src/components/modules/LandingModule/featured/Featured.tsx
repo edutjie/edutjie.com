@@ -57,11 +57,8 @@ export default function Featured() {
     return (
         <section id="featured" className="relative w-full min-h-screen pb-24 flex flex-col justify-center items-center overflow-x-hidden text-white z-10">
             {/* Dark background fading out to transparent at the bottom */}
-            <div className="absolute inset-0 z-0 bg-[#0A0A0B] pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)' }}>
-                <div
-                    className="absolute inset-0 z-0 pointer-events-none"
-                    style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)' }}
-                >
+            <div className="absolute inset-0 z-0 pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)' }}>
+                <div className="absolute inset-0 z-0 pointer-events-none falling-pattern-mask">
                     <FallingPattern color="rgba(255, 255, 255, 1)" backgroundColor="#0A0A0B" duration={120} blurIntensity="1em" density={1} />
                 </div>
             </div>
@@ -115,8 +112,8 @@ export default function Featured() {
 
             {/* Decorative background styling to match site aura - hidden here to let the global background shine through the transparent bottom */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-50" style={{ maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)' }}>
-                <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
+                <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 blur-[80px] rounded-full" style={{ willChange: "transform", transform: "translateZ(0) translate(-50%, -50%)" }} />
+                <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-500/10 blur-[80px] rounded-full" style={{ willChange: "transform", transform: "translateZ(0) translate(50%, 50%)" }} />
             </div>
         </section>
     );

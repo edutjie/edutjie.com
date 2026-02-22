@@ -199,7 +199,8 @@ export function FocusRail({
                         <img
                             src={activeItem.imageSrc}
                             alt=""
-                            className="h-full w-full object-cover blur-[100px] saturate-[1.5] scale-[1.5] pointer-events-none"
+                            className="h-full w-full object-cover blur-[60px] saturate-[1.5] scale-[1.2] pointer-events-none"
+                            style={{ willChange: "opacity", transform: "translateZ(0) scale(1.2)" }}
                         />
                     </motion.div>
                 </AnimatePresence>
@@ -214,6 +215,7 @@ export function FocusRail({
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.2}
                     onDragEnd={onDragEnd}
+                    style={{ willChange: "transform", transform: "translateZ(0)" }}
                 >
                     {visibleIndices.map((offset) => {
                         const absIndex = active + offset;
@@ -232,7 +234,9 @@ export function FocusRail({
                         const rotateY = offset * -20;
 
                         const opacity = isCenter ? 1 : Math.max(0.1, 1 - dist * 0.5);
-                        const blur = isCenter ? 0 : dist * 6;
+                        // Keep blur/brightness out of framer-motion animate prop.
+                        // CSS transitions run on the compositor thread — much cheaper on mobile.
+                        const blur = isCenter ? 0 : dist * 4;
                         const brightness = isCenter ? 1 : 0.5;
 
                         return (
@@ -246,10 +250,9 @@ export function FocusRail({
                                 animate={{
                                     x: xOffset,
                                     z: zOffset,
-                                    scale: scale, // Trigger "tap" via TAP_SPRING when this changes
+                                    scale: scale,
                                     rotateY: rotateY,
                                     opacity: opacity,
-                                    filter: `blur(${blur}px) brightness(${brightness})`,
                                 }}
                                 transition={
                                     ((val: string) => {
@@ -259,6 +262,11 @@ export function FocusRail({
                                 }
                                 style={{
                                     transformStyle: "preserve-3d",
+                                    // Apply filter via CSS transition (compositor path)
+                                    // rather than framer-motion JS animation
+                                    filter: `blur(${blur}px) brightness(${brightness})`,
+                                    transition: "filter 0.4s ease",
+                                    willChange: "transform, opacity",
                                 }}
                                 onClick={() => {
                                     if (offset !== 0) setActive((p) => p + offset);

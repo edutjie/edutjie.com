@@ -287,3 +287,17 @@
     height: 100%;
   }
 }
+
+/* FallingPattern wrapper: starts fully transparent on mobile,
+   partially opaque (0.5) at the top on md+ so it blends into the dark section bg */
+.falling-pattern-mask {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .falling-pattern-mask {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, black 15%, black 85%, transparent 100%);
+  }
+}

@@ -30,16 +30,15 @@ const Hero = () => {
     <div className="w-full relative flex justify-center">
       {/* Hero-Specific Ambient Background Overlay */}
       <div
-        className="aura-background-component absolute top-0 left-0 w-full h-[100vh] min-h-[800px] -z-[5] brightness-110 opacity-30 md:opacity-70 mix-blend-screen pointer-events-none"
-        data-alpha-mask="80"
+        className="aura-background-component absolute top-0 left-0 w-full h-[100vh] min-h-[800px] -z-[5] opacity-30 md:opacity-70 md:mix-blend-screen pointer-events-none"
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       >
-        <div data-us-project="bmaMERjX2VZDtPrh4Zwx" className="absolute w-full h-full left-0 top-0 -z-10"></div>
-        {/* Radial vignette just for the hero section */}
-        {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(3,7,18,0.8)_50%,rgba(3,7,18,1)_100%)] pointer-events-none z-0"></div> */}
+        <div data-us-project="bmaMERjX2VZDtPrh4Zwx" className="absolute w-full h-full left-0 top-0 -z-10" />
       </div>
 
       <section
@@ -94,7 +93,11 @@ const Hero = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400/80 leading-none">M.S.</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400/80 leading-none">M.S.</span>
+                        <span className="text-[10px] text-blue-400/40 leading-none">•</span>
+                        <span className="text-[11px] font-mono tracking-widest text-blue-400/60 leading-none">2025–2027</span>
+                      </div>
                       <span className="text-white/90 font-medium text-sm leading-tight tracking-tight">Advanced Computing</span>
                       <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider leading-none">Tsinghua · 清华大学</span>
                     </div>
@@ -112,7 +115,11 @@ const Hero = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400/80 leading-none">B.Sc.</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400/80 leading-none">B.Sc.</span>
+                        <span className="text-[10px] text-cyan-400/40 leading-none">•</span>
+                        <span className="text-[11px] font-mono tracking-widest text-cyan-400/60 leading-none">2021–2025</span>
+                      </div>
                       <span className="text-white/90 font-medium text-sm leading-tight tracking-tight">Computer Science</span>
                       <span className="text-slate-500 text-[10px] font-mono uppercase tracking-wider leading-none">University of Indonesia</span>
                     </div>
