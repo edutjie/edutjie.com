@@ -79,6 +79,10 @@ interface FocusRailProps {
 
 /**
  * Helper to wrap indices (e.g., -1 becomes length-1)
+ * @param {number} min - The minimum bound (inclusive)
+ * @param {number} max - The maximum bound (exclusive)
+ * @param {number} v - The value to wrap
+ * @return {number} The wrapped value within [min, max)
  */
 function wrap(min: number, max: number, v: number) {
     const rangeSize = max - min;

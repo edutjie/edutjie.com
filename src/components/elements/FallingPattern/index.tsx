@@ -23,6 +23,7 @@ export function FallingPattern({
     duration = 150,
     blurIntensity = "1em",
     density = 1,
+    // eslint-disable-next-line react/prop-types
     className,
 }: FallingPatternProps) {
     // Generate background image style with customizable color
