@@ -58,7 +58,7 @@ export default function Featured() {
         <section id="featured" className="relative w-full min-h-screen pb-24 flex flex-col justify-center items-center overflow-x-hidden text-white z-10">
             {/* Dark background fading out to transparent at the bottom */}
             <div className="absolute inset-0 z-0 pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)' }}>
-                <div className="absolute inset-0 z-0 pointer-events-none falling-pattern-mask">
+                <div className="absolute inset-0 z-0 pointer-events-none falling-pattern-mask hidden md:block">
                     <FallingPattern color="rgba(255, 255, 255, 1)" backgroundColor="#0A0A0B" duration={120} blurIntensity="1em" density={1} />
                 </div>
             </div>
