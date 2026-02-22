@@ -57,16 +57,17 @@ export default function Featured() {
     return (
         <section id="featured" className="relative w-full min-h-screen pb-24 flex flex-col justify-center items-center overflow-x-hidden text-white z-10">
             {/* Dark background fading out to transparent at the bottom */}
-            <div className="absolute inset-0 z-0 bg-[#0A0A0B] pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)' }} />
-
-            {/* Title Container with local Falling Pattern Background */}
-            <div className="relative w-full flex flex-col items-center justify-center py-20">
+            <div className="absolute inset-0 z-0 bg-[#0A0A0B] pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)' }}>
                 <div
                     className="absolute inset-0 z-0 pointer-events-none"
                     style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)' }}
                 >
                     <FallingPattern color="rgba(255, 255, 255, 1)" backgroundColor="#0A0A0B" duration={120} blurIntensity="1em" density={1} />
                 </div>
+            </div>
+
+            {/* Title Container with local Falling Pattern Background */}
+            <div className="relative w-full flex flex-col items-center justify-center py-20">
 
                 {/* Title Content */}
                 <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 text-center md:px-6">
