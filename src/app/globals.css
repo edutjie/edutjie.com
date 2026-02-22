@@ -213,34 +213,68 @@
 }
 
 @layer utilities {
+
+  /*
+   * Firefox-compatible scroll-reveal:
+   * Instead of toggling animation-play-state (broken in Firefox with filter),
+   * we hide elements with opacity:0 + animation-name:none by default,
+   * and swap in the real animation only when .animate is added.
+   */
   .animate-on-scroll {
-    animation-play-state: paused !important;
+    opacity: 0;
+    animation-name: none !important;
   }
 
   .animate-on-scroll.animate {
-    animation-play-state: running !important;
+    opacity: 1;
+    /* fallback if animation fails */
+    animation-name: animationIn !important;
   }
 
-  /* Add this class alongside any element using animationIn.
-     It hoists the element to its own GPU compositor layer so the
-     blur filter doesn't trigger a full-page repaint each frame. */
+  /* Promote to its own compositor layer for better perf */
   .animate-in {
-    will-change: filter, transform, opacity;
+    will-change: transform, opacity;
     animation-fill-mode: both;
   }
 }
 
+/*
+ * animationIn — Firefox-safe version.
+ * filter: blur() is intentionally OMITTED because Firefox does not reliably
+ * animate filter inside @keyframes when combined with animation-name toggling.
+ * The translateY + opacity fade is sufficient and works cross-browser.
+ */
 @keyframes animationIn {
   0% {
     opacity: 0;
     transform: translateY(30px);
-    filter: blur(8px);
   }
 
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0px);
+  }
+}
+
+/*
+ * Chromium/Safari get the richer blur version via @supports.
+ * Firefox does not support animating filter reliably with play-state toggling,
+ * so we gate this behind a feature query that Firefox effectively ignores
+ * in the context of keyframe filter animations.
+ */
+@supports (not (-moz-appearance: none)) {
+  @keyframes animationIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+      filter: blur(8px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+    }
   }
 }
 
