@@ -32,7 +32,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "GEMASTIK XVII Grand Champion",
         description: "Fasilkom UI wins Grand Champion Title at GEMASTIK 17. Secured 1st place in Data Mining category with team 'Three Outliers'.",
         meta: "Champion • Data Mining",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D562DAQFokVEYPjWlag/profile-treasury-image-shrink_480_480/profile-treasury-image-shrink_480_480/0/1727796583883?e=1772355600&v=beta&t=s96Zvpn37tMy9qXpuiiFc6c-GoZ5cf_SmawiSNxw4_w",
+        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHRzms5WzMTDQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1727533467934?e=1773878400&v=beta&t=co_Hv0OvsbgdmFBeTlhzAay6H9jXUyoniZ7O-cs0Ru4",
         href: "https://cs.ui.ac.id/2024/09/26/fakultas-ilmu-komputer-ui-raih-gelar-juara-umum-gemastik-17-membawa-pulang-9-medali/",
     },
     {
