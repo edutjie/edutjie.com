@@ -1,6 +1,6 @@
 // Featured.tsx
 import React from 'react';
-import { FocusRail, type FocusRailItem, FallingPattern } from "../../../elements";
+import { FocusRail, type FocusRailItem } from "../../../elements";
 
 const FEATURED_ITEMS: FocusRailItem[] = [
     {
