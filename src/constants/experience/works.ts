@@ -75,7 +75,7 @@ const WorkExperience: SingularExperienceType[] = [
     roles: [
       {
         name: 'AI Engineer Intern',
-        date: 'Sep 2024 - Present',
+        date: 'Sep 2024 - Dec 2024',
         description: [
           'Worked directly under the CTO to research, design, and develop an advanced Retrieval-Augmented Generation (RAG) system leveraging diverse data sources, including social media, news outlets, and legal documents.',
         ],
