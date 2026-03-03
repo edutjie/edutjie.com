@@ -29,7 +29,7 @@ const Hero = () => {
   return (
     <div className="w-full relative flex justify-center">
       {/* Hero-Specific Ambient Background Overlay */}
-      <div
+      {/* <div
         className="aura-background-component absolute top-0 left-0 w-full h-[100vh] min-h-[800px] -z-[5] opacity-30 md:opacity-70 md:mix-blend-screen pointer-events-none"
         style={{
           maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
@@ -39,7 +39,7 @@ const Hero = () => {
         }}
       >
         <div data-us-project="bmaMERjX2VZDtPrh4Zwx" className="absolute w-full h-full left-0 top-0 -z-10" />
-      </div>
+      </div> */}
 
       <section
         id="home"
