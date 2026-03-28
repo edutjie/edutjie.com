@@ -11,6 +11,9 @@ const EXPERIENCE_TABS = [
   { label: 'Volunteer / Org', value: 'Org' },
 ]
 
+const FADE_IN_DURATION = 0.35
+const FADE_IN_STAGGER = 0.05
+
 const Experiences = () => {
   const [activeTab, setActiveTab] = useState<'Work' | 'Org'>('Work')
   const containerRef = useRef<HTMLDivElement>(null)
@@ -47,7 +50,7 @@ const Experiences = () => {
             }
           })
         },
-        { threshold: 0.1, rootMargin: '0px 0px -5% 0px' }
+        { threshold: 0.05, rootMargin: '0px 0px -2% 0px' }
       )
 
       const elements = document.querySelectorAll('.animate-on-scroll')
@@ -67,7 +70,7 @@ const Experiences = () => {
     <section id="experience" className="w-full max-w-5xl z-10 pt-32 px-6 mx-auto" ref={containerRef}>
       <div
         className="mb-12 text-center animate-on-scroll"
-        style={{ animation: 'animationIn 0.8s ease-out 0.1s both' }}
+        style={{ animation: `animationIn ${FADE_IN_DURATION}s ease-out 0s both` }}
       >
         <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-4">
           Experience
@@ -95,7 +98,7 @@ const Experiences = () => {
           <div
             key={index}
             className="relative cursor-target group/item animate-on-scroll"
-            style={{ animation: `animationIn 0.8s ease-out ${0.2 + index * 0.1}s both` }}
+            style={{ animation: `animationIn ${FADE_IN_DURATION}s ease-out ${index * FADE_IN_STAGGER}s both` }}
           >
             <div className="absolute -left-8 md:-left-12 top-8 w-4 h-4 rounded-full bg-slate-900 border-[3px] border-white/20 group-hover/item:border-blue-400 group-hover/item:bg-blue-500 group-hover/item:scale-[1.3] transition-all duration-500 z-20 group-hover/item:shadow-[0_0_20px_rgba(59,130,246,1)] -translate-x-1/2 -translate-y-1/2 block"></div>
             <div className="ios-glass p-5 md:p-8 rounded-3xl border border-white/10 transition-all duration-500 group-hover/item:-translate-y-2 group-hover/item:bg-slate-800/40 group-hover/item:border-blue-500/50 group-hover/item:shadow-[0_20px_40px_-10px_rgba(59,130,246,0.15)] relative overflow-hidden">

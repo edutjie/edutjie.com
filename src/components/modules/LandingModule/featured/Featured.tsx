@@ -1,4 +1,6 @@
 // Featured.tsx
+'use client';
+
 import React from 'react';
 import { FocusRail, type FocusRailItem } from "../../../elements";
 
@@ -8,7 +10,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "M.S. at Tsinghua University",
         description: "Commenced M.S. at Tsinghua University focusing on Artificial Intelligence after graduating in 3.5 years from University of Indonesia.",
         meta: "Academic • Journey",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQFSfqtyaMB-lw/feedshare-shrink_1280/B56ZkIPbR5HcAs-/0/1756779890956?e=1773273600&v=beta&t=ubm-IITDPT6XIeynl27NvcUlqY0_ZtYEqKdp-mQyz-A",
+        imageSrc: "assets/images/featured/edutsinghua.jpg",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7368468929901445120/",
     },
     {
@@ -16,7 +18,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "FrOG: Framework of Open GraphRAG",
         description: "Published Bachelor's Thesis at the TEXT2KG workshop & BiKE Challenge at ESWC 2025 in Slovenia.",
         meta: "Research • Publication",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHR-yURP87AkA/feedshare-shrink_2048_1536/B56ZkPHPNqHUA4-/0/1756895181120?e=1773273600&v=beta&t=JqkK6lUuWWahKqTZUQ1f9l7ioabyJ1O48qnyuX4XbE8",
+        imageSrc: "assets/images/featured/frog.jpg",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7368970289797345281/",
     },
     {
@@ -24,7 +26,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "Coaching Indonesian National AI Team",
         description: "Guided Indonesia's young talents at IOAI 2025 Beijing, bringing home 3 Silver and 1 Bronze medals.",
         meta: "Mentorship • IOAI",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHSxSV-kcazqg/feedshare-shrink_1280/B56ZiuE714G4Aw-/0/1755267196135?e=1773273600&v=beta&t=TNQA0lbY0a0bw3ci_8DkD4kas4YnAvuZ0cEL6_IIgK0",
+        imageSrc: "assets/images/featured/ioai.jpg",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7362124231846846464/",
     },
     {
@@ -32,7 +34,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "GEMASTIK XVII Grand Champion",
         description: "Fasilkom UI wins Grand Champion Title at GEMASTIK 17. Secured 1st place in Data Mining category with team 'Three Outliers'.",
         meta: "Champion • Data Mining",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHRzms5WzMTDQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1727533467934?e=1773878400&v=beta&t=co_Hv0OvsbgdmFBeTlhzAay6H9jXUyoniZ7O-cs0Ru4",
+        imageSrc: "assets/images/featured/gemastik.jpg",
         href: "https://cs.ui.ac.id/2024/09/26/fakultas-ilmu-komputer-ui-raih-gelar-juara-umum-gemastik-17-membawa-pulang-9-medali/",
     },
     {
@@ -40,22 +42,63 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "Satria Data 2024 Silver Medal",
         description: "UI Students win Silver Medal at the Satria Data 2024 Big Data Challenge competition.",
         meta: "Victory • Big Data",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHSCmAhkMSlMg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727533471601?e=1773273600&v=beta&t=IkONgaYthNokPrSudFY47T3tnTOJdxVQUiX_5tOSejc",
+        imageSrc: "assets/images/featured/satdat.jpg",
         href: "https://cs.ui.ac.id/2024/08/06/mahasiswa-ui-sabet-medali-di-kompetisi-satria-data-2024/",
     },
-    {
-        id: 6,
-        title: "JOINTS 2023 Grand Champion",
-        description: "UI wins Grand Champion at JOINTS 2023 IT Competition. Won 2nd place in first-ever external competition.",
-        meta: "Milestone • IT",
-        imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHETVW3NJVXXA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1704531858827?e=1773273600&v=beta&t=XeRGkmsUN_XeOt8mH1zkLNDUcnb29sQegMxCcOa85sU",
-        href: "https://cs.ui.ac.id/2023/05/23/universitas-indonesia-raih-juara-umum-kompetisi-it-bergengsi-jogja-information-technology-session-joints-2023/",
-    }
+    // {
+    //     id: 6,
+    //     title: "JOINTS 2023 Grand Champion",
+    //     description: "UI wins Grand Champion at JOINTS 2023 IT Competition. Won 2nd place in first-ever external competition.",
+    //     meta: "Milestone • IT",
+    //     imageSrc: "https://media.licdn.com/dms/image/v2/D5622AQHETVW3NJVXXA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1704531858827?e=1773273600&v=beta&t=XeRGkmsUN_XeOt8mH1zkLNDUcnb29sQegMxCcOa85sU",
+    //     href: "https://cs.ui.ac.id/2023/05/23/universitas-indonesia-raih-juara-umum-kompetisi-it-bergengsi-jogja-information-technology-session-joints-2023/",
+    // }
 ];
 
 export default function Featured() {
+    const sectionRef = React.useRef<HTMLElement | null>(null);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
+
+    React.useEffect(() => {
+        const section = sectionRef.current;
+
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            {
+                threshold: 0.2,
+                rootMargin: "200px 0px",
+            }
+        );
+
+        observer.observe(section);
+
+        return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+        if (typeof window === "undefined" || !window.matchMedia) return;
+
+        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+        updatePreference();
+        mediaQuery.addEventListener("change", updatePreference);
+
+        return () => mediaQuery.removeEventListener("change", updatePreference);
+    }, []);
+
+    const shouldAutoPlay = isVisible && !prefersReducedMotion;
+
     return (
-        <section id="featured" className="relative w-full min-h-screen pb-24 flex flex-col justify-center items-center overflow-x-hidden text-white z-10">
+        <section
+            id="featured"
+            ref={sectionRef}
+            className="relative w-full min-h-screen pb-24 flex flex-col justify-center items-center overflow-x-hidden text-white z-10"
+            style={{ contentVisibility: "auto", containIntrinsicSize: "100vh" }}
+        >
             {/* Dark background fading out to transparent at the bottom */}
             {/* <div className="absolute inset-0 z-0 pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, black 5%, black 70%, transparent 100%)' }}>
                 <div className="absolute inset-0 z-0 pointer-events-none falling-pattern-mask hidden md:block">
@@ -101,7 +144,7 @@ export default function Featured() {
                     <div className="pt-10 pb-4 relative z-20">
                         <FocusRail
                             items={FEATURED_ITEMS}
-                            autoPlay={true}
+                            autoPlay={shouldAutoPlay}
                             interval={5000}
                             loop={true}
                             className="bg-transparent"
