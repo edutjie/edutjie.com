@@ -35,3 +35,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# latex
+public/assets/resume/*.aux
+public/assets/resume/*.fdb_latexmk
+public/assets/resume/*.fls
+public/assets/resume/*.log
+public/assets/resume/*.out
+public/assets/resume/*.gz

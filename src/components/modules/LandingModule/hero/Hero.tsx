@@ -1,10 +1,12 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { AiCoreCanvas } from './AiCoreCanvas'
 import Typewriter from 'typewriter-effect'
+import ResumeModal from './ResumeModal'
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
 
   useEffect(() => {
     // Add intersection observer for scroll animations
@@ -137,10 +139,8 @@ const Hero = () => {
             className="flex flex-col md:flex-row gap-6 items-center mt-4 animate-on-scroll"
             style={{ animation: 'animationIn 0.8s ease-out 0.4s both' }}
           >
-            <a
-              href="https://docs.google.com/document/d/1cqlbjsTYAD8AeFo9leEdtL_aYDpoy1_wxr4BWrC8-d4/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setIsResumeOpen(true)}
               className="group relative inline-flex p-[4px] rounded-full bg-blue-900/20 border border-blue-500/20 shadow-[0_0_20px_-5px_rgba(59,130,246,0.3)] cursor-target transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)] hover:border-blue-400/40 hover:bg-blue-900/30"
             >
               {/* Floating particles around the button */}
@@ -166,7 +166,7 @@ const Hero = () => {
                   </span>
                 </span>
               </div>
-            </a>
+            </button>
             <div className="flex flex-wrap items-center gap-4 md:gap-3">
               <a
                 href="mailto:edutjitrahardja@gmail.com"
@@ -255,6 +255,11 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <ResumeModal 
+        isOpen={isResumeOpen} 
+        onClose={() => setIsResumeOpen(false)} 
+        pdfUrl="/assets/resume/resume.pdf" 
+      />
     </div>
   )
 }

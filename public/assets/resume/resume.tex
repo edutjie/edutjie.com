@@ -1,0 +1,337 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
+\definecolor{softblue}{RGB}{20, 100, 200}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=softblue,
+    filecolor=magenta,      
+    urlcolor=softblue,
+}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[lining]{ebgaramond}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\raggedright\large\bfseries
+}{}{0em}{\MakeUppercase}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\MakeUppercase{#1}} & #2 \\
+      \textbf{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep {\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{p{0.82\textwidth}@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{0pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.1in, label={}, itemsep=0pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+  %----------HEADING----------
+  \begin{center}
+    \textbf{\huge \MakeUppercase{Eduardus Tjitrahardja} (徐和平)} \\ \vspace{1pt}
+    \small (+86) 18801172162 $|$ (+62) 89635464305 $|$ \href{mailto:edutjitrahardja@gmail.com}{edutjitrahardja@gmail.com} $|$
+    \href{https://www.edutjie.net/}{edutjie.net} $|$
+    \href{https://github.com/edutjie}{github.com/edutjie} $|$
+    \href{https://www.linkedin.com/in/edutjie/}{linkedin.com/in/edutjie}
+  \end{center}
+
+  %-----------EDUCATION-----------
+  \section{Education}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+  {Tsinghua University}{Beijing, China}
+  {Master of Advanced Computing}{Sep 2025 -- Present}
+  \resumeItemListStart
+  \resumeItem{Awarded Full Chinese Government Scholarships}
+  \resumeItem{Researching at the Key Laboratory of Pervasive Computing Lab supervised by Prof. Yuanchun Shi and Prof. Yuntao Wang}
+  \resumeItemListEnd
+  \resumeSubheading
+  {Universitas Indonesia}{Depok, Indonesia}
+  {Bachelor of Computer Science}{Sep 2021 -- Jan 2025}
+  \resumeItemListStart
+  \resumeItem{Graduated, Cumulative GPA: 3.88/4.00 (Cum Laude)}
+  \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------WORK EXPERIENCE-----------
+  \section{Work Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+  {Tsinghua University}{Beijing, China}
+  {Research Assistant}{Sep 2025 -- Present}
+  \resumeItemListStart
+  \resumeItem{Researching at the Key Laboratory of Pervasive Computing lab focusing on VLM, Multimodal AI on human interaction and Intention with smart wearables.}
+  \resumeItem{Currently developing a Multimodal Egocentric Dataset utilizing smart wearables to capture and model human intentions in real-world settings.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {International Olympiad of Artificial Intelligence (IOAI)}{Depok, Indonesia}
+  {Coach, Indonesian National AI Team}{Jun 2025 -- Aug 2025}
+  \resumeItemListStart
+  \resumeItem{In Indonesia National Team first-ever participation in IOAI, we achieved an outstanding result: 3 Silver medals and 1 Bronze — four delegations, four medals.}
+  \resumeItem{Mentored and prepared Indonesia's top high school students for Indonesia's debut at the 2025 International Olympiad in Artificial Intelligence (IOAI), covering key areas such as machine learning, natural language processing (NLP), computer vision (CV), and data science.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Maknadata}{Jakarta, Indonesia}
+  {AI Engineer Intern}{Jan 2025 -- Apr 2025}
+  \resumeItemListStart
+  \resumeItem{Worked closely with the CEO on the Criminal Detention Studies in Indonesia project, developing AI-driven solutions.}
+  \resumeItem{Developing AI-driven solutions, including an LLM-powered system to extract key criminal information from unstructured legal documents (e.g., PDFs), an automated meeting notes generation system for prisoner-officer interviews, and a Chat RAG system leveraging relational databases for efficient information retrieval.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Media Kernels Indonesia}{Jakarta, Indonesia}
+  {AI Engineer Intern}{Sep 2024 -- Dec 2024}
+  \resumeItemListStart
+  \resumeItem{Worked closely with the CTO to research, design, and develop an advanced Retrieval-Augmented Generation (RAG) system using vector databases to integrate diverse data sources, including social media, news, and legal documents.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Traveloka}{Tangerang, Indonesia}
+  {Backend Engineer Intern}{Feb 2024 -- Jun 2024}
+  \resumeItemListStart
+  \resumeItem{Part of a core team within the company, the Flight Supply team, which is responsible for managing the technology related to airline inventory.}
+  \resumeItem{Successfully improved booking health by $\sim$4\%, seat selection availability of the top 3 airline providers by $\sim$10\%, and our Memcache effectiveness and hit rate by $\sim$15\%.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Sabilamall}{Depok, Indonesia}
+  {Software Engineer Intern}{Jun 2023 -- Sep 2023}
+  \resumeItemListStart
+  \resumeItem{Revamped the backend of \href{http://www.sabilamall.co.id}{www.sabilamall.co.id} using Express with TypeScript. This revamp resulted in an impressive average improvement of 50\% in response time. Additionally, we took charge of managing and redesigning the MySQL database and successfully migrated it to AWS RDS.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Xeratic}{Tangerang, Indonesia}
+  {Data Ops Engineer Intern}{Sep 2022 -- Nov 2022}
+  \resumeItemListStart
+  \resumeItem{Contributed to the Great Giant Foods (GGF) project by utilizing Pentaho for ETL processes and Tableau to create informative dashboards.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Faculty of Computer Science, Universitas Indonesia}{Depok, Indonesia}
+  {Teaching Assistant}{Aug 2022 -- Jan 2024}
+  \resumeItemListStart
+  \resumeItem{Teaching Assistant for Data Structure and Algorithm, Programming Foundations 1 \& 2.}
+  \resumeItem{Responsible for aiding professors and providing support to students in comprehending course materials. I also create lab exercises and programming tasks to enhance their learning experience.}
+  \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+  %-----------ACHIEVEMENTS-----------
+  \section{Achievements}
+  \resumeSubHeadingListStart
+  \resumeProjectHeading
+  {\textbf{1st Winner of Data Mining, GEMASTIK XVII} $|$ \emph{Indonesian Ministry of Education}}{Sep 2024}
+  \resumeItemListStart
+  \resumeItem{Achieved the gold medal in a prestigious national competition, outperforming 250+ teams through both our research, titled \href{https://drive.google.com/file/d/15HmJpU3KRHUvOON4qWJyQakfDKY8PJWZ/view?usp=drive_link}{"Automated Assignment of Community Reports Using Early Fusion Multimodal Transformer,"} and our best performance in classifying tuition fee categories in the final round by leveraging cost-sensitive learning and a hill climbing ensemble method.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{2nd Winner of Big Data Challenge, Satria Data 2024} $|$ \emph{Indonesian Ministry of Education}}{Aug 2024}
+  \resumeItemListStart
+  \resumeItem{Achieved the silver medal by overcoming 400+ teams in a prestigious national competition by developing and implementing a unique analytical method for the study \href{https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view?usp=sharing}{"Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media."}}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{1st Winner of Machine Learning Competition, Data Slayer} $|$ \emph{Telkom Institute of Technology}}{Jan 2024}
+  \resumeItemListStart
+  \resumeItem{Overcome other 120+ teams with proposed \href{https://drive.google.com/file/d/1abA4RgYQgsyJTtCBlHqgU36Tv0KO2y4m/view?usp=drive_link}{multi-layered stacking machine learning models} to estimate the CO2 vehicle emissions in Indonesia.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{1st Winner of Data Competition, Airnology 2.0} $|$ \emph{Airlangga University}}{Oct 2023}
+  \resumeItemListStart
+  \resumeItem{Created a highly effective \href{https://docs.google.com/presentation/d/1BlHTQLov80DPzyMtRfwblcDp1_Zq5TSP1d2mNSw9es0/edit?usp=drive_link}{"Image-based Drugs Search Engine using OCR and Levenshtein Algorithm".} We also employed an ensemble method to predict rainfall during the selection phase.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{2nd Winner of Natural Language Processing Data Competition} $|$ \emph{Intelligo ID}}{Oct 2023}
+  \resumeItemListStart
+  \resumeItem{Utilized NLP techniques to develop a \href{https://docs.google.com/presentation/d/1Lpaqc8JIjlVnWu0VdvE3ww51-joKPPa554qvu7F40Dk/edit?usp=sharing}{"High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis".}}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Finalist of Data Mining, GEMASTIK XVI} $|$ \emph{Indonesian Ministry of Education}}{Sep 2023}
+  \resumeItemListStart
+  \resumeItem{Conducted a computer vision research project, utilizing CCTVs to create our own dataset. The objective of our study was to develop a paper titled \href{https://buletingemastik.id/index.php/bg/article/view/202404.009}{"Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR".}}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Semi-Finalist of Big Data Challenge, Satria Data 2023} $|$ \emph{Indonesian Ministry of Education}}{Aug 2023}
+  \resumeItemListStart
+  \resumeItem{Ranked in the top 10 by utilizing a fine-tuned model and Faster RCNN to develop an OCR for detecting Indonesian car plate numbers.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{2nd Winner of Data Competition, JOINTS} $|$ \emph{Gajah Mada University}}{May 2023}
+  \resumeItemListStart
+  \resumeItem{Utilized an \href{https://drive.google.com/file/d/1_tvkBcP26Jn8eUFJVBg3QLRFtQL431S4/view?usp=drive_link}{ensemble convolutional neural network architecture} for detecting fires in images. Additionally, during the selection phase, we implemented an \href{https://drive.google.com/file/d/1TCMRumWNdt3XMSphyG5xL2gLgiJ9Lxf2/view?usp=drive_link}{ensemble model} for classifying earthquake damage.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{2nd Winner of Datathon, Pekan RISTEK} $|$ \emph{RISTEK FASILKOM UI}}{Dec 2022}
+  \resumeItemListStart
+  \resumeItem{Utilized \href{https://github.com/edutjie/Ristek-Datathon-2022}{a multimodal model} consisting of both images and text to assess whether the tweets contained any useful intelligence that could aid in disaster management and recovery efforts.}
+  \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------PUBLICATIONS-----------
+  \section{Publications}
+  \resumeSubHeadingListStart
+  \resumeProjectHeading
+  {\textbf{FrOG: Framework of Open GraphRAG}}{2025}
+  \resumeItemListStart
+  \resumeItem{Manuscript has been published at the ESWC LLM-TEXT2KG 2025.}
+  \resumeItem{Conducted a study introducing an open GraphRAG, a system that integrates Retrieval-Augmented Generation (RAG) with knowledge graphs (KGs) for question-answering (QA). The research leveraged open source large language models (LLMs) to generate SPARQL queries on Wikidata, DBpedia and Local KGs. For more information: \href{https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf}{Paper}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Towards an Open NLI LLM-based System for KGs: A Case Study of Wikidata}}{2024}
+  \resumeItemListStart
+  \resumeItem{Manuscript has been published at the International Seminar on Research of Information Technology and Intelligent Systems (ISRITI) 2024: \href{https://ieeexplore.ieee.org/document/10963661}{Proceedings}.}
+  \resumeItem{Preliminary study for the FrOG: Framework of Open GraphRAG research.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Automatic Assignment of Community Reports on the CRM Platform Using Early Fusion Multimodal Transformer}}{2024}
+  \resumeItemListStart
+  \resumeItem{Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process.}
+  \resumeItem{Manuscript published in the Journal of Computer Sciences and Information (JIKI): \href{https://drive.google.com/file/d/15HmJpU3KRHUvOON4qWJyQakfDKY8PJWZ/view?usp=sharing}{Journal}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR}}{2024}
+  \resumeItemListStart
+  \resumeItem{Conducted research that leveraged Transformer-based object detection model, Deformable DETR to detect helmet usage on motorcycle riders.}
+  \resumeItem{Manuscript published for publication to the National Student Performance Bulletin in Information and Communication Technology: \href{https://buletingemastik.id/index.php/bg/article/view/202404.009}{Journal}.}
+  \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------PROJECTS-----------
+  \section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{MyoPong: Musculoskeletal Table Tennis Control with Training-Free High-Level Policy}}{Dec 2025}
+      \resumeItemListStart
+        \resumeItem{Developed MyoPong, a hierarchical framework for controlling musculoskeletal systems (up to 210 muscles) in table tennis, combining a physics-based high-level planner with a low-level PPO actor.}
+        \resumeItem{Achieved a 94\% success rate on the MyoChallenge phase 1 task, outperforming standard RL baselines through muscle synergy extraction and latent exploration (Lattice method). For more information: \href{https://myopong.github.io/}{Website} and \href{https://github.com/alfonsusrr/MyoPong}{Source Code}.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media}}{Feb 2024}
+  \resumeItemListStart
+  \resumeItem{Conducted research analytics project employed innovative methods like lexical mutation analysis, stance classification, and civility assessment to provide insights into the dynamics of social media discourse during the election campaign. For more information: \href{https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view?usp=drive_link}{Slides} and \href{https://drive.google.com/file/d/1ndZ2PceM5PIP7JRswWmhNAPOXqh3pUu-/view?usp=drive_link}{Proposal}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{PilgrimPal: Umrah AI Companion App}}{Feb 2024}
+  \resumeItemListStart
+  \resumeItem{Developed an app that contributes to helping pilgrims communicate, informing them of crowdedness in an area, and identifying their future needs. Our two main features are live CCTV crowd detection and an AI chatbot. For more information: \href{https://www.canva.com/design/DAF7nQXyLso/oGE0B96UUZniNcxempFxJQ/view?}{Pitch deck} and \href{https://github.com/PilgrimPal/pilgrimpal-app/releases/tag/0.1.0\%2B2}{Prototype Release}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Duren Search Engine}}{Dec 2023}
+  \resumeItemListStart
+  \resumeItem{Developed a search engine website that utilizes a Learning to Rank technique. The technique is trained and indexed using the WikiCLIR dataset. For more information: \href{https://github.com/edutjie/duren-search-engine-be}{Github Repository}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Image-based Drugs Search Engine using OCR and Levenshtein Algorithm}}{Oct 2023}
+  \resumeItemListStart
+  \resumeItem{Developed an OCR-based drug brand detector for the Kasir Pintar company during the Airnology 2.0 Data Competition. For more information: \href{https://docs.google.com/presentation/d/1BlHTQLov80DPzyMtRfwblcDp1_Zq5TSP1d2mNSw9es0/edit?usp=drive_link}{Slides} and \href{https://github.com/edutjie/drug-ocr}{Github Repository}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis}}{Oct 2023}
+  \resumeItemListStart
+  \resumeItem{Conducted an experiment on a ``High-Accuracy, Low-Cost'' model for sentiment analysis using self-acquired and pseudo-labeled data obtained through web scraping. The focus of the analysis was on the Indonesian logistics industry. For more information: \href{https://docs.google.com/presentation/d/1Lpaqc8JIjlVnWu0VdvE3ww51-joKPPa554qvu7F40Dk/edit?usp=sharing}{Slides} and \href{https://docs.google.com/document/d/1b2yb6K0zvnY7AKaKJ1S5jNREaXFXh69Dmo1Q34D6eEE/edit?usp=sharing}{Proposal}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+  {\textbf{Segmentation Self-Driving Car}}{Aug 2022}
+  \resumeItemListStart
+  \resumeItem{This project involved training a semantic segmentation model using an image dataset from Cityscapes. Three experiments were conducted using three different models, namely U-Net, FCN8s, and U-Net x Mobile-Net V2. For more information: \href{https://github.com/edutjie/Computer-Vision-Indonesia.AI/blob/main/8.\%20Final\%20Project/segmentation_self_driving_car.ipynb}{Github Repository} or \href{https://www.linkedin.com/posts/edutjie_final-project-segmentation-self-driving-activity-6971711279463903232-E7xZ?utm_source=share&utm_medium=member_desktop}{LinkedIn post}.}
+  \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------VOLUNTEER EXPERIENCE-----------
+  \section{Volunteer Experience}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+  {RISTEK FASILKOM UI}{Depok, Indonesia}
+  {Lead of Data Science \& Analytics SIG | Lead of Web Development SIG}{Feb 2024 -- Jan 2025 | Jan 2023 -- Jan 2024}
+  \resumeItemListStart
+  \resumeItem{Awarded as the best lead during the \href{https://drive.google.com/file/d/1pP1CsDuR71Rs0owoqqicpCiUmuYeMwdL/view}{first quarter of RISTEK 2023} and \href{https://drive.google.com/file/d/1JvAupLQcdfikTIEoBEY6xJRka4_q4eNk/view?usp=drive_link}{second quarter of RISTEK 2024}.}
+  \resumeItem{Actively participated and contributed to achievement in various data science competitions.}
+  \resumeItem{Collaborate on both internal and external projects with clients, while also taking charge of guiding and mentoring team members to enhance their proficiency in the data science and web development domain.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {COMPFEST}{Depok, Indonesia}
+  {Data Science Academy Mentor}{Aug 2024, Aug 2025}
+  \resumeItemListStart
+  \resumeItem{Guided and consulted a group of students on their final projects, providing advice on data science concepts, methodologies, and best practices.}
+  \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  %-----------ADDITIONAL INFORMATION-----------
+  \section{Additional Information}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+          \textbf{Programming Language Skills}{: Python, Java, TypeScript, Go, SQL, C++} \\
+          \textbf{AI Technical Skills}{: Computer Vision, NLP, LLM, VLM, Agentic System, PyTorch, Tensorflow, Hugging Face, LangChain, LangGraph, Weaviate, Milvus} \\
+          \textbf{Software Engineering Technical Skills}{: JavaScript frameworks, Go frameworks, Django, FastAPI, Springboot, Redis, Docker} \\
+          \textbf{Languages}{: Fluent in Indonesia (native) and English (IELTS: 7.5, Duolingo English Test: 145), Limited Proficiency in Chinese (HSK 4)} \\
+          \textbf{Certifications}{: \href{https://drive.google.com/file/d/1LGxIU7f2DcPAavWGGb3w8n1sH5tmykkq/view?usp=drive_link}{TETRIS II: Data Analytics} (2022); Indonesia AI (\href{https://drive.google.com/file/d/1epVnzJAXUXkG0rDCY730wTkvqDTrKWmm/view?usp=drive_link}{Machine Learning} (2022), \href{https://drive.google.com/file/d/1hHk_ImBLJzZ2NknDrCkT3ZzIs6F4mi3m/view?usp=drive_link}{Deep Learning} (2022), \href{https://drive.google.com/file/d/1C72bTT8PYm3IHrJUUTycmnR05fLWO0an/view?usp=drive_link}{Computer Vision} (2022)), AI Planet (\href{https://drive.google.com/file/d/1ieVkydbAKMGE093SnktFL9BwapL9iu9G/view?usp=drive_link}{Unsupervised Learning} (2022), \href{https://drive.google.com/file/d/1-61Aa_cTMonVNvP91dcCp_PKp65HVTgn/view?usp=drive_link}{Natural Language Processing} (2022)), \href{https://drive.google.com/file/d/1Mjz63QF8Kiiy8I8GsrcZjDwXTZTmdueW/view?usp=drive_link}{CS50 Harvard: Intro to Computer Science} (2021)}
+          }}
+  \end{itemize}
+
+\end{CJK*}
+\end{document}
