@@ -16,7 +16,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
     {
         id: 2,
         title: "FrOG: Framework of Open GraphRAG",
-        description: "Published Bachelor's Thesis at the TEXT2KG workshop & BiKE Challenge at ESWC 2025 in Slovenia.",
+        description: "Published Bachelor's Thesis at the LLM-TEXT2KG @ ESWC 2025 in Slovenia.",
         meta: "Research • Publication",
         imageSrc: "assets/images/featured/frog.jpg",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7368970289797345281/",
