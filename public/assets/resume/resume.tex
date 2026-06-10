@@ -122,8 +122,8 @@
 	{Tsinghua University}{Beijing, China}
 	{Research Assistant}{Sep 2025 -- Present}
 	\resumeItemListStart
-	\resumeItem{Researching at the Key Laboratory of Pervasive Computing lab focusing on MLLMs, Multimodal AI on human interaction and Intention with smart wearables.}
-	\resumeItem{Contributing to the development of a multimodal egocentric dataset using smart wearables to model human intentions in real-world settings, specifically I'm in charge of the proactive recommendation task.}
+	\resumeItem{Researching at the Key Laboratory of Pervasive Computing lab focusing on MLLMs, multimodal AI, human interaction, and intention reasoning with smart wearables.}
+	\resumeItem{Contributing to EgoIntrospect, a multimodal egocentric dataset and benchmark for user-centric internal state reasoning; specifically responsible for the Proactive Request Recommendations task.}
 	\resumeItemListEnd
 
 	\resumeSubheading
@@ -235,6 +235,13 @@
 	\section{Publications}
 	\resumeSubHeadingListStart
 	\resumeProjectHeading
+	{\textbf{EgoIntrospect: An Egocentric Dataset and Benchmark for User-Centric Internal State Reasoning}}{2026}
+	\resumeItemListStart
+	\resumeItem{Preprint: \href{https://arxiv.org/abs/2605.17262}{arXiv}. Submitted to NeurIPS 2026 and currently under review.}
+	\resumeItem{Introduced the first egocentric dataset captured in naturalistic, user-driven scenarios with self-annotations for AI assistant interaction; collected 180+ hours from 60 participants via a cross-device setup with synchronized video, audio, gaze, motion, physiological, and environmental signals.}
+	\resumeItem{Formalized benchmark tasks for user-centric internal state reasoning across affective experience, interactive/request intent, and cognitive memory; specifically responsible for Task 2.2, Proactive Request Recommendations.}
+	\resumeItemListEnd
+	\resumeProjectHeading
 	{\textbf{FrOG: Framework of Open GraphRAG}}{2025}
 	\resumeItemListStart
 	\resumeItem{Published at the LLM-TEXT2KG @ ESWC 2025: \href{https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf}{Paper} and \href{https://github.com/Framework-of-Open-GraphRAG/FROG}{Github}.}
@@ -275,22 +282,15 @@
 	%-----------PROJECTS-----------
 	\section{Projects}
 	\resumeSubHeadingListStart
-	\resumeProjectHeading
-	{\textbf{EgoIntrospect: An Ego-Centric Dataset for Daily Assistant with User-Provided Intention Annotations}}{Oct 2025 - Present}
-	\resumeItemListStart
-	\resumeItem{Introducing the first ego-centric dataset captured in naturalistic, user-chosen scenarios with user-provided intention annotations for AI assistant interaction; collected via a cross-device setup yielding synchronized video, audio, gaze, motion, physiological, and environmental signals.}
-	\resumeItem{Formalized tasks externalizing users' internal states (affective experience, request intent, cognitive memory) and derived a benchmark for testing whether MLLMs can reason beyond observable actions; targeting NeurIPS 2026 submission.}
-	\resumeItem{Leading the proactive recommendation task: designed interruptibility prediction and recommendation acceptance prediction benchmarks, where models must identify user-interruptible moments from continuous egocentric video and rank contextually appropriate proactive suggestions the user would accept.}
-	\resumeItemListEnd
 	% \resumeProjectHeading
 	% {\textbf{HiveGlass (Rokid Edition): A Wearable-First Knowledge System for Service Workers}}{April 2026 - Present}
 	% \resumeItemListStart
 	% \resumeItem{Building a wearable shared knowledge system using Rokid AR glasses for frontline service workers, enabling real-time capture and sharing of observational knowledge across shifts via face re-identification and vision LLM scene understanding.}
 	% \resumeItemListEnd
 	\resumeProjectHeading
-	{\textbf{Disentangling Intent: Sparse Autoencoders for Interpretable Action Transition Prediction in Egocentric Video}}{April 2026 - Present}
+	{\textbf{What Does V-JEPA See? Sparse Autoencoders Reveal Interpretable Concepts in Video Foundation Models}}{Jun 2026}
 	\resumeItemListStart
-	\resumeItem{Conducting a research that applies Sparse Autoencoders to V-JEPA video embeddings to decompose dense representations into interpretable features for egocentric intent prediction, producing the first catalog of interpretable features in a video foundation model.}
+	\resumeItem{Developed a label-free interpretability pipeline that trains Top-K Sparse Autoencoders on frozen V-JEPA representations from Ego4D videos, then maps sparse features to real world concepts using narration mining, enrichment scoring, and Benjamini-Hochberg FDR correction across 141.9M tokens and 88 concepts. For more information: \href{https://docs.google.com/presentation/d/1RyIFJ2ADLm7qGLW2ivULAk10faA5i9ATF8TOIIU1QTw/edit?usp=sharing}{Slides.}}
 	\resumeItemListEnd
 	\resumeProjectHeading
 	{\textbf{MyoPong: Musculoskeletal Table Tennis Control with Training-Free High-Level Policy}}{Dec 2025}

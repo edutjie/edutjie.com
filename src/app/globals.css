@@ -267,7 +267,7 @@
     0% {
       opacity: 0;
       transform: translateY(30px);
-      filter: blur(8px);
+      filter: blur(4px);
     }
 
     100% {
@@ -275,6 +275,16 @@
       transform: translateY(0);
       filter: blur(0px);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  [style*="animationIn"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
 

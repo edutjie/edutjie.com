@@ -18,13 +18,18 @@ export const AiCoreCanvas = () => {
       1000,
     )
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
+    const isMobile = window.innerWidth < 768
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: !isMobile,
+      powerPreference: 'high-performance',
+    })
     renderer.setSize(container.clientWidth, container.clientHeight)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 1.5))
     container.appendChild(renderer.domElement)
 
     // --- 1. Torus Knot AI Core ---
-    const torusGeometry = new THREE.TorusKnotGeometry(1.4, 0.35, 128, 32)
+    const torusGeometry = new THREE.TorusKnotGeometry(1.4, 0.35, isMobile ? 64 : 96, 16)
     const torusMat = new THREE.MeshBasicMaterial({
       color: 0x3b82f6,
       wireframe: true,
@@ -53,7 +58,7 @@ export const AiCoreCanvas = () => {
 
     const depth = 0.35
     const rad = 1
-    const segs = 32
+    const segs = isMobile ? 16 : 24
     const gap = 0.05
 
     const geoTL = new THREE.BoxGeometry(rad, rad, depth)
@@ -107,7 +112,7 @@ export const AiCoreCanvas = () => {
 
     // --- 3. Neural Particle field ---
     const particlesGeom = new THREE.BufferGeometry()
-    const particlesCount = 800
+    const particlesCount = isMobile ? 300 : 600
     const posArray = new Float32Array(particlesCount * 3)
 
     for (let i = 0; i < particlesCount; i++) {
@@ -255,6 +260,7 @@ export const AiCoreCanvas = () => {
       ref={containerRef}
       id="ai-3d-canvas"
       className="w-full h-full rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#030712]/50 to-[#0f172a]/50 relative z-0"
+      style={{ willChange: 'transform' }}
     />
   )
 }

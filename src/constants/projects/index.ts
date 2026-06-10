@@ -3,6 +3,36 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'EgoIntrospect: An Ego-Centric Dataset for Daily Assistant with User-Provided Intention Annotations',
+    image: 'images/projects/egointrospect/image1.png',
+    date: '2025',
+    description:
+      'Introduced the first egocentric dataset captured in naturalistic, user-driven scenarios with self-annotations for AI assistant interaction; collected 180+ hours from 60 participants via a cross-device setup with synchronized video, audio, gaze, motion, physiological, and environmental signals. Formalized benchmark tasks for user-centric internal state reasoning across affective experience, interactive/request intent, and cognitive memory; specifically responsible for Task 2.2, Proactive Request Recommendations. Submitted to NeurIPS 2026 and currently under review.',
+    links: [
+      {
+        name: 'Preprint',
+        link: 'https://arxiv.org/abs/2605.17262',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.CV, SKILLS.LLM, SKILLS.HCI, SKILLS.Python],
+    type: 'Research Publication',
+  },
+  {
+    name: 'What Does V-JEPA See? Sparse Autoencoders Reveal Interpretable Concepts in Video Foundation Models',
+    image: 'images/projects/jepasae/image1.png',
+    date: '2026',
+    description:
+      'Developed a label-free interpretability pipeline that trains Top-K Sparse Autoencoders on frozen V-JEPA representations from Ego4D videos, then maps sparse features to real-world concepts using narration mining, enrichment scoring, and Benjamini-Hochberg FDR correction across 141.9M tokens and 88 concepts.',
+    links: [
+      {
+        name: 'Slides',
+        link: 'https://docs.google.com/presentation/d/1RyIFJ2ADLm7qGLW2ivULAk10faA5i9ATF8TOIIU1QTw/edit?usp=sharing',
+      },
+    ],
+    skills: [SKILLS.ML, SKILLS.CV, SKILLS.Python, SKILLS.Pytorch],
+    type: 'Project',
+  },
+  {
     name: 'MyoPong: Goal-Conditioned Synergistic Action and Latent Exploration for Musculoskeletal Table Tennis Control with Training-Free High-Level Policy',
     image: 'images/projects/myopong/image1.gif',
     date: '2025',
@@ -41,7 +71,15 @@ export const PROJECTS: ProjectType[] = [
         link: 'https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf',
       },
     ],
-    skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
+    skills: [
+      SKILLS.LangChain,
+      SKILLS.RAG,
+      SKILLS.KnowledgeGraph,
+      SKILLS.LLM,
+      SKILLS.NLP,
+      SKILLS.Python,
+      SKILLS.SPARQL,
+    ],
     type: 'Research Publication',
   },
   {
@@ -56,7 +94,15 @@ export const PROJECTS: ProjectType[] = [
         link: 'https://ieeexplore.ieee.org/document/10963661',
       },
     ],
-    skills: [SKILLS.LangChain, SKILLS.RAG, SKILLS.KnowledgeGraph, SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.SPARQL],
+    skills: [
+      SKILLS.LangChain,
+      SKILLS.RAG,
+      SKILLS.KnowledgeGraph,
+      SKILLS.LLM,
+      SKILLS.NLP,
+      SKILLS.Python,
+      SKILLS.SPARQL,
+    ],
     type: 'Research Publication',
   },
   {
@@ -90,12 +136,7 @@ export const PROJECTS: ProjectType[] = [
         link: 'https://drive.google.com/file/d/1f3iNid15NXVFoLfYQfgfGdZvATOsu5IU/view?usp=drive_link',
       },
     ],
-    skills: [
-      SKILLS.ML,
-      SKILLS.CV,
-      SKILLS.NLP,
-      SKILLS.Python,
-    ],
+    skills: [SKILLS.ML, SKILLS.CV, SKILLS.NLP, SKILLS.Python],
     type: 'Research Publication',
   },
   {
@@ -216,12 +257,7 @@ export const PROJECTS: ProjectType[] = [
         link: 'https://buletingemastik.id/index.php/bg/article/view/202404.009',
       },
     ],
-    skills: [
-      SKILLS.ML,
-      SKILLS.CV,
-      SKILLS.Python,
-      SKILLS.Pytorch,
-    ],
+    skills: [SKILLS.ML, SKILLS.CV, SKILLS.Python, SKILLS.Pytorch],
     type: 'Research Publication',
   },
   {
