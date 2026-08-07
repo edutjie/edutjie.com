@@ -3,6 +3,25 @@ import { ProjectType } from './interface'
 
 export const PROJECTS: ProjectType[] = [
   {
+    name: 'ShiftMind: Shared Workforce Memory and Agentic Analysis on Smart Glasses',
+    image: 'images/projects/shiftmind/image1.png',
+    date: '2026',
+    description:
+      "Built a wearable workforce memory system demo using Rokid AR glasses that transforms per-customer information into proactive, identity-anchored shared memory; when a returning customer is recognized via face recognition, their memory card automatically appears on the worker's HUD without requiring a query, with memories shared across employees and sites as cumulative cards queryable through a tool-using agent. Accepted at the WearAgent Workshop @ Ubicomp/ISWC 2026.",
+    links: [
+      {
+        name: 'Demo',
+        link: 'https://www.youtube.com/watch?v=zaEACnPiLCE',
+      },
+      {
+        name: 'Source Code',
+        link: 'https://github.com/edutjie/ShiftMind',
+      },
+    ],
+    skills: [SKILLS.CV, SKILLS.LLM, SKILLS.RAG, SKILLS.HCI],
+    type: 'Research Publication',
+  },
+  {
     name: 'EgoIntrospect: An Ego-Centric Dataset for Daily Assistant with User-Provided Intention Annotations',
     image: 'images/projects/egointrospect/image1.png',
     date: '2025',

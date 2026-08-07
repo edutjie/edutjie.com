@@ -1,10 +1,11 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react'
-import Image from 'next/image'
+import { SkillTag, TabPills } from '@elements'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Image from 'next/image'
+import React, { useEffect, useRef, useState } from 'react'
 import { EXPERIENCES } from 'src/constants/experience'
-import { TabPills, SkillTag } from '@elements'
+import { renderTextWithLinks } from 'src/lib/utils'
 
 const EXPERIENCE_TABS = [
   { label: 'Professional', value: 'Work' },
@@ -67,16 +68,23 @@ const Experiences = () => {
   const experiences = EXPERIENCES[activeTab]
 
   return (
-    <section id="experience" className="w-full max-w-5xl z-10 pt-32 px-6 mx-auto" ref={containerRef}>
+    <section
+      id="experience"
+      className="w-full max-w-5xl z-10 pt-32 px-6 mx-auto"
+      ref={containerRef}
+    >
       <div
         className="mb-12 text-center animate-on-scroll"
-        style={{ animation: `animationIn ${FADE_IN_DURATION}s ease-out 0s both` }}
+        style={{
+          animation: `animationIn ${FADE_IN_DURATION}s ease-out 0s both`,
+        }}
       >
         <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-4">
           Experience
         </h2>
         <p className="text-slate-400 text-sm max-w-xl mx-auto mb-8 font-sans">
-          Tracing the path of deploying research into real-world applications and giving back to the community.
+          Tracing the path of deploying research into real-world applications
+          and giving back to the community.
         </p>
 
         {/* Experience Tabs */}
@@ -98,7 +106,11 @@ const Experiences = () => {
           <div
             key={index}
             className="relative cursor-target group/item animate-on-scroll"
-            style={{ animation: `animationIn ${FADE_IN_DURATION}s ease-out ${index * FADE_IN_STAGGER}s both` }}
+            style={{
+              animation: `animationIn ${FADE_IN_DURATION}s ease-out ${
+                index * FADE_IN_STAGGER
+              }s both`,
+            }}
           >
             <div className="absolute -left-8 md:-left-12 top-8 w-4 h-4 rounded-full bg-slate-900 border-[3px] border-white/20 group-hover/item:border-blue-400 group-hover/item:bg-blue-500 group-hover/item:scale-[1.3] transition-all duration-500 z-20 group-hover/item:shadow-[0_0_20px_rgba(59,130,246,1)] -translate-x-1/2 -translate-y-1/2 block"></div>
             <div className="ios-glass p-5 md:p-8 rounded-3xl border border-white/10 transition-all duration-500 group-hover/item:-translate-y-2 group-hover/item:bg-slate-800/40 group-hover/item:border-blue-500/50 group-hover/item:shadow-[0_20px_40px_-10px_rgba(59,130,246,0.15)] relative overflow-hidden">
@@ -123,7 +135,9 @@ const Experiences = () => {
                         <h3 className="text-xl font-medium text-white group-hover/item:text-blue-50 transition-colors font-sans">
                           {role.name}
                         </h3>
-                        <p className="text-blue-400 text-sm font-medium font-sans">{exp.name}</p>
+                        <p className="text-blue-400 text-sm font-medium font-sans">
+                          {exp.name}
+                        </p>
                       </div>
                     </div>
                     <span className="text-xs font-mono text-slate-500 bg-white/5 px-3 py-1 rounded-full w-fit group-hover/item:text-blue-300 group-hover/item:bg-blue-500/10 transition-colors whitespace-nowrap">
@@ -132,7 +146,7 @@ const Experiences = () => {
                   </div>
                   <ul className="text-sm text-slate-400 leading-relaxed mb-4 relative z-10 list-disc list-inside font-sans">
                     {role.description?.map((desc, dIndex) => (
-                      <li key={dIndex}>{desc}</li>
+                      <li key={dIndex}>{renderTextWithLinks(desc)}</li>
                     ))}
                   </ul>
                 </div>

@@ -3,6 +3,23 @@ import { SingularExperienceType } from './interface'
 
 const WorkExperience: SingularExperienceType[] = [
   {
+    name: 'VITURE',
+    logo: 'images/companies/viture.png',
+    links: [{ name: 'Company Website', link: 'https://www.viture.com/' }],
+    location: 'Beijing, China',
+    roles: [
+      {
+        name: 'Research Intern',
+        date: 'Jul 2026 - Present',
+        description: [
+          'Working on Multimodal Human-AI interaction research in AI & XR glasses settings.',
+          'Researching on Standard Operating Procedure (SOP) authoring and proactive guidance for [VITURE x NVIDIA Helix AI Safety Glasses](https://www.viture.com/helix).',
+        ],
+      },
+    ],
+    skills: [SKILLS.VLM, SKILLS.LLM, SKILLS.CV, SKILLS.HCI],
+  },
+  {
     name: 'Tsinghua University',
     logo: 'images/universities/tsinghua.png',
     links: [
@@ -15,7 +32,7 @@ const WorkExperience: SingularExperienceType[] = [
         date: 'Sep 2025 - Present',
         description: [
           'Researching at the Key Laboratory of Pervasive Computing lab, focusing on Vision-Language Models (VLM), Multimodal AI on human interaction, and intention with smart wearables.',
-          'Currently developing a Multimodal Egocentric Dataset utilizing smart wearables to capture and model human intentions in real-world settings.'
+          'Developed [EgoIntrospect](https://arxiv.org/abs/2605.17262), a Multimodal Egocentric Dataset utilizing smart wearables to capture and model human intentions in real-world settings.',
         ],
       },
     ],
@@ -41,8 +58,8 @@ const WorkExperience: SingularExperienceType[] = [
         name: 'AI Coach, Indonesian National Team',
         date: 'Jun 2025 - August 2025',
         description: [
-          "In Indonesia National Team first-ever participation in IOAI, the team achieved an outstanding result: 3 Silver medals and 1 Bronze — four students, four medals.",
-          "Mentoring and preparing Indonesia’s top high school students for Indonesia's debut at the 2025 International Olympiad in Artificial Intelligence (IOAI), covering key areas such as machine learning, natural language processing (NLP), computer vision (CV), and data science.",
+          'In Indonesia National Team first-ever participation in IOAI, the team achieved an outstanding result: [3 Silver medals and 1 Bronze — four students, four medals](https://community.spline.design/file/90d98893-bcd5-4c28-8338-d322ff5c3655).',
+          "Mentoring and preparing Indonesia's top high school students for Indonesia's debut at the 2025 International Olympiad in Artificial Intelligence (IOAI), covering key areas such as machine learning, natural language processing (NLP), computer vision (CV), and data science.",
         ],
       },
     ],
@@ -81,7 +98,14 @@ const WorkExperience: SingularExperienceType[] = [
         ],
       },
     ],
-    skills: [SKILLS.LLM, SKILLS.NLP, SKILLS.Python, SKILLS.FastAPI, SKILLS.TypeScript, SKILLS.PostgreSQL],
+    skills: [
+      SKILLS.LLM,
+      SKILLS.NLP,
+      SKILLS.Python,
+      SKILLS.FastAPI,
+      SKILLS.TypeScript,
+      SKILLS.PostgreSQL,
+    ],
   },
   {
     name: 'Traveloka',

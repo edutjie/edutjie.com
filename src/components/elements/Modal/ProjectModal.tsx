@@ -1,6 +1,7 @@
 'use client'
-import React, { useEffect, useRef, useCallback } from 'react'
 import gsap from 'gsap'
+import React, { useCallback, useEffect, useRef } from 'react'
+import { renderTextWithLinks } from 'src/lib/utils'
 
 interface ProjectModalProps {
   project: any
@@ -8,7 +9,11 @@ interface ProjectModalProps {
   isAchievement?: boolean
 }
 
-export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, isAchievement }) => {
+export const ProjectModal: React.FC<ProjectModalProps> = ({
+  project,
+  onClose,
+  isAchievement,
+}) => {
   const modalRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -20,9 +25,22 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
     gsap.to(modalRef.current, { y: '0%', duration: 0.8, ease: 'power3.inOut' })
 
     gsap.fromTo(
-      ['#modal-title', '#modal-subtitle', '#modal-desc', '#modal-list', '#modal-specs'],
+      [
+        '#modal-title',
+        '#modal-subtitle',
+        '#modal-desc',
+        '#modal-list',
+        '#modal-specs',
+      ],
       { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, delay: 0.4, stagger: 0.1, ease: 'power2.out' }
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.4,
+        stagger: 0.1,
+        ease: 'power2.out',
+      }
     )
 
     if (scrollRef.current) {
@@ -73,9 +91,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
           id="close-modal-btn"
           className="group flex items-center gap-2 text-white/70 hover:text-white transition-colors cursor-target pointer-events-auto bg-white/5 backdrop-blur-xl px-5 py-2.5 rounded-full border border-white/10 mt-4 md:mr-4"
         >
-          <span className="uppercase tracking-widest text-[10px] font-sans font-semibold">Close</span>
+          <span className="uppercase tracking-widest text-[10px] font-sans font-semibold">
+            Close
+          </span>
           <span className="iconify solar--close-circle-linear w-5 h-5 group-hover:rotate-90 transition-transform duration-300 text-blue-400">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.5 9.5l-5 5m0-5l5 5m7.5-2.5c0 4.142 0 6.213-1.285 7.502C19.429 20.789 17.358 20.789 13.216 20.789h-2.431c-4.142 0-6.214 0-7.503-1.287C2 18.213 2 16.142 2 12s0-6.213 1.282-7.502C4.57 3.211 6.643 3.211 10.785 3.211h2.43c4.143 0 6.215 0 7.503 1.287C22 5.787 22 7.858 22 12Z" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="m14.5 9.5l-5 5m0-5l5 5m7.5-2.5c0 4.142 0 6.213-1.285 7.502C19.429 20.789 17.358 20.789 13.216 20.789h-2.431c-4.142 0-6.214 0-7.503-1.287C2 18.213 2 16.142 2 12s0-6.213 1.282-7.502C4.57 3.211 6.643 3.211 10.785 3.211h2.43c4.143 0 6.215 0 7.503 1.287C22 5.787 22 7.858 22 12Z"
+              />
+            </svg>
           </span>
         </button>
       </div>
@@ -89,7 +123,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
       >
         {/* Hero Image */}
         <div className="w-full h-[60vh] md:h-[80vh] relative">
-          <img id="modal-img" src={`/assets/${project.image}`} alt={project.name} className="w-full h-full object-cover" />
+          <img
+            id="modal-img"
+            src={`/assets/${project.image}`}
+            alt={project.name}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#030712]/50 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 pb-12">
             <div className="overflow-visible pr-4">
@@ -117,8 +156,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
             <h3 className="font-display text-xl lg:text-2xl text-blue-400 -rotate-1">
               {isAchievement ? 'The Story' : 'About'}
             </h3>
-            <p id="modal-desc" className="font-sans text-base md:text-lg leading-relaxed text-slate-300 font-light">
-              {project.description}
+            <p
+              id="modal-desc"
+              className="font-sans text-base md:text-lg leading-relaxed text-slate-300 font-light"
+            >
+              {typeof project.description === 'string'
+                ? renderTextWithLinks(project.description)
+                : project.description}
             </p>
             <div className="w-full h-[1px] bg-white/10 mt-8"></div>
             {project.links && project.links.length > 0 && (
@@ -126,10 +170,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
                 <h4 className="text-sm uppercase tracking-widest font-mono text-slate-500 mt-4">
                   {isAchievement ? 'Related Links' : 'Key Outcomes'}
                 </h4>
-                <ul id="modal-list" className="space-y-4 font-sans text-slate-300 list-disc list-inside">
+                <ul
+                  id="modal-list"
+                  className="space-y-4 font-sans text-slate-300 list-disc list-inside"
+                >
                   {project.links.map((link: any, index: number) => (
                     <li key={index}>
-                      <a href={link.link} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 underline decoration-blue-500/30 underline-offset-4">
+                      <a
+                        href={link.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-400 underline decoration-blue-500/30 underline-offset-4"
+                      >
                         {link.name}
                       </a>
                     </li>
@@ -143,7 +195,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
             <h3 className="font-display text-xl text-white rotate-1 mb-2">
               {isAchievement ? 'Details' : 'Stack & Specs'}
             </h3>
-            <div id="modal-specs" className="flex flex-col gap-4 font-mono text-xs text-slate-400">
+            <div
+              id="modal-specs"
+              className="flex flex-col gap-4 font-mono text-xs text-slate-400"
+            >
               {project.date && (
                 <div className="flex justify-between border-b border-white/10 pb-2 gap-4">
                   <span className="text-slate-500">Date</span>
@@ -153,7 +208,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
               {isAchievement && project.medal && (
                 <div className="flex justify-between border-b border-white/10 pb-2 gap-4">
                   <span className="text-slate-500">Medal</span>
-                  <span className="text-white text-right capitalize">{project.medal}</span>
+                  <span className="text-white text-right capitalize">
+                    {project.medal}
+                  </span>
                 </div>
               )}
               {project.skills && project.skills.length > 0 && (
@@ -174,7 +231,21 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
                 className="mt-8 flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 hover:brightness-110 text-white rounded-lg transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] cursor-target text-sm font-medium"
               >
                 <span className="iconify solar--code-square-linear w-5 h-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m10 8l-4 4l4 4m4-8l4 4l-4 4m-4.5-9.5c0-4.142 0-6.213-1.285-7.502C19.429 2.211 17.358 2.211 13.216 2.211h-2.431c-4.142 0-6.214 0-7.503 1.287C2 4.787 2 6.858 2 11s0 6.213 1.282 7.502C4.57 19.789 6.643 19.789 10.785 19.789h2.43c4.143 0 6.215 0 7.503-1.287C22 17.213 22 15.142 22 11Z" /></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="m10 8l-4 4l4 4m4-8l4 4l-4 4m-4.5-9.5c0-4.142 0-6.213-1.285-7.502C19.429 2.211 17.358 2.211 13.216 2.211h-2.431c-4.142 0-6.214 0-7.503 1.287C2 4.787 2 6.858 2 11s0 6.213 1.282 7.502C4.57 19.789 6.643 19.789 10.785 19.789h2.43c4.143 0 6.215 0 7.503-1.287C22 17.213 22 15.142 22 11Z"
+                    />
+                  </svg>
                 </span>
                 {isAchievement ? 'View Proof' : 'View Link'}
               </a>
