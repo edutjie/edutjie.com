@@ -24,7 +24,7 @@ export const PROJECTS: ProjectType[] = [
   {
     name: 'EgoIntrospect: An Ego-Centric Dataset for Daily Assistant with User-Provided Intention Annotations',
     image: 'images/projects/egointrospect/image1.png',
-    date: '2025',
+    date: '2026',
     description:
       'Introduced the first egocentric dataset captured in naturalistic, user-driven scenarios with self-annotations for AI assistant interaction; collected 180+ hours from 60 participants via a cross-device setup with synchronized video, audio, gaze, motion, physiological, and environmental signals. Formalized benchmark tasks for user-centric internal state reasoning across affective experience, interactive/request intent, and cognitive memory; specifically responsible for Task 2.2, Proactive Request Recommendations. Submitted to NeurIPS 2026 and currently under review.',
     links: [
