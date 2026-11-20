@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import { SplineScene } from './SplineScene'
 import Typewriter from 'typewriter-effect'
 import ResumeModal from './ResumeModal'
+import { SplineScene } from './SplineScene'
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -396,7 +396,7 @@ const Hero = () => {
       <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
-        pdfUrl="/assets/resume/resume.pdf"
+        pdfUrl="/assets/resume/resume_ai_research.pdf"
       />
     </div>
   )

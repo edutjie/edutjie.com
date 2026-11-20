@@ -56,23 +56,23 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{0pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabularx}{\linewidth}[t]{>{\raggedright\arraybackslash}Xr@{}}
       \textbf{#1} & #2 \\
       \textbf{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{0pt}
+    \end{tabularx}\vspace{0pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep {\fill}}r}
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}Xr@{}}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{0pt}
+    \end{tabularx}\vspace{0pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{p{0.82\textwidth}@{\extracolsep{\fill}}r}
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}Xr@{}}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{0pt}
+    \end{tabularx}\vspace{0pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{0pt}}
@@ -113,7 +113,7 @@
   \resumeSubheading{Tsinghua University}{Beijing, China}{Research Assistant, Key Laboratory of Pervasive Computing}{Sep 2025 -- Present}
     \resumeItemListStart
       \resumeItem{Lead a research project on \textbf{proactive multimodal AI assistants} that anticipate user needs and generate context-aware, personalized, and timely \textbf{recommendations} from egocentric multimodal observations.}
-      \resumeItem{Co-authored \href{https://ego-introspect.github.io/}{\textbf{EgoIntrospect}}, a multimodal egocentric dataset and benchmark for user-centric internal state reasoning with \textbf{180+ hours of recordings from 60 participants}, leading the \textbf{Proactive Request Recommendation} task and and developed the end-to-end benchmarking codebase for \textbf{21 MLLMs across 6 reasoning tasks}.}
+      \resumeItem{Co-authored \href{https://ego-introspect.github.io/}{\textbf{EgoIntrospect}}, a multimodal egocentric dataset and benchmark for user-centric internal state reasoning with \textbf{180+ hours of recordings from 60 participants}. Led the \textbf{Proactive Request Recommendations} task and built the end-to-end benchmarking codebase for \textbf{21 MLLMs across 6 reasoning tasks}.}
       \resumeItem{\textbf{Research Areas:} Multimodal Learning, Human-Centered AI, Multimodal Large Language Models (MLLMs), Egocentric AI.}
     \resumeItemListEnd
 
@@ -128,7 +128,7 @@
     {AI Engineer Intern}{Jan 2025 -- Apr 2025}
     \resumeItemListStart
       \resumeItem{Collaborated directly with the \textbf{CEO} on the \textbf{Criminal Detention Studies in Indonesia} project, developing AI-powered solutions to streamline legal document analysis and prisoner-officer interview workflows.}
-      \resumeItem{Developed an \textbf{LLM-powered information extraction system} for unstructured multi-pages legal documents (PDFs), an \textbf{automated interview note-generation system}, and a \textbf{retrieval-augmented generation (RAG) chatbot} integrated with relational databases for efficient information retrieval.}
+      \resumeItem{Developed an \textbf{LLM-powered information extraction system} for unstructured multi-page legal PDFs, an \textbf{automated interview note-generation system}, and a \textbf{retrieval-augmented generation (RAG) chatbot} integrated with relational databases for efficient information retrieval.}
     \resumeItemListEnd
 
   \resumeSubheading{Media Kernels Indonesia}{Jakarta, Indonesia}
@@ -141,7 +141,7 @@
     {Backend Engineer Intern}{Feb 2024 -- Jun 2024}
     \resumeItemListStart
       \resumeItem{Contributed to the \textbf{Flight Supply} engineering team, developing and optimizing backend services responsible for airline inventory management and flight booking operations.}
-      \resumeItem{Improved \textbf{booking health by $\sim$4\%}, \textbf{seat selection availability by $\sim$10\%} across the top 3 airline providers, and \textbf{Memcache cache hit rate by $\sim$15\%} through backend performance and reliability optimizations.}
+      \resumeItem{Improved \textbf{booking system success rate by $\sim$4\%}, \textbf{seat selection availability by $\sim$10\%} across the top 3 airline providers, and \textbf{Memcache hit rate by $\sim$15\%} through backend performance and reliability optimizations.}
     \resumeItemListEnd
 
 
@@ -219,7 +219,7 @@
 \resumeProjectHeading
   {\textbf{EgoPulse: Proactive Recommendation Agentic System for Continuous In-the-Wild Egocentric Video}}{In Development}
   \resumeItemListStart
-    \resumeItem{Developing a \textbf{proactive recommendation AI agent framework} that anticipates user needs and generates \textbf{context-aware, memory-grounded, and personalized recommendations} from in-the-wild continuous egocentric observations, adapting to user feedback.}
+    \resumeItem{Developing a \textbf{proactive AI recommendation agent framework} that anticipates user needs and generates \textbf{context-aware, memory-grounded, and personalized recommendations} from continuous in-the-wild egocentric observations, dynamically deciding \textbf{when to initiate, maintain, or withdraw recommendations} based on evolving context and user feedback.}
 
     \resumeItem{Designing a \textbf{user feedback simulation agent} that models real wearer personas and preferences to evaluate proactive recommendations and provide feedback signals for iterative agent improvement.}
 
@@ -243,24 +243,6 @@
 \resumeSubHeadingListEnd
 
 
-\section{Volunteer Experience}
-\resumeSubHeadingListStart
-\resumeSubheading{Tsinghua Master of Soccer (THMOS), Future Robot Club (FuRoC)}{}{Member of Gait Team}{Oct 2026 -- Present}
-\resumeItemListStart
-\resumeItem{Converted LAFAN1 motion-capture sequences from BVH to SMPL-X and retargeted them to the Booster K1 humanoid with GMR and UMR. Recovered human motion from soccer video with GVHMR and used UMR to generate K1 reference trajectories.}
-\resumeItem{Learning to train a motion-tracking policy in Booster mjlab using UMR reference trajectories, with deployment on the physical K1 as the next stage.}
-\resumeItemListEnd
-\resumeSubheading{RISTEK FASILKOM UI}{Depok, Indonesia}{Data Science \& Analytics Lead (2024--25), Web Development Lead (2023--24)}{Jan 2023 -- Jan 2025}
-\resumeItemListStart
-\resumeItem{Mentored student teams on software and data science projects for internal and external clients.}
-\resumeItemListEnd
-\resumeSubheading{COMPFEST}{Depok, Indonesia}{Data Science Academy Mentor}{Aug 2024, Aug 2025}
-\resumeItemListStart
-\resumeItem{Advised students on data science methods for their final data science projects.}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
-
-
 
 \section{Technical Leadership \& Volunteering}
 \resumeSubHeadingListStart
@@ -271,7 +253,7 @@
   \resumeItemListStart
     \resumeItem{Developed a \textbf{human-to-humanoid motion retargeting pipeline} for the \textbf{Booster K1 robot}, converting LAFAN1 motion-capture data from BVH to SMPL-X and retargeting motions using \textbf{GMR and UMR}; reconstructed soccer movements from video using \textbf{GVHMR} to generate robot reference trajectories.}
 
-    \resumeItem{Currently learning to train \textbf{RL-based motion tracking policy} in \textbf{Booster mjlab} using UMR reference trajectories, with physical deployment on the Booster K1 planned as the next stage.}
+    \resumeItem{Currently learning to train a \textbf{motion tracking policy using reinforcement learning} in \textbf{Booster mjlab} using UMR reference trajectories, with physical deployment on the Booster K1 planned as the next stage.}
   \resumeItemListEnd
 
 \resumeSubheading
