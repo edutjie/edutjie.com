@@ -1,0 +1,339 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
+\definecolor{softblue}{RGB}{20, 100, 200}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=softblue,
+    filecolor=magenta,
+    urlcolor=softblue,
+}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[lining]{ebgaramond}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\raggedright\large\bfseries
+}{}{0em}{\MakeUppercase}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textbf{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep {\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{p{0.82\textwidth}@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{0pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{0pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.1in, label={}, itemsep=3pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+	%----------HEADING----------
+	\begin{center}
+		\textbf{\huge \MakeUppercase{Eduardus Tjitrahardja} (徐和平)} \\ \vspace{1pt}
+		\small (+86) 18801172162 $|$ (+62) 89635464305 $|$ \href{mailto:edutjitrahardja@gmail.com}{edutjitrahardja@gmail.com} $|$
+		\href{https://www.edutjie.net/}{edutjie.net} $|$
+		\href{https://github.com/edutjie}{github.com/edutjie} $|$
+		\href{https://www.linkedin.com/in/edutjie/}{linkedin.com/in/edutjie}
+	\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{Tsinghua University}{Beijing, China}{M.S. in Computer Science and Technology (Advanced Computing) }{Sep 2025 -- Present}
+\resumeItemListStart
+\resumeItem{GPA 3.7/4.0. \textbf{Fully funded Chinese Government Scholarship}. Advisors: Prof. Yuanchun Shi and Prof. Yuntao Wang.}
+\resumeItemListEnd
+\resumeSubheading{Universitas Indonesia}{Depok, Indonesia}{Bachelor of Computer Science, cum laude}{Sep 2021 -- Jan 2025}
+\resumeItemListStart
+\resumeItem{GPA 3.88/4.00. Thesis: \textbf{\href{https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf}{``FrOG: Framework of Open GraphRAG''}}, published in LLM-TEXT2KG @ ESWC 2025.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Research and Engineering Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading{Tsinghua University}{Beijing, China}{Research Assistant, Key Laboratory of Pervasive Computing}{Sep 2025 -- Present}
+    \resumeItemListStart
+      \resumeItem{Lead a research project on \textbf{proactive multimodal AI assistants} that anticipate user needs and generate context-aware, personalized, and timely \textbf{recommendations} from egocentric multimodal observations.}
+      \resumeItem{Co-authored \href{https://ego-introspect.github.io/}{\textbf{EgoIntrospect}}, a multimodal egocentric dataset and benchmark for user-centric internal state reasoning with \textbf{180+ hours of recordings from 60 participants}, leading the \textbf{Proactive Request Recommendation} task and and developed the end-to-end benchmarking codebase for \textbf{21 MLLMs across 6 reasoning tasks}.}
+      \resumeItem{\textbf{Research Areas:} Multimodal Learning, Human-Centered AI, Multimodal Large Language Models (MLLMs), Egocentric AI.}
+    \resumeItemListEnd
+
+  \resumeSubheading{VITURE}{Beijing, China}{Human-AI Research Intern}{Jul 2026 -- Sep 2026}
+    \resumeItemListStart
+      \resumeItem{Built and deployed a \textbf{real-time proactive AI guidance agent system} for \textbf{\href{https://www.viture.com/helix}{VITURE x NVIDIA Helix AI Glasses}}, delivering continuous, context-aware physical procedural guidance and spoken corrective feedback without requiring explicit user input.}
+      \resumeItem{Designed a \textbf{VLM evaluation harness} to systematically assess the impact of visual reference frames and textual instructions on procedural understanding and verification across \textbf{3 VLMs}.}
+      \resumeItem{Constructed an internal object detection dataset of \textbf{1,767 annotated frames} to train a \textbf{YOLO-based detector} for physical object understanding in the proactive guidance system; deployed the detector with \textbf{OpenVINO INT8 inference}, achieving approximately \textbf{20 ms/frame on an Intel CPU}.}
+    \resumeItemListEnd
+
+  \resumeSubheading{Maknadata}{Jakarta, Indonesia}
+    {AI Engineer Intern}{Jan 2025 -- Apr 2025}
+    \resumeItemListStart
+      \resumeItem{Collaborated directly with the \textbf{CEO} on the \textbf{Criminal Detention Studies in Indonesia} project, developing AI-powered solutions to streamline legal document analysis and prisoner-officer interview workflows.}
+      \resumeItem{Developed an \textbf{LLM-powered information extraction system} for unstructured multi-pages legal documents (PDFs), an \textbf{automated interview note-generation system}, and a \textbf{retrieval-augmented generation (RAG) chatbot} integrated with relational databases for efficient information retrieval.}
+    \resumeItemListEnd
+
+  \resumeSubheading{Media Kernels Indonesia}{Jakarta, Indonesia}
+    {AI Engineer Intern}{Sep 2024 -- Dec 2024}
+    \resumeItemListStart
+      \resumeItem{Collaborated directly with the \textbf{CTO} to research and prototype \textbf{Retrieval-Augmented Generation (RAG)} approaches for heterogeneous data sources, including social media, news, and legal documents; experimented with \textbf{hybrid search}, \textbf{early and late chunking}, and \textbf{vector databases} to improve information retrieval.}
+    \resumeItemListEnd
+  
+  \resumeSubheading{Traveloka}{Tangerang, Indonesia}
+    {Backend Engineer Intern}{Feb 2024 -- Jun 2024}
+    \resumeItemListStart
+      \resumeItem{Contributed to the \textbf{Flight Supply} engineering team, developing and optimizing backend services responsible for airline inventory management and flight booking operations.}
+      \resumeItem{Improved \textbf{booking health by $\sim$4\%}, \textbf{seat selection availability by $\sim$10\%} across the top 3 airline providers, and \textbf{Memcache cache hit rate by $\sim$15\%} through backend performance and reliability optimizations.}
+    \resumeItemListEnd
+
+
+  \item[]
+    \small{\textbf{Earlier Experience:}
+    \textbf{Sabilamall} (Software Engineer Intern, Jun--Sep 2023);
+    \textbf{Xeratic} (Data Ops Engineer Intern, Sep--Nov 2022).}
+
+\resumeSubHeadingListEnd
+
+\section{Publications}
+\resumeSubHeadingListStart
+
+% --- Main Research Publications ---
+
+\resumeProjectHeading
+  {\textbf{\href{https://arxiv.org/abs/2605.17262}{EgoIntrospect: An Egocentric Dataset and Benchmark for User-Centric Internal State Reasoning}}}{Preprint, 2026}
+  \resumeItemListStart
+    \resumeItem{Zeyu Wang\textsuperscript{*}, Chang Liu\textsuperscript{*}, \textbf{Eduardus Tjitrahardja}, et al. \textit{arXiv preprint; under review at CVPR 2027}. \href{https://arxiv.org/abs/2605.17262}{[Paper]} \href{https://ego-introspect.github.io/}{[Project]}}
+    \resumeItem{Introduced a \textbf{multimodal egocentric benchmark} for user-centric internal state reasoning across \textbf{affective experience, interactive intent, and cognitive memory}; led \textbf{Task 2.2: Proactive Request Recommendations} and developed the foundational \textbf{MLLM benchmarking codebase}.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{ShiftMind: Shared Workforce Memory and Agentic Analysis on Smart Glasses}}{UbiComp/ISWC-W, 2026}
+  \resumeItemListStart
+    \resumeItem{Jose M. D. Mancilla\textsuperscript{*}, \textbf{Eduardus Tjitrahardja}\textsuperscript{*}, Yuntao Wang. \textit{WearAgent Workshop @ UbiComp/ISWC 2026}. \textsuperscript{*}Equal contribution. \href{https://www.youtube.com/watch?v=zaEACnPiLCE}{[Demo]} \href{https://wearagent.github.io/\#accepted-papers}{[Workshop]} \href{https://github.com/edutjie/ShiftMind}{[GitHub]}}
+    \resumeItem{Developed a \textbf{proactive shared-memory system} on \textbf{Rokid AR glasses} that automatically surfaces identity-linked customer memories via face recognition, synchronizes cumulative memories across employees, and enables contextual retrieval and analysis through a \textbf{tool-using AI agent}.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{\href{https://aclanthology.org/2025.bea-1.97/}{Tutor Identity Classification using DiReC, a Two-Stage Disentangled Contrastive Representation}}}{BEA-W, 2025}
+  \resumeItemListStart
+    \resumeItem{\textbf{Eduardus Tjitrahardja}, Ikhlasul Akmal Hanif. \textit{BEA Workshop @ ACL 2025}. \href{https://aclanthology.org/2025.bea-1.97/}{[Paper]} \href{https://github.com/edutjie/DiReC}{[GitHub]}}
+    \resumeItem{Achieved \textbf{3rd place overall} in the BEA 2025 Shared Task with \textbf{0.9172 macro-F1}; developed \textbf{DiReC}, a two-stage framework combining \textbf{disentangled representation learning} and \textbf{supervised contrastive learning} to separate semantic content from stylistic features.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{\href{https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf}{FrOG: Framework of Open GraphRAG}}}{ESWC-W, 2025}
+  \resumeItemListStart
+    \resumeItem{Jaycent G. Ongris\textsuperscript{*}, \textbf{Eduardus Tjitrahardja}\textsuperscript{*}, Fariz Darari, Fajar J. Ekaputra. \textit{LLM-TEXT2KG Workshop @ ESWC 2025}. \textsuperscript{*}Equal contribution. \href{https://ceur-ws.org/Vol-4020/Paper_ID_7.pdf}{[Paper]} \href{https://github.com/Framework-of-Open-GraphRAG/FROG}{[GitHub]}}
+    \resumeItem{Introduced an open-source \textbf{GraphRAG framework} integrating \textbf{LLMs and knowledge graphs} for question answering, leveraging \textbf{LLM-generated SPARQL queries}, entity linking, and ontology retrieval across \textbf{Wikidata, DBpedia, and local KGs}.}
+  \resumeItemListEnd
+
+% --- Additional Publications ---
+
+\resumeProjectHeading
+  {\textbf{\href{https://aclanthology.org/2025.semeval-1.279/}{Evaluating State-of-the-Art Encoders for Multi-Label Emotion Detection}}}{SemEval-W, 2025}
+  \resumeItemListStart
+    \resumeItem{Ikhlasul A. Hanif, Eryawan P. Yulianrifat, Jaycent G. Ongris, \textbf{Eduardus Tjitrahardja}, et al. \textit{SemEval Workshop @ ACL 2025}. \href{https://aclanthology.org/2025.semeval-1.279/}{[Paper]}}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{\href{https://ieeexplore.ieee.org/document/10963661}{Towards an Open NLI LLM-based System for KGs: A Case Study of Wikidata}}}{ISRITI, 2024}
+  \resumeItemListStart
+    \resumeItem{Jaycent G. Ongris, \textbf{Eduardus Tjitrahardja}, Fariz Darari, Fajar J. Ekaputra. \textit{ISRITI 2024 (IEEE Proceedings)}. \href{https://ieeexplore.ieee.org/document/10963661}{[Paper]} Developed an \textbf{LLM-based natural language interface} for knowledge graph question answering using \textbf{SPARQL generation}; preliminary research for FrOG.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{\href{https://jiki.cs.ui.ac.id/index.php/jiki/article/view/1426}{Automated Assignment of Community Reports With Early Fusion Multimodal Transformer}}}{JIKI, 2026}
+  \resumeItemListStart
+    \resumeItem{Ikhlasul A. Hanif, \textbf{Eduardus Tjitrahardja}, Rahmat B. Naufal, Laksmita R. \textit{Jurnal Ilmu Komputer dan Informasi, 2026}. \href{https://doi.org/10.21609/jiki.v19i1.1426}{[Paper]}}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{\href{https://buletingemastik.id/index.php/bg/article/view/202404.009}{Helmet Detection on Motorcycle Riders in Indonesia Using Deformable DETR}}}{Buletin GEMASTIK, 2024}
+  \resumeItemListStart
+    \resumeItem{\textbf{Eduardus Tjitrahardja}, Ikhlasul Akmal Hanif, Rahmat Bryan Naufal, Laksmita Rahadianti. \textit{Buletin GEMASTIK, 2024}. \href{https://buletingemastik.id/index.php/bg/article/view/202404.009}{[Paper]}}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{EgoPulse: Proactive Recommendation Agentic System for Continuous In-the-Wild Egocentric Video}}{In Development}
+  \resumeItemListStart
+    \resumeItem{Developing a \textbf{proactive recommendation AI agent framework} that anticipates user needs and generates \textbf{context-aware, memory-grounded, and personalized recommendations} from in-the-wild continuous egocentric observations, adapting to user feedback.}
+
+    \resumeItem{Designing a \textbf{user feedback simulation agent} that models real wearer personas and preferences to evaluate proactive recommendations and provide feedback signals for iterative agent improvement.}
+
+    \resumeItem{Building an \textbf{offline evaluation benchmark framework} for the proactive recommendation AI agent paradigm in naturalistic egocentric scenarios, assessing both \textbf{recommendation relevance and intervention timing}.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{What Does V-JEPA See? Sparse Autoencoders Reveal Interpretable Concepts in Video Foundation Models}}{Jun 2026}
+  \resumeItemListStart
+    \resumeItem{Developed a \textbf{label-free interpretability pipeline} using \textbf{Top-K Sparse Autoencoders (SAEs)} on frozen \textbf{V-JEPA} representations from Ego4D videos; mapped learned sparse features to real-world concepts through \textbf{narration mining, statistical enrichment, and Benjamini--Hochberg FDR correction}, analyzing \textbf{141.9M tokens and 88 concepts}.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{MyoPong: Goal-Conditioned Synergistic Action and Latent Exploration for Musculoskeletal Table Tennis Control with Training-Free High-Level Policy}}{Dec 2025}
+  \resumeItemListStart
+    \resumeItem{Developed a \textbf{hierarchical reinforcement learning framework} for musculoskeletal table tennis control with up to \textbf{210 muscles}, combining a \textbf{physics-based high-level planner} with a \textbf{goal-conditioned PPO policy} and muscle synergy-based action representations.}
+
+    \resumeItem{Achieved a \textbf{94\% success rate} on the \textbf{MyoChallenge Phase 1} task, compared to \textbf{0\% for baseline PPO}, using \textbf{muscle synergy extraction} and \textbf{Lattice-based latent exploration}. \href{https://myopong.github.io/}{[Project]} \href{https://github.com/alfonsusrr/MyoPong}{[GitHub]}}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\section{Volunteer Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{Tsinghua Master of Soccer (THMOS), Future Robot Club (FuRoC)}{}{Member of Gait Team}{Oct 2026 -- Present}
+\resumeItemListStart
+\resumeItem{Converted LAFAN1 motion-capture sequences from BVH to SMPL-X and retargeted them to the Booster K1 humanoid with GMR and UMR. Recovered human motion from soccer video with GVHMR and used UMR to generate K1 reference trajectories.}
+\resumeItem{Learning to train a motion-tracking policy in Booster mjlab using UMR reference trajectories, with deployment on the physical K1 as the next stage.}
+\resumeItemListEnd
+\resumeSubheading{RISTEK FASILKOM UI}{Depok, Indonesia}{Data Science \& Analytics Lead (2024--25), Web Development Lead (2023--24)}{Jan 2023 -- Jan 2025}
+\resumeItemListStart
+\resumeItem{Mentored student teams on software and data science projects for internal and external clients.}
+\resumeItemListEnd
+\resumeSubheading{COMPFEST}{Depok, Indonesia}{Data Science Academy Mentor}{Aug 2024, Aug 2025}
+\resumeItemListStart
+\resumeItem{Advised students on data science methods for their final data science projects.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+
+\section{Technical Leadership \& Volunteering}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Tsinghua Master of Soccer (THMOS), Future Robot Club (FuRoC)}{Beijing, China}
+  {Gait Team Member}{Oct 2026 -- Present}
+  \resumeItemListStart
+    \resumeItem{Developed a \textbf{human-to-humanoid motion retargeting pipeline} for the \textbf{Booster K1 robot}, converting LAFAN1 motion-capture data from BVH to SMPL-X and retargeting motions using \textbf{GMR and UMR}; reconstructed soccer movements from video using \textbf{GVHMR} to generate robot reference trajectories.}
+
+    \resumeItem{Currently learning to train \textbf{RL-based motion tracking policy} in \textbf{Booster mjlab} using UMR reference trajectories, with physical deployment on the Booster K1 planned as the next stage.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {RISTEK FASILKOM UI}{Depok, Indonesia}
+  {Data Science \& Analytics Lead (2024--25); Web Development Lead (2023--24)}{Jan 2023 -- Jan 2025}
+  \resumeItemListStart
+    \resumeItem{Led and mentored technical teams across \textbf{Data Science \& Analytics} and \textbf{Web Development}, overseeing internal and client-facing projects and guiding members' technical development.}
+
+    \resumeItem{Recognized as \textbf{Best Lead} in \href{https://drive.google.com/file/d/1pP1CsDuR71Rs0owoqqicpCiUmuYeMwdL/view}{Q1 2023 (Web Development)} and \href{https://drive.google.com/file/d/1JvAupLQcdfikTIEoBEY6xJRka4_q4eNk/view}{Q2 2024 (Data Science \& Analytics)}.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {COMPFEST}{Depok, Indonesia}
+  {Data Science Academy Mentor}{Aug 2024, Aug 2025}
+  \resumeItemListStart
+    \resumeItem{Mentored Data Science Academy participants in \textbf{2024 and 2025}, advising student teams on data science methodologies, best practices, and final projects.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\section{Selected Awards \& Teaching}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{Coach, Indonesian National AI Team} $|$ International Olympiad in Artificial Intelligence}{2025}
+  \resumeItemListStart
+    \resumeItem{Coached \textbf{4 Indonesian national team representatives} in machine learning, NLP, and computer vision for Indonesia's debut at the IOAI; \textbf{all 4 earned medals (3 silver, 1 bronze)}.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Gold Medal, Data Mining} $|$ GEMASTIK XVII, 250+ Teams, Indonesian Ministry of Education}{2024}
+  \resumeItemListStart
+    \resumeItem{Co-developed an \href{https://jiki.cs.ui.ac.id/index.php/jiki/article/view/1426}{\textbf{early-fusion multimodal transformer}} for community report classification; applied \textbf{cost-sensitive learning and ensemble methods} to classify tuition fee categories in the final round.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Silver Medal, Big Data Challenge} $|$ Satria Data, 400+ Teams, Indonesian Ministry of Education}{2024}
+  \resumeItemListStart
+    \resumeItem{Analyzed Indonesian presidential election discourse on X using \href{https://drive.google.com/file/d/1V0vUd1qH7-YPac044EeQka8AK3ei8407/view}{\textbf{lexical mutation networks, stance classification, and civility analysis}}.}
+  \resumeItemListEnd
+
+\item[]
+  \small{\textbf{Other Competition Achievements (2 Gold, 3 Silver):}
+  \textbf{Gold} -- Data Slayer (2024), Airnology 2.0 (2023);
+  \textbf{Silver} -- Intelligo NLP (2023), JOINTS (2023), Pekan RISTEK Datathon (2022);
+  \textbf{Finalist} -- GEMASTIK XVI (2023);
+  \textbf{Top-10 Semifinalist} -- Satria Data (2023).}
+
+\resumeSubHeadingListEnd
+
+
+\section{Technical Skills \& Languages}
+\begin{itemize}[leftmargin=0.1in, label={}, itemsep=1pt, parsep=0pt]
+\small
+  \item \textbf{Programming:} Python, C++, SQL, Go, TypeScript, Java
+  \item \textbf{Machine Learning \& AI:} PyTorch, TensorFlow, Hugging Face, Computer Vision, NLP, Multimodal LLMs, Reinforcement Learning
+  \item \textbf{LLM \& Agent Systems:} PEFT, LoRA/QLoRA, LLM/VLM Inference, LangChain, LangGraph, RAG, Weaviate, Milvus
+  \item \textbf{Software Engineering \& Infrastructure:} FastAPI, JS/TS Frameworks, Redis, Docker, Linux, AWS, SQL/NoSQL Databases
+  \item \textbf{Languages:} Indonesian (Native), English (IELTS 7.5), Mandarin Chinese (HSK 4)
+\end{itemize}
+
+
+\end{CJK*}
+\end{document}
