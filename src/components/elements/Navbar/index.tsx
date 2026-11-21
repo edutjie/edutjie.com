@@ -21,7 +21,6 @@ export const Navbar: React.FC = () => {
         width: '600px',
         height: '56px',
         backgroundColor: 'rgba(15, 23, 42, 0.85)',
-        backdropFilter: 'blur(20px)',
         borderRadius: '9999px',
         marginTop: '16px',
         ease: 'power2.inOut',
@@ -39,7 +38,6 @@ export const Navbar: React.FC = () => {
         width: '92%',
         height: '56px',
         backgroundColor: 'rgba(15, 23, 42, 0.9)',
-        backdropFilter: 'blur(20px)',
         marginTop: '12px',
         ease: 'power2.out',
       })
@@ -93,6 +91,16 @@ export const Navbar: React.FC = () => {
       })
     }
   }
+
+  // Esc closes the fullscreen menu
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') toggleMenu()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [isMenuOpen])
 
   return (
     <>

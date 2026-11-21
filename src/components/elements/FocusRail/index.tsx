@@ -196,7 +196,7 @@ export function FocusRail({
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="absolute inset-0 flex items-center justify-center transform-gpu"
                     >
-                        <img
+                        <img loading="lazy" decoding="async"
                             src={activeItem.imageSrc}
                             alt=""
                             className="h-full w-full object-cover blur-[60px] saturate-[1.5] scale-[1.2] pointer-events-none"
@@ -243,7 +243,7 @@ export function FocusRail({
                             <motion.div
                                 key={absIndex}
                                 className={cn(
-                                    "absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl border-t border-white/20 bg-neutral-900 shadow-2xl transition-shadow duration-300",
+                                    "focus-rail-card absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl border-t border-white/20 bg-neutral-900 shadow-2xl transition-shadow duration-300",
                                     isCenter ? "z-20 shadow-white/10" : "z-10"
                                 )}
                                 initial={false}
@@ -272,7 +272,7 @@ export function FocusRail({
                                     if (offset !== 0) setActive((p) => p + offset);
                                 }}
                             >
-                                <img
+                                <img loading="lazy" decoding="async"
                                     src={item.imageSrc}
                                     alt={item.title}
                                     className="h-full w-full rounded-2xl object-cover pointer-events-none"

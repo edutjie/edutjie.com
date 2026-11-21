@@ -47,33 +47,50 @@ export const SplineScene = () => {
   useEffect(() => {
     // Inject the viewer web component from the CDN (once). It self-registers
     // as `<spline-viewer>` and upgrades the element rendered below.
+    // Deferred to idle time so the ~2MB runtime doesn't compete with
+    // hydration / first paint on slower devices.
+    let idleId: number | undefined
     if (
       typeof customElements !== 'undefined' &&
       !customElements.get('spline-viewer') &&
       !document.querySelector('script[data-spline-viewer]')
     ) {
-      const script = document.createElement('script')
-      script.type = 'module'
-      script.src = SPLINE_VIEWER_SRC
-      script.dataset.splineViewer = 'true'
-      document.head.appendChild(script)
+      const inject = () => {
+        if (document.querySelector('script[data-spline-viewer]')) return
+        const script = document.createElement('script')
+        script.type = 'module'
+        script.src = SPLINE_VIEWER_SRC
+        script.dataset.splineViewer = 'true'
+        document.head.appendChild(script)
+      }
+      idleId =
+        typeof window.requestIdleCallback === 'function'
+          ? window.requestIdleCallback(inject, { timeout: 1500 })
+          : (setTimeout(inject, 300) as unknown as number)
+    }
+    const cancelIdle = () => {
+      if (idleId === undefined) return
+      if (typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(idleId)
+      else clearTimeout(idleId)
     }
 
     // Custom elements upgrade in place, so a listener attached here (before
     // the element upgrades) still receives the `load-complete` event.
     const el = viewerRef.current
-    if (!el) return
+    if (!el) return cancelIdle
     const handleLoad = () => setLoaded(true)
     el.addEventListener('load-complete', handleLoad)
-    return () => el.removeEventListener('load-complete', handleLoad)
+    return () => {
+      cancelIdle()
+      el.removeEventListener('load-complete', handleLoad)
+    }
   }, [])
 
   return (
     <div
       id="ai-3d-canvas"
       className="w-full h-full rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#030712]/50 to-[#0f172a]/50 relative z-0"
-      style={{ willChange: 'transform' }}
-    >
+          >
       {!loaded && <SceneFallback />}
 
       {/* Viewer oversized vertically, bottom clipped by the overflow-hidden

@@ -116,38 +116,20 @@ function useInView(threshold = 0.15) {
   return { ref, inView }
 }
 
-// Hook: drives continuous orbit rotation via rAF
-function useOrbitAngle(speed: number, enabled: boolean) {
-  const [angle, setAngle] = useState(0)
-  const rafRef = useRef<number>(0)
-  const lastRef = useRef<number>(0)
-  useEffect(() => {
-    if (!enabled) return
-    const tick = (now: number) => {
-      if (lastRef.current) {
-        const delta = now - lastRef.current
-        setAngle(a => (a + (delta / 1000) * speed) % 360)
-      }
-      lastRef.current = now
-      rafRef.current = requestAnimationFrame(tick)
-    }
-    rafRef.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(rafRef.current)
-  }, [enabled, speed])
-  return angle
-}
-
 interface OrbitIconProps {
   item: typeof ORBIT_SKILLS[0]
   containerSize: number
-  orbitAngle: number
   hasEntered: boolean
   entranceDelay: number
+  /** counter-rotation class so the logo stays upright while its ring spins */
+  counterClass: string
 }
 
-const OrbitIcon = ({ item, containerSize, orbitAngle, hasEntered, entranceDelay }: OrbitIconProps) => {
+// Icon sits at a fixed angle on its ring; the ring itself spins with a CSS
+// animation (compositor-only, zero React renders per frame) and the icon
+// counter-rotates to stay upright.
+const OrbitIcon = ({ item, containerSize, hasEntered, entranceDelay, counterClass }: OrbitIconProps) => {
   const [imgErr, setImgErr] = React.useState(false)
-  const [entranceDone, setEntranceDone] = React.useState(false)
 
   const radii: Record<string, number> = {
     outer: containerSize * 0.44,
@@ -156,61 +138,52 @@ const OrbitIcon = ({ item, containerSize, orbitAngle, hasEntered, entranceDelay 
   const r = radii[item.orbit] ?? containerSize * 0.44
   const cx = containerSize / 2
   const cy = containerSize / 2
-
-  // Position on the orbit ring, offset by current orbit angle
-  const totalAngle = item.angle + orbitAngle
-  const { x, y } = getOrbitXY(totalAngle, r, cx, cy)
-
-  useEffect(() => {
-    if (hasEntered) {
-      const t = setTimeout(() => setEntranceDone(true), entranceDelay + 600)
-      return () => clearTimeout(t)
-    }
-  }, [hasEntered, entranceDelay])
+  const { x, y } = getOrbitXY(item.angle, r, cx, cy)
 
   const style: React.CSSProperties = {
     width: item.size,
     height: item.size,
     left: x - item.size / 2,
     top: y - item.size / 2,
-    // Entrance: scale from 0 at center, then move to position
+    // Entrance: scale from 0, with a springy overshoot
     transform: hasEntered ? 'scale(1)' : 'scale(0)',
     opacity: hasEntered ? 1 : 0,
-    transition: entranceDone
-      ? 'none'
-      : `transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${entranceDelay}ms, opacity 0.4s ease ${entranceDelay}ms`,
+    transition: `transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${entranceDelay}ms, opacity 0.4s ease ${entranceDelay}ms`,
   }
 
   return (
-    <div
-      className="absolute flex items-center justify-center rounded-2xl bg-[#0f1423] border border-white/10 hover:border-blue-400/40 hover:scale-110 cursor-target shadow-[0_4px_20px_rgba(0,0,0,0.4)] z-10 overflow-hidden"
-      style={style}
-      title={item.name}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent rounded-2xl pointer-events-none"></div>
-      {!imgErr ? (
+    <div className="absolute z-10" style={style}>
+      <div className={`w-full h-full ${counterClass}`}>
         <div
-          className="rounded-full flex items-center justify-center relative z-10"
-          style={{
-            width: Math.round(item.size * 0.65),
-            height: Math.round(item.size * 0.65),
-            backgroundColor: item.bg ?? 'transparent',
-            padding: item.bg ? 3 : 0,
-          }}
+          className="relative w-full h-full flex items-center justify-center rounded-2xl bg-[#0f1423] border border-white/10 hover:border-blue-400/40 hover:scale-110 transition-transform cursor-target shadow-[0_4px_20px_rgba(0,0,0,0.4)] overflow-hidden"
+          title={item.name}
         >
-          <Image
-            src={item.logo}
-            alt={item.name}
-            width={Math.round(item.size * 0.55)}
-            height={Math.round(item.size * 0.55)}
-            className="object-contain w-full h-full"
-            onError={() => setImgErr(true)}
-            unoptimized
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent rounded-2xl pointer-events-none"></div>
+          {!imgErr ? (
+            <div
+              className="rounded-full flex items-center justify-center relative z-10"
+              style={{
+                width: Math.round(item.size * 0.65),
+                height: Math.round(item.size * 0.65),
+                backgroundColor: item.bg ?? 'transparent',
+                padding: item.bg ? 3 : 0,
+              }}
+            >
+              <Image
+                src={item.logo}
+                alt={item.name}
+                width={Math.round(item.size * 0.55)}
+                height={Math.round(item.size * 0.55)}
+                className="object-contain w-full h-full"
+                onError={() => setImgErr(true)}
+                unoptimized
+              />
+            </div>
+          ) : (
+            <span className="text-[10px] font-bold text-blue-300 relative z-10">{item.name[0]}</span>
+          )}
         </div>
-      ) : (
-        <span className="text-[10px] font-bold text-blue-300 relative z-10">{item.name[0]}</span>
-      )}
+      </div>
     </div>
   )
 }
@@ -300,11 +273,16 @@ const SkillChip = ({ skill, index, visible }: SkillChipProps) => {
     return () => obs.disconnect()
   }, [])
 
-  // Orbit entrance + continuous rotation
+  // Orbit entrance (once) + pause rotation while off-screen
   const { ref: orbitRef, inView: orbitInView } = useInView(0.2)
-  // outer: 12 deg/s (30s/rev), mid: 18 deg/s (20s/rev)
-  const outerAngle = useOrbitAngle(12, orbitInView)
-  const midAngle = useOrbitAngle(-18, orbitInView)  // opposite direction for visual interest
+  const [orbitOnScreen, setOrbitOnScreen] = useState(false)
+  useEffect(() => {
+    const el = orbitRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => setOrbitOnScreen(entry.isIntersecting))
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [orbitRef])
 
   const handleTabChange = (id: string) => {
     if (id === activeTab) return
@@ -382,29 +360,33 @@ const SkillChip = ({ skill, index, visible }: SkillChipProps) => {
             <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white/[0.04] -translate-y-1/2"></div>
             <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.04] -translate-x-1/2"></div>
 
-            {/* Outer orbit icons */}
-            {outerSkills.map((item, idx) => (
-              <OrbitIcon
-                key={item.name}
-                item={item}
-                containerSize={containerSize}
-                orbitAngle={outerAngle}
-                hasEntered={orbitInView}
-                entranceDelay={idx * 70}
-              />
-            ))}
+            {/* Outer orbit (30s/rev clockwise) */}
+            <div className={`absolute inset-0 orbit-spin-cw ${orbitOnScreen ? '' : 'orbit-paused'}`}>
+              {outerSkills.map((item, idx) => (
+                <OrbitIcon
+                  key={item.name}
+                  item={item}
+                  containerSize={containerSize}
+                  hasEntered={orbitInView}
+                  entranceDelay={idx * 70}
+                  counterClass="orbit-spin-ccw"
+                />
+              ))}
+            </div>
 
-            {/* Mid orbit icons */}
-            {midSkills.map((item, idx) => (
-              <OrbitIcon
-                key={item.name}
-                item={item}
-                containerSize={containerSize}
-                orbitAngle={midAngle}
-                hasEntered={orbitInView}
-                entranceDelay={outerSkills.length * 70 + idx * 70}
-              />
-            ))}
+            {/* Mid orbit (20s/rev counter-clockwise) */}
+            <div className={`absolute inset-0 orbit-spin-ccw orbit-fast ${orbitOnScreen ? '' : 'orbit-paused'}`}>
+              {midSkills.map((item, idx) => (
+                <OrbitIcon
+                  key={item.name}
+                  item={item}
+                  containerSize={containerSize}
+                  hasEntered={orbitInView}
+                  entranceDelay={outerSkills.length * 70 + idx * 70}
+                  counterClass="orbit-spin-cw orbit-fast"
+                />
+              ))}
+            </div>
 
             {/* Center Node */}
             <div

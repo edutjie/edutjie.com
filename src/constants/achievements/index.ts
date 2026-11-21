@@ -23,7 +23,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     name: '1st Winner of Data Mining, GEMASTIK XVII',
     issuer:
       'Indonesian Ministry of Education, Culture, Research, and Technology',
-    image: 'images/achievements/gemastik/image20241.jpg',
+    image: 'images/achievements/gemastik/image20241.webp',
     date: 'Sep 2024',
     medal: 'gold',
     type: 'competition',
@@ -53,7 +53,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     name: '2nd Winner of Big Data Challenge, Satria Data 2024',
     issuer:
       'Indonesian Ministry of Education, Culture, Research, and Technology',
-    image: 'images/achievements/satria data/image20241.jpg',
+    image: 'images/achievements/satria data/image20241.webp',
     date: 'Aug 2024',
     medal: 'silver',
     type: 'competition',
@@ -107,7 +107,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
   {
     name: '1st Winner of Objective Quest Dataquest, Airnology 2.0',
     issuer: 'BEM FTMM Universitas Airlangga',
-    image: 'images/achievements/dataquest/image1.jpg',
+    image: 'images/achievements/dataquest/image1.webp',
     date: 'Oct 2023',
     medal: 'gold',
     type: 'competition',
@@ -132,7 +132,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
   {
     name: '2nd Winner of Natural Language Processing Data Competition, Intelligo ID 2023',
     issuer: 'Intelligo ID',
-    image: 'images/achievements/intelligo/image1.jpg',
+    image: 'images/achievements/intelligo/image1.webp',
     date: 'Oct 2023',
     medal: 'silver',
     type: 'competition',
@@ -180,7 +180,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
     name: 'Semi-Finalist of Big Data Competition, Satria Data 2023',
     issuer:
       'Indonesian Ministry of Education, Culture, Research, and Technology',
-    image: 'images/achievements/satria data/image1.png',
+    image: 'images/achievements/satria data/image1.webp',
     date: 'Sep 2023',
     medal: 'none',
     type: 'competition',
@@ -214,7 +214,7 @@ export const ACHIEVEMENTS: AchievementType[] = [
   {
     name: '2nd Winner of Data Competition, JOINTS 2023',
     issuer: 'HIMAKOM Universitas Gadjah Mada',
-    image: 'images/achievements/joints/image1.jpeg',
+    image: 'images/achievements/joints/image1.webp',
     date: 'May 2023',
     medal: 'silver',
     type: 'competition',

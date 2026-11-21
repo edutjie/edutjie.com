@@ -99,10 +99,10 @@ const Projects = () => {
               className="grid-item group relative w-full flex flex-col cursor-target project-trigger animate-on-scroll"
               style={{ animation: `animationIn 0.8s ease-out ${0.2 + (index % 4) * 0.1}s both` }}
             >
-              <div className="relative w-full h-full p-4 bg-[#0a0a0a]/80 backdrop-blur-md film-card rounded-xl border border-white/10">
+              <div className="relative w-full h-full p-4 bg-[#0a0a0a]/90 film-card rounded-xl border border-white/10">
                 <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#111] mb-5 rounded-lg border border-white/5">
                   <div className="absolute inset-0 bg-blue-900/20 z-10 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay"></div>
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={`/assets/${project.image}`}
                     alt={project.name}
                     className="w-full h-full object-cover grayscale-[70%] contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
@@ -199,10 +199,10 @@ const Projects = () => {
                       onClick={() => setSelectedProject(project)}
                       className="grid-item group relative flex flex-col cursor-target project-trigger"
                     >
-                      <div className="relative w-full h-full p-4 bg-[#0a0a0a]/80 backdrop-blur-md film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
+                      <div className="relative w-full h-full p-4 bg-[#0a0a0a]/90 film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
                         <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#111] mb-5 rounded-lg border border-white/5">
                           <div className="absolute inset-0 bg-blue-900/20 z-10 group-hover:bg-transparent transition-colors duration-500 mix-blend-overlay"></div>
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={`/assets/${project.image}`}
                             alt={project.name}
                             className="w-full h-full object-cover grayscale-[70%] contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, Rock_Salt, Playfair_Display } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
-import { CustomCursor, SmoothScroll, Footer, Navbar, UnicornScript, ScrollToTop, AuraBackground } from '@elements'
+import { CustomCursor, SmoothScroll, Footer, Navbar, ScrollToTop, AuraBackground } from '@elements'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'], variable: '--font-rock-salt' })
@@ -30,7 +30,6 @@ export default function RootLayout({
         {/* Global Ambient Background — uses static gradient on mobile, WebGL on desktop */}
         <AuraBackground />
 
-        <UnicornScript />
 
         <Navbar />
         {children}

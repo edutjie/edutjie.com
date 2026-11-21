@@ -123,7 +123,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
       >
         {/* Hero Image */}
         <div className="w-full h-[60vh] md:h-[80vh] relative">
-          <img
+          <img loading="lazy" decoding="async"
             id="modal-img"
             src={`/assets/${project.image}`}
             alt={project.name}

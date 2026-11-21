@@ -4,7 +4,7 @@ import { ProjectType } from './interface'
 export const PROJECTS: ProjectType[] = [
   {
     name: 'ShiftMind: Shared Workforce Memory and Agentic Analysis on Smart Glasses',
-    image: 'images/projects/shiftmind/image1.png',
+    image: 'images/projects/shiftmind/image1.webp',
     date: '2026',
     description:
       "Built a wearable workforce memory system demo using Rokid AR glasses that transforms per-customer information into proactive, identity-anchored shared memory; when a returning customer is recognized via face recognition, their memory card automatically appears on the worker's HUD without requiring a query, with memories shared across employees and sites as cumulative cards queryable through a tool-using agent. Accepted at the WearAgent Workshop @ Ubicomp/ISWC 2026.",
@@ -23,7 +23,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'EgoIntrospect: An Ego-Centric Dataset for Daily Assistant with User-Provided Intention Annotations',
-    image: 'images/projects/egointrospect/image1.png',
+    image: 'images/projects/egointrospect/image1.webp',
     date: '2026',
     description:
       'Introduced the first egocentric dataset captured in naturalistic, user-driven scenarios with self-annotations for AI assistant interaction; collected 180+ hours from 60 participants via a cross-device setup with synchronized video, audio, gaze, motion, physiological, and environmental signals. Formalized benchmark tasks for user-centric internal state reasoning across affective experience, interactive/request intent, and cognitive memory; specifically responsible for Task 2.2, Proactive Request Recommendations. Submitted to NeurIPS 2026 and currently under review.',
@@ -38,7 +38,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'What Does V-JEPA See? Sparse Autoencoders Reveal Interpretable Concepts in Video Foundation Models',
-    image: 'images/projects/jepasae/image1.png',
+    image: 'images/projects/jepasae/image1.webp',
     date: '2026',
     description:
       'Developed a label-free interpretability pipeline that trains Top-K Sparse Autoencoders on frozen V-JEPA representations from Ego4D videos, then maps sparse features to real-world concepts using narration mining, enrichment scoring, and Benjamini-Hochberg FDR correction across 141.9M tokens and 88 concepts.',
@@ -80,7 +80,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'FrOG: Framework of Open GraphRAG',
-    image: 'images/projects/frog/image1.png',
+    image: 'images/projects/frog/image1.webp',
     date: '2025',
     description:
       'Conducted a study introducing an open GraphRAG, a system that integrates Retrieval-Augmented Generation (RAG) with knowledge graphs (KGs) for question-answering (QA). The research leveraged open source large language models (LLMs) to generate SPARQL queries on Wikidata, DBpedia and Local KGs. Manuscript has been published at the ESWC LLM-TEXT2KG 2025.',
@@ -126,7 +126,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'Analysis of the 2024 Presidential Election Campaign Using Lexical Mutations Network, Public Stance, and Civility Tendency on Social Media',
-    image: 'images/projects/election-analysis/image1.png',
+    image: 'images/projects/election-analysis/image1.webp',
     date: '2024',
     description:
       'Conducted research analytics project employed innovative methods like lexical mutation analysis, stance classification, and civility assessment to provide insights into the dynamics of social media discourse during the election campaign.',
@@ -145,7 +145,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'Automatic Assignment of Community Reports on the CRM Platform Using Early Fusion Multimodal Transformer',
-    image: 'images/projects/crm/image1.png',
+    image: 'images/projects/crm/image1.webp',
     date: '2024',
     description:
       'Conducted an experiment that leveraged Transformer-based models such as DINOv2 and E5 to automatically assign community reports in Jakarta to the respective agencies, aiming to enhance the efficiency of the reporting process. Manuscript has been accepted for publication in the Journal of Computer Sciences and Information (JIKI) and expected to be published in the next volume in February 2026.',
@@ -160,7 +160,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'PilgrimPal - Umroh AI App',
-    image: 'images/projects/pilgrimpal/image1.jpeg',
+    image: 'images/projects/pilgrimpal/image1.webp',
     date: '2024',
     description:
       'PilgrimPal is an AI-based mobile application that aims to help pilgrims with their activities related to Umrah. This app contributes to helping pilgrims communicate, informing them of crowdedness in an area, and identifying their future needs. Our two main features are live CCTV crowd detection and AI chatbot assistant.',
@@ -228,7 +228,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'Image-based Drugs Search Engine using OCR and Levenshtein Algorithm',
-    image: 'images/projects/drug ocr/image1.png',
+    image: 'images/projects/drug ocr/image1.webp',
     date: '2023',
     description:
       'Developed an OCR-based drug brand detector for the Kasir Pintar® company during the Airnology 2.0 Data Competition.',
@@ -247,7 +247,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'High-Accuracy, Low-Cost Model for Indonesian Logistics Sentiment Analysis',
-    image: 'images/projects/cb sentiment analysis/image1.png',
+    image: 'images/projects/cb sentiment analysis/image1.webp',
     date: '2023',
     description:
       'Conducted an experimentona "High-Accuracy, Low-Cost" model for sentiment analysis using self-acquired and pseudo-labeled data obtained through web scraping. The focus of the analysis was on the Indonesian logistics industry.',
@@ -266,7 +266,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'Helm Detection on Motorcycle Drivers in Indonesia using Deformable DETR',
-    image: 'images/projects/helm detection/image1.png',
+    image: 'images/projects/helm detection/image1.webp',
     date: '2024',
     description:
       'Conducted research that leveraged Transformer-based object detection model, Deformable DETR to detect helmet usage on motorcycle riders. Utilized CCTVs from Bali Tower to create our own dataset. Manuscript published for publication to the National Student Performance Bulletin in Information and Communication Technology.',
@@ -302,7 +302,7 @@ export const PROJECTS: ProjectType[] = [
   },
   {
     name: 'Pesta Rakyat 2022 & 2023 Website, PERAK 2023',
-    image: 'images/projects/perak/image1.png',
+    image: 'images/projects/perak/image1.webp',
     date: '2022 & 2023',
     description:
       'Developed the 2022 website and led the team to make the 2023 website to accommodate the Pesta Rakyat Komputer event. It had features like mini e-commerce, a leaderboard, built-in games, a Scan Me game, and many more. Developed the website using T3stack (Next.js + tRPC +Prisma) and utilized NextAuth.js for authentication.',

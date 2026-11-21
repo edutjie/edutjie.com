@@ -15,7 +15,7 @@ export const ScrollToTop = () => {
       }
     }
 
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
     
     // Check initial state
     toggleVisibility()
@@ -40,7 +40,10 @@ export const ScrollToTop = () => {
     >
       <div className="relative rounded-full p-[1px] overflow-hidden w-full h-full z-10">
         {/* Spinning glowing light */}
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,rgba(96,165,250,1)_95%,transparent_100%)] opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Small square layer (not inset-[-1000%]) and only spins while shown */}
+        <span
+          className={`absolute left-1/2 top-1/2 w-[120px] h-[120px] -ml-[60px] -mt-[60px] ${isVisible ? 'animate-[spin_2s_linear_infinite]' : ''} bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,rgba(96,165,250,1)_95%,transparent_100%)] opacity-80 group-hover:opacity-100 transition-opacity duration-300`}
+        />
         
         {/* Actual button surface */}
         <span className="relative flex items-center justify-center p-3 text-white rounded-full bg-blue-600/20 hover:bg-blue-600 backdrop-blur-md border border-blue-500/30 transition-all duration-300 h-full w-full">

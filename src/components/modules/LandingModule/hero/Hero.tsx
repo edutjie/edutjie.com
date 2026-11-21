@@ -216,7 +216,7 @@ const Hero = () => {
               {/* Inner wrapper for spinning border */}
               <div className="relative rounded-full p-[1px] overflow-hidden w-full z-10">
                 {/* Spinning white light */}
-                <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_80%,rgba(255,255,255,0.8)_95%,transparent_100%)]" />
+                <span className="absolute left-1/2 top-1/2 w-[400px] h-[400px] -ml-[200px] -mt-[200px] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_80%,rgba(255,255,255,0.8)_95%,transparent_100%)]" />
 
                 {/* Actual button surface */}
                 <span className="relative flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white rounded-full bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] h-full w-full transition-all group-hover:from-blue-500 group-hover:to-blue-400">

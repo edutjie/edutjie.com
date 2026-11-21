@@ -71,9 +71,9 @@ const Achievements = () => {
               className="grid-item group relative w-full flex flex-col cursor-target project-trigger animate-on-scroll"
               style={{ animation: `animationIn 0.8s ease-out ${0.2 + (index % 4) * 0.1}s both` }}
             >
-              <div className="relative w-full h-full p-3 bg-[#0a0a0a]/80 backdrop-blur-md film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
+              <div className="relative w-full h-full p-3 bg-[#0a0a0a]/90 film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
                 <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#111] mb-4 rounded-lg border border-white/5">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={`/assets/${achievement.image}`}
                     alt={achievement.name}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
@@ -153,9 +153,9 @@ const Achievements = () => {
                       onClick={() => setSelectedAchievement(achievement)}
                       className="grid-item group relative flex flex-col cursor-target project-trigger"
                     >
-                      <div className="relative w-full h-full p-3 bg-[#0a0a0a]/80 backdrop-blur-md film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
+                      <div className="relative w-full h-full p-3 bg-[#0a0a0a]/90 film-card rounded-xl border border-white/10 hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.2)] transition-all duration-500">
                         <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#111] mb-4 rounded-lg border border-white/5">
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={`/assets/${achievement.image}`}
                             alt={achievement.name}
                             className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"

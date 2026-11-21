@@ -26,7 +26,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "Coaching Indonesian National AI Team",
         description: "Guided Indonesia's young talents at IOAI 2025 Beijing, bringing home 3 Silver and 1 Bronze medals.",
         meta: "Mentorship • IOAI",
-        imageSrc: "assets/images/featured/ioai.jpg",
+        imageSrc: "assets/images/featured/ioai.webp",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7362124231846846464/",
     },
     {
@@ -42,7 +42,7 @@ const FEATURED_ITEMS: FocusRailItem[] = [
         title: "Satria Data 2024 Silver Medal",
         description: "UI Students win Silver Medal at the Satria Data 2024 Big Data Challenge competition.",
         meta: "Victory • Big Data",
-        imageSrc: "assets/images/featured/satdat.jpg",
+        imageSrc: "assets/images/featured/satdat.webp",
         href: "https://cs.ui.ac.id/2024/08/06/mahasiswa-ui-sabet-medali-di-kompetisi-satria-data-2024/",
     },
     // {
@@ -124,7 +124,7 @@ export default function Featured() {
             </div>
 
             <div className="w-full max-w-6xl mx-auto px-4 md:px-6 relative z-20">
-                <div className="relative rounded-2xl md:rounded-[32px] border border-white/[0.08] bg-[#09090b]/80 shadow-[0_0_100px_rgba(0,0,0,0.5)] backdrop-blur-xl overflow-hidden ring-1 ring-white/[0.02]">
+                <div className="relative rounded-2xl md:rounded-[32px] border border-white/[0.08] bg-[#09090b]/90 shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden ring-1 ring-white/[0.02]">
 
                     {/* MacOS-style Window Header */}
                     <div className="absolute top-0 inset-x-0 h-12 flex items-center px-6 z-30 bg-transparent">
